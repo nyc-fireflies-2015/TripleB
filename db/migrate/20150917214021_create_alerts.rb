@@ -3,10 +3,11 @@ class CreateAlerts < ActiveRecord::Migration
     create_table :alerts do |t|
       t.references :creator
       t.references :mechanic
-      t.integer :latitude
-      t.integer :longitude
-      t.string :status
-      t.timestamps
+      t.integer :latitude, null: false
+      t.integer :longitude, null: false
+      t.string :status, default: 'incomplete'
+
+      t.timestamps null: false
     end
   end
 end
