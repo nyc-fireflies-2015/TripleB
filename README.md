@@ -1,7 +1,7 @@
 #TripleB
 ##Triple A for Bikes
 
-- Product Manager | George Project Manager |
+- Product Manager | George Project Manager
 - Weekend starting time | 12:00pm
 - Alex | CRUD & Ajax
 - Ernesto | CRUD
