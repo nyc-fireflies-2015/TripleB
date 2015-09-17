@@ -1,13 +1,16 @@
-# TripleB
-Triple A for Bikes
+#TripleB
+##Triple A for Bikes
 
-Product Manager | George Project Manager |
-Weekend starting time | 12:00pm
-Alex | CRUD & Ajax Ernesto | CRUD Lauren | Tests & Front end George | Tests & Front end
-End of Day Code Reviews
-Initialize Repo Wireframe mvp Draw Schema Set up Routes Set up circle & simple cov
-User Credentials username name password payment info phone number
-Users Stories As a user
+- Product Manager | George Project Manager |
+- Weekend starting time | 12:00pm
+- Alex | CRUD & Ajax
+- Ernesto | CRUD
+- Lauren | Tests & Front end
+- George | Tests & Front end
+- End of Day Code Reviews
+- Initialize Repo Wireframe mvp Draw Schema Set up Routes Set up circle & simple cov
+- User Credentials username name password payment info phone number
+- Users Stories As a user
 
 MVP:
 - I can login with bcrypt/oauth
