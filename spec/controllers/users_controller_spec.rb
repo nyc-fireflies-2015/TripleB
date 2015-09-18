@@ -43,8 +43,14 @@ describe UsersController do
     end
   end
 
-  # describe 'PATCH #update' do
-  #   it
-  # end
+  describe 'PATCH #update' do
+    before :each do
+      @user = create(:user, first_name: 'Alex', last_name: 'Huang', username: 'alex62wp7c', email: 'ahuang62wp7c@gmail.com', phone: '415-298-1745', password: 'foo')
+    end
+
+    # it 'changes @users attributes' do
+    #   patch :update, id: @user.id
+    # end
+  end
 
 end
