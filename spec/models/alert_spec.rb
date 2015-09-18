@@ -14,11 +14,5 @@ describe Alert do
     it 'should have many issues' do
       should have_many :issues
     end
-    # it 'should belong to comments' do
-    #   should have_many :comments
-    # end
-    # it 'should have many votes'do
-    #   should have_many :votes
-    # end
   end
 end
