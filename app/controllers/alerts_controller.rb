@@ -14,11 +14,12 @@ class AlertsController < ApplicationController
   end
 
   def create
-    @alert = Alert.build()
+    @alert = Alert.new(creator_id: session[:user_id], latitude: 0, longitude: 0)
     if @alert.save
-      redirect_to "show"
+      @alert.alert_issues.create(issue_id: params[:issues], description: params[:description])
+      redirect_to "/"
     else
-      #oh shit
+      redirect_to "/alerts/new"
     end
   end
 
