@@ -1,6 +1,9 @@
-# FactoryGirl.define do
-#   factory :alert do
-#     title { Faker::Lorem.word }
-#     content { Faker::Lorem.paragraph }
-#   end
-# end
+require 'faker'
+
+FactoryGirl.define do
+  factory :alert do
+    creator_id { 1 }
+    latitude { Faker::Address.latitude }
+    longitude { Faker::Address.longitude }
+  end
+end
