@@ -1,7 +1,7 @@
 class AlertsController < ApplicationController
 
   def index
-    @alerts = AlertIssue.all
+    @alerts = Alert.all
   end
 
   def new
