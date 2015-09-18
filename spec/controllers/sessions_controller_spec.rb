@@ -3,9 +3,9 @@ require 'rails_helper'
 describe SessionsController  do
 
   describe "GET #new" do
-    it "redirects to login form" do
+    it "renders login form" do
       get :new
-      expect(response).to redirect_to login_path
+      expect(response).to render_template :new
     end
   end
 
