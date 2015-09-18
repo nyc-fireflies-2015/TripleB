@@ -11,6 +11,8 @@ class AlertsController < ApplicationController
 
   def show
     @alert = Alert.find(params[:id])
+    # This is using first only because for basic crud walkthough we're only using one issue.  This will be addressed in the future.
+    @alert_issue = @alert.alert_issues.first
   end
 
   def create
