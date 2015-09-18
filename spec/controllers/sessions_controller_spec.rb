@@ -10,6 +10,11 @@ describe SessionsController  do
   end
 
   describe "POST #create" do
+    it "creates a user session" do
+      user = create(:user)
+      post :create, :username => user.username, :password => user.password
+      expect(response).to redirect_to alerts_path
+    end
   end
 
   describe "DELETE #destroy" do
