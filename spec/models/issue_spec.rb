@@ -10,5 +10,6 @@ describe Alert do
     it 'should have many alerts' do
       should have_many :alerts
     end
+    
   end
 end
