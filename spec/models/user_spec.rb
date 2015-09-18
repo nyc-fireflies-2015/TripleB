@@ -2,17 +2,6 @@ require 'rails_helper'
 
 describe User do
   context 'associations' do
-    # it 'should belong to creator (class name User)' do
-    #   should belong_to(:creator).class_name("User")
-    # end
-
-    # it 'should belong to mechanic (class name User)' do
-    #   should belong_to(:mechanic).class_name("User")
-    # end
-
-    it 'should have many alerts' do
-      should have_many :alert_issues
-    end
 
     it 'should have many alerts' do
       should have_many :alerts
@@ -20,6 +9,14 @@ describe User do
 
     it 'should have many created_alerts' do
       should have_many :created_alerts
+    end
+
+    it 'should have many alerts' do
+      should have_many :alert_issues
+    end
+
+    it 'should have many alerts' do
+      should have_many :issues
     end
 
   end
