@@ -5,7 +5,7 @@ describe SessionsController  do
 
   describe "GET #new" do
     it "renders login form" do
-      get :new
+      get :newg
       expect(response).to render_template :new
     end
   end
