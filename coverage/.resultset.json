@@ -8,10 +8,10 @@
         null,
         null,
         1,
-        2,
-        2,
-        2,
-        2,
+        1,
+        1,
+        1,
+        1,
         null,
         0,
         null,
@@ -31,12 +31,12 @@
         1,
         null,
         1,
-        4,
+        0,
         null,
         1,
         null,
         1,
-        3,
+        0,
         null,
         1,
         null,
@@ -73,17 +73,8 @@
         1,
         1,
         null
-      ],
-      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/controllers/welcome_controller.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null
       ]
     },
-    "timestamp": 1442601309
+    "timestamp": 1442601561
   }
 }
