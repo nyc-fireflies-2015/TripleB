@@ -1,14 +1,12 @@
 <div class="contain-to-grid sticky">
-  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
-    <ul class="button-group even-3">
-      <li><%= link_to "Triple B", :root, class: "button" %></li>
-      <% if signed_in? %>
-        <li><%= link_to current_user.username, user_path(id: current_user.id), class: "button" %></li>
-        <li><%= link_to "Logout", session_path(id: current_user.id), method: :delete, class: "button" %></li>
-      <% else %>
-        <li><%= link_to "Login", login_path, class: "button" %></li>
-        <li><%= link_to "Sign up", new_user_path, class: "button" %></li>
-      <% end %>
-    </ul>
+  <nav class="top-bar row" data-topbar role="navigation" data-options="sticky_on: large">
+    <div class="large-10 columns"><%= link_to "Triple B", :root %></div>
+    <% if signed_in? %>
+      <div class="large-1 columns"><%= link_to current_user.username, user_path(id: current_user.id) %></div>
+      <div class="large-1 columns"><%= link_to "Logout", session_path(id: current_user.id), method: :delete %></div>
+    <% else %>
+      <div class="large-1 columns"><%= link_to "Login", login_path %></div>
+      <div class="large-1 columns"><%= link_to "Sign up", new_user_path %></div>
+    <% end %>
   </nav>
 </div>
