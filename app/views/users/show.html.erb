@@ -1,4 +1,19 @@
 <div>
+
 	<h1>Welcome <%= @user.first_name %></h1>
-	<div><%= @user.created_alerts %></div>
+
+	<article>
+	<h2>Your Created Alerts</h2>
+		<% @user.created_alerts.each do |alert| %>
+
+		<% end %>
+	</article>
+
+	<article>
+		<h2>Your Accepted Alerts</h2>
+		<% @user.alerts.each do |alert| %>
+
+		<% end %>
+	</article>	
+
 </div>
