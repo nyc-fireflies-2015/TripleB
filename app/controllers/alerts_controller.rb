@@ -32,4 +32,13 @@ class AlertsController < ApplicationController
     end
   end
 
+  def update
+  	@alert = Alert.find(params[:id])
+  	if @alert.update_attributes(status: params[:status])
+  		redirect_to "/alerts"
+  	else
+  		redirect_to edit_alert_path(@alert)
+  	end
+  end
+
 end
