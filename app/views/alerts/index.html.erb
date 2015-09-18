@@ -1,7 +1,7 @@
 <ul>
   <% @alerts.each do |a| %>
     <li>
-      <%= Issue.find(a.issue_id).part %>
+      <%= a.creator.username %>
     </li>
   <% end %>
 </ul>
