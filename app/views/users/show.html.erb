@@ -3,18 +3,18 @@
 
 	<h1>Welcome <%= @user.first_name %></h1>
 
-	<article>
 	<h2>Your Created Alerts</h2>
-		<% @user.created_alerts.each do |alert| %>
-
+	<ul>
+		<% @created_alerts.each do |alert| %>
+			<li><%= link_to alert.created_at, alert_path(alert) %></li>
 		<% end %>
-	</article>
+	</ul>
 
-	<article>
 		<h2>Your Accepted Alerts</h2>
-		<% @user.alerts.each do |alert| %>
-
+	<ul>
+		<% @alerts.each do |alert| %>
+			<li><%= link_to alert.created_at, alert_path(alert) %></li>
 		<% end %>
-	</article>	
+	</ul>
 
 </div>

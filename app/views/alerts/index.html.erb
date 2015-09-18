@@ -1,0 +1,8 @@
+<%= link_to "Create an alert", new_alert_path %>
+<ul>
+  <% @alerts.each do |alert| %>
+    <li>
+      <%= link_to alert.creator.username, alert_path(alert) %>
+    </li>
+  <% end %>
+</ul>
