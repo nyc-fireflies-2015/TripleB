@@ -54,4 +54,11 @@ describe User do
     expect(user.errors[:email]).to include("has already been taken")
   end
 
+  it 'is invalid with a duplicate username' do
+    create(:user, username: "gp3gp3gp3")
+    user = build(:user, username: "gp3gp3gp3")
+    user.valid?
+    expect(user.errors[:username]).to include("has already been taken")
+  end
+
 end
