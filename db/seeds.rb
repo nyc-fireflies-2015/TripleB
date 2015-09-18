@@ -5,3 +5,7 @@ end
 issues = ["worn brake pad","slipped chain","detached brake cable","punctured tube", "popped tire", "loose crankset","split fork"]
 
 issues.each {|issue| Issue.create(part: issue)}
+
+2.times do
+  Alert.create()
+end
