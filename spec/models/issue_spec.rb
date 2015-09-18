@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Alert do
+describe Issue do
   context 'associations' do
 
     it 'should have many alert_issues' do
