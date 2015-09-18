@@ -12,17 +12,22 @@ describe UsersController do
         get :new
         expect(assigns(:user)).to be_a_new(User)
       end
+
+      it "renders signup form" do
+        get :new
+        expect(response).to render_template :new
+        end
     end
 
-    describe '#create' do
-      it "creates a new user with valid attributes" do
-        get :new
-        binding.pry
-        post :create, user: @user_attributes
-        expect(User.last.username).to eq(@user.username)
-        expect(User.last.email).to eq(@user.email)
-      end
-    end
+    # describe '#create' do
+    #   it "creates a new user with valid attributes" do
+    #     get :new
+    #     binding.pry
+    #     post :create, user: @user_attributes
+    #     expect(User.last.username).to eq(@user.username)
+    #     expect(User.last.email).to eq(@user.email)
+    #   end
+    # end
 
     # it "POST#create denies access" do
     #   post :create, user: attributes_for(:user)
