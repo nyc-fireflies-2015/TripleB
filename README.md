@@ -12,7 +12,10 @@
 - User Credentials username name password payment info phone number
 - Users Stories As a user
 
-MVP:
+###Schema
+![](app/assets/images/Schema.png)
+
+###MVP:
 - I can login with bcrypt/oauth
 - I can post an alert, with issues
 - I can read alert
@@ -20,7 +23,7 @@ MVP:
 - I can see distance/ETA of mechanic
 - I can receive text messages about the status of my mechanic from the application * email for mvp
 
-STRETCH:
+###STRETCH:
 - I can see bike shops
 - I can save my cc info
 - I can pay a mechanic
