@@ -14,6 +14,7 @@ describe SessionsController  do
       user = create(:user)
       post :create, :username => user.username, :password => user.password
       expect(response).to redirect_to alerts_path
+      expect(session[:user_id]).to eq(user.id)
     end
   end
 
