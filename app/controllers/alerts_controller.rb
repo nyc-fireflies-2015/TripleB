@@ -17,7 +17,7 @@ class AlertsController < ApplicationController
     @alert = Alert.new(creator_id: current_user.id, latitude: 0, longitude: 0)
     if @alert.save
       @alert.alert_issues.create(issue_id: params[:issues], description: params[:description])
-      redirect_to "/"
+      redirect_to "/alerts"
     else
       redirect_to "/alerts/new"
     end

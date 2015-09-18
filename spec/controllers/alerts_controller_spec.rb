@@ -30,20 +30,26 @@ RSpec.describe AlertsController, type: :controller do
     end
   end
 
-  # describe 'POST #create' do
-  #
-  #   it "creates a new alert with valid attributes" do
-  #     expect{
-  #         get :new
-  #         post :create, alert: attributes_for(:alert)
-  #     }.to change(Alert, :count).by(1)
-  #   end
-  #
-  #   it "redirects to alerts index page" do
-  #     post :create, alert: attributes_for(:alert)
-  #     expect(response).to redirect_to alerts_path
-  #   end
-  # end
+  describe 'POST #create' do
+
+    before :each do
+      user = create(:user)
+      stub_current_user user
+      session[:user_id] = user.id
+    end
+
+    it "creates a new alert with valid attributes" do
+      expect{
+          get :new
+          post :create, creator_id: 1, latitude: 0, longitude: 0, description: "test"
+      }.to change(Alert, :count).by(1)
+    end
+
+    it "redirects to alerts index page" do
+      post :create, creator_id: 1, latitude: 0, longitude: 0, description: "test"
+      expect(response).to redirect_to alerts_path
+    end
+  end
 
 
 
