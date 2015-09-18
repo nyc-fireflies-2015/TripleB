@@ -11,7 +11,8 @@ feature "User visits the site" do
     it "can log in" do
       user = create(:user)
       log_in user
-      expect(page).to redirect_to root_path
+      expect(page).to have_content("Logout")
+      # expect(page).not_to have_content("Login")
     end
   end
 
