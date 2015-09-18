@@ -11,4 +11,10 @@ describe User do
     expect(user.errors[:first_name]).not_to include("can't be blank")
   end
 
+  it 'is invalid without a first name' do
+    user = build(:user, first_name: nil)
+    user.valid?
+    expect(user.errors[:first_name]).to include("can't be blank")
+  end
+
 end
