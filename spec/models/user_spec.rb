@@ -61,4 +61,10 @@ describe User do
     expect(user.errors[:username]).to include("has already been taken")
   end
 
+  it 'is invalid with a password less than 6 characters long' do
+    user = build(:user, password: "foods")
+    user.valid?
+    expect(user.errors[:password]).to include("is too short (minimum is 6 characters)")
+  end
+
 end
