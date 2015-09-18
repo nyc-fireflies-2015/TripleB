@@ -1,4 +1,4 @@
-<div>
+<div id="login_header">
   <%= link_to "Triple B", :root %>
   <% if signed_in? %>
     <%= link_to current_user.username, user_path(id: current_user.id) %>
