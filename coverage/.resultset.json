@@ -1,0 +1,80 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/controllers/sessions_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/models/alert_issue.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/models/alert.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/models/issue.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1442601561
+  }
+}
