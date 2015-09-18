@@ -4,31 +4,38 @@ end
 
 issues = ["worn brake pad","slipped chain","detached brake cable","punctured tube", "popped tire", "loose crankset","split fork"]
 
-issues.each {|issue| Issue.create(part: issue)}
+issue_obj = issues.each {|issue| Issue.create(part: issue)}
 
 status = ["incomplete","in progress","complete"]
 
 users = User.all
 
 2.times do
-  users[0].created_alerts.create(latitude: 40.672203,longitude: -73.989809,status: status[0])
+  alert = users[0].created_alerts.create(latitude: 40.672203,longitude: -73.989809,status: status[0])
+  alert.alert_issues.create(issue_id: 1, description: "brake pads are balding")
 end
 2.times do
   alert = users[1].created_alerts.create(latitude: 40.681031,longitude: -73.974717,status: status[1])
   alert.mechanic = users[2]
+  alert.alert_issues.create(issue_id: 2, description: "my chain slipped off idk what to do")
 end
 2.times do
   alert = users[0].created_alerts.create(latitude: 40.689300,longitude: -73.957153,status: status[2])
   alert.mechanic = users[2]
+  alert.alert_issues.create(issue_id: 3, description: "busted brake cable, can't stop!")
 end
 2.times do
-  users[3].created_alerts.create(latitude: 40.721215,longitude: -73.962044,status: status[0])
+  alert = users[3].created_alerts.create(latitude: 40.721215,longitude: -73.962044,status: status[0])
+  alert.alert_issues.create(issue_id: 4, description: "rode over a rock, need an extra tube")
 end
 2.times do
   alert = users[4].created_alerts.create(latitude: 40.711171,longitude: -73.960916,status: status[1])
   alert.mechanic = users[1]
+  alert.alert_issues.create(issue_id: 5, description: "rode through a tack convention and now my tire is flat :(")
 end
 2.times do
   alert = users[4].created_alerts.create(latitude: 40.752761,longitude: -73.975263,status: status[2])
   alert.mechanic = users[0]
+  alert.alert_issues.create(issue_id: 7, description: "my bike split in half where is the nearest repair shop!??")
+
 end
