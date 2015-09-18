@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/controllers/sessions_controller.rb": [
+      "/Users/Alex/Desktop/TripleB/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -24,7 +24,7 @@
         null,
         null
       ],
-      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/controllers/application_controller.rb": [
+      "/Users/Alex/Desktop/TripleB/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -42,7 +42,7 @@
         null,
         null
       ],
-      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/controllers/users_controller.rb": [
+      "/Users/Alex/Desktop/TripleB/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -85,13 +85,13 @@
         null,
         null
       ],
-      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/models/alert_issue.rb": [
+      "/Users/Alex/Desktop/TripleB/app/models/alert_issue.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/models/alert.rb": [
+      "/Users/Alex/Desktop/TripleB/app/models/alert.rb": [
         1,
         1,
         1,
@@ -99,13 +99,13 @@
         1,
         null
       ],
-      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/models/issue.rb": [
+      "/Users/Alex/Desktop/TripleB/app/models/issue.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/models/user.rb": [
+      "/Users/Alex/Desktop/TripleB/app/models/user.rb": [
         1,
         1,
         1,
@@ -117,7 +117,7 @@
         1,
         null
       ],
-      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/controllers/welcome_controller.rb": [
+      "/Users/Alex/Desktop/TripleB/app/controllers/welcome_controller.rb": [
         1,
         null,
         1,
@@ -127,6 +127,6 @@
         null
       ]
     },
-    "timestamp": 1442606329
+    "timestamp": 1442608817
   }
 }
