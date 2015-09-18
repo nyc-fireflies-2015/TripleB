@@ -24,9 +24,9 @@ class AlertsController < ApplicationController
   end
 
   def destroy
-    alert = Alert.find(params[:id])
-    if alert.destroy
-      redirect_to "/"
+    @alert = Alert.find(params[:id])
+    if @alert.destroy
+      redirect_to "/alerts"
     else
       redirect_to alerts_path(alert)
     end

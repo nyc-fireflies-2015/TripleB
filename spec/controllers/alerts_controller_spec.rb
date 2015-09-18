@@ -51,6 +51,24 @@ RSpec.describe AlertsController, type: :controller do
     end
   end
 
+  describe "DELETE #destroy" do
+
+    before :each do
+      @alert = create(:alert)
+    end
+
+    it "destroys an alert" do
+      expect{
+          delete :destroy, id: @alert.id
+      }.to change(Alert, :count).by(-1)
+    end
+
+    it "redirects to alerts index page" do
+      delete :destroy, id: @alert.id
+      expect(response).to redirect_to alerts_path
+    end
+  end
+
 
 
 end
