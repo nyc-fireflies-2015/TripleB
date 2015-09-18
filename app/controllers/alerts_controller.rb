@@ -10,7 +10,7 @@ class AlertsController < ApplicationController
   end
 
   def show
-    @alert = Alert.find(current_user.id)
+    @alert = Alert.find(params[:id])
   end
 
   def create
