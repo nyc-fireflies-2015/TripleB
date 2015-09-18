@@ -11,10 +11,14 @@ describe User do
     # end
 
     it 'should have many alerts' do
+      should have_many :alert_issues
+    end
+
+    it 'should have many alerts' do
       should have_many :alerts
     end
 
-    it 'should have many issues' do
+    it 'should have many created_alerts' do
       should have_many :created_alerts
     end
 
