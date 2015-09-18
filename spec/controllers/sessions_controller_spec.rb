@@ -19,6 +19,9 @@ describe SessionsController  do
   end
 
   describe "DELETE #destroy" do
+    it "logs a user out" do
+
+    end
   end
 
 end
