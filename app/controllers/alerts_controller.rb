@@ -2,7 +2,6 @@ class AlertsController < ApplicationController
 
   def index
     @alerts = AlertIssue.all
-
   end
 
   def new
@@ -11,11 +10,11 @@ class AlertsController < ApplicationController
   end
 
   def show
-    @alert = Alert.find(params[:id])
+    @alert = Alert.find(current_user.id)
   end
 
   def create
-    @alert = Alert.new(creator_id: session[:user_id], latitude: 0, longitude: 0)
+    @alert = Alert.new(creator_id: current_user.id, latitude: 0, longitude: 0)
     if @alert.save
       @alert.alert_issues.create(issue_id: params[:issues], description: params[:description])
       redirect_to "/"
@@ -25,11 +24,11 @@ class AlertsController < ApplicationController
   end
 
   def destroy
-    @alert = Alert.find(params[:id])
-    if @alert.destroy
-      redirect_to "index"
+    alert = Alert.find(params[:id])
+    if alert.destroy
+      redirect_to "/"
     else
-      #oh shit
+      redirect_to alerts_path(alert)
     end
   end
 
