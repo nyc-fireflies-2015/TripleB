@@ -1,7 +1,7 @@
 <ul>
-  <% @alerts.each do |a| %>
+  <% @alerts.each do |alert| %>
     <li>
-      <%= a.creator.username %>
+      <%= link_to alert.creator.username, alert_path(alert) %>
     </li>
   <% end %>
 </ul>
