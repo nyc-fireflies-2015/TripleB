@@ -1,13 +1,9 @@
 require 'rails_helper'
-<<<<<<< HEAD
 include AuthenticationHelpers
-=======
->>>>>>> 767ec1b0d029ec3e2cd00909f2c8968d237839d1
 
 describe SessionsController  do
 
   describe "GET #new" do
-<<<<<<< HEAD
     it "renders login form" do
       get :new
       expect(response).to render_template :new
@@ -34,14 +30,6 @@ describe SessionsController  do
       expect(response).to redirect_to root_path
       expect(session[:user_id]).to eq(nil)
     end
-=======
-  end
-
-  describe "POST #create" do
-  end
-
-  describe "DELETE #destroy" do
->>>>>>> 767ec1b0d029ec3e2cd00909f2c8968d237839d1
   end
 
 end
