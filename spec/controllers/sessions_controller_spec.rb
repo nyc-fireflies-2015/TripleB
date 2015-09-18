@@ -1,4 +1,5 @@
 require 'rails_helper'
+include AuthenticationHelpers
 
 describe SessionsController  do
 
@@ -19,8 +20,15 @@ describe SessionsController  do
   end
 
   describe "DELETE #destroy" do
+    before :each do
+      user = create(:user)
+      stub_current_user user
+      session[:user_id] = user.id
+    end
     it "logs a user out" do
-
+      delete :destroy, :id => session[:user_id]
+      expect(response).to redirect_to root_path
+      expect(session[:user_id]).to eq(nil)
     end
   end
 
