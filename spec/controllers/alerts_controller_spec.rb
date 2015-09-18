@@ -61,18 +61,4 @@ RSpec.describe AlertsController, type: :controller do
     end
   end
 
-  describe "PATCH #update" do
-    before :each do
-      @alert = create(:alert)
-      put :update, id: @alert, alert: attributes_for(:alert, status: "in progress")
-      @alert.reload
-    end
-    it "updates the alert's status" do
-      expect(@alert.status).to eq("in progress")
-    end
-    it "redirects to alert/:id if valid" do
-      expect(response).to redirect_to alerts_path
-    end
-  end
-
 end
