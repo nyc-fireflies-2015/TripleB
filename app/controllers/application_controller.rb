@@ -6,8 +6,11 @@ class ApplicationController < ActionController::Base
   def signed_in?
     !!session[:user_id]
   end
+  helper_method :signed_in?
 
   def current_user
     User.find_by(id: session[:user_id])
   end
+  helper_method :current_user
+
 end
