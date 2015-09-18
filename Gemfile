@@ -31,4 +31,3 @@ group :test do
   gem 'shoulda-matchers', require: false
 
 end
-
