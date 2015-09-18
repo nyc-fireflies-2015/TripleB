@@ -16,6 +16,8 @@ class UsersController < ApplicationController
 
   def show
   	@user = current_user
+    @created_alerts = @user.created_alerts
+    @alerts = @user.alerts
   end
 
   def edit
