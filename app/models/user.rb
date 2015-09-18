@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
   has_many :issues, through: :alert_issues
 
   validates :first_name, :last_name, :username, :email, :phone,  presence: true
-  validates :email, uniqueness: true
+  validates :email, :username, uniqueness: true
 end
