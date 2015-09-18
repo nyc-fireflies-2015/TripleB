@@ -1,0 +1,20 @@
+<div>
+	<%= link_to 'Edit', edit_user_path(@user) %>
+
+	<h1>Welcome <%= @user.first_name %></h1>
+
+	<article>
+	<h2>Your Created Alerts</h2>
+		<% @user.created_alerts.each do |alert| %>
+
+		<% end %>
+	</article>
+
+	<article>
+		<h2>Your Accepted Alerts</h2>
+		<% @user.alerts.each do |alert| %>
+
+		<% end %>
+	</article>	
+
+</div>
