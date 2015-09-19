@@ -9,18 +9,14 @@ class AlertsController < ApplicationController
   end
 
   def show
-    @alert = Alert.find(params[:id])
-    # This is using first only because for basic crud walkthough we're only using one issue.  This will be addressed in the future.
-    @alert_issue = @alert.alert_issues.first
+    @alert = Alert.find_by(id: params[:id])
   end
 
   def create
-    @alert = Alert.new(creator_id: current_user.id, latitude: 0, longitude: 0)
-    if @alert.save
-      @alert.alert_issues.create(issue_id: params[:issues], description: params[:description])
-      redirect_to "/alerts"
+    if alert = current_user.created_alerts.create(alert_params)
+      redirect_to alert
     else
-      redirect_to "/alerts/new"
+      redirect_to new_alert_path
     end
   end
 
@@ -40,6 +36,12 @@ class AlertsController < ApplicationController
   	else
   		redirect_to edit_alert_path(@alert)
   	end
+  end
+
+  private
+
+  def alert_params
+    params.require(:alert).permit(:creator_id, :mechanic_id, :latitude, :longitude, :status, :description)
   end
 
 end
