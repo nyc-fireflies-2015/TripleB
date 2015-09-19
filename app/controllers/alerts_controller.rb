@@ -1,7 +1,7 @@
 class AlertsController < ApplicationController
 
   def index
-    @alerts = Alert.all
+    @alerts = Alert.limit(50).order(created_at: :desc)
   end
 
   def new
