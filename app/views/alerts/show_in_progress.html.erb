@@ -1,0 +1,27 @@
+<h1>Alert status: <%= @alert.status %></h1>
+<h3><%= @alert.creator.first_name %> needs help</h3>
+<p><%= @alert.description %></p>
+<p>Posted at: <%= @alert.created_at %></p>
+<p>Latitude: <%= @alert.latitude %></p>
+<p>Longitude: <%= @alert.longitude %></p>
+<div>
+  <% @alert.tags.each do |tag| %>
+    <p><%= tag %>, </p>
+  <% end %>
+</div>
+<div>
+  <% if @alert.creator == current_user %>
+    <%= form_for @alert do |f| %>
+      <%= f.hidden_field :status, value: "complete" %>
+      <%= f.submit "Complete this alert" %>
+    <% end %>
+  <% end %>
+
+  <% if @alert.mechanic == current_user %>
+    <%= form_for @alert do |f| %>
+      <%= f.hidden_field :status, value: "incomplete" %>
+      <%= f.hidden_field :mechanic_id, value: nil %>
+      <%= f.submit "Cancel this alert" %>
+    <% end %>
+  <% end %>
+</div>
