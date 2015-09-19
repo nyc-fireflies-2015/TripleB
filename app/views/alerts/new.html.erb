@@ -2,9 +2,10 @@
 <%= form_for @alert do |f| %>
   <%= f.label :description %>
   <%= f.text_field :description %>
+  <%= f.label :tags %>
   <%= f.text_field :all_tags %>
-  <%= f.hidden_field :latitude %>
-  <%= f.hidden_field :longitude %>
+  <div id="location">
+  </div>
   <%= f.submit %>
 <% end %>
 </div>
