@@ -1,11 +1,82 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/Gp3gp3gp/Documents/DBC_Stuff/phase-3/final-project/TripleB/app/controllers/alerts_controller.rb": [
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/Gp3gp3gp/Documents/DBC_Stuff/phase-3/final-project/TripleB/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        1,
+        null,
+        null
+      ],
       "/Users/Gp3gp3gp/Documents/DBC_Stuff/phase-3/final-project/TripleB/app/models/alert.rb": [
         1,
         1,
         1,
         1,
+        1,
+        null,
         1,
         null
       ],
@@ -20,20 +91,8 @@
         1,
         1,
         null
-      ],
-      "/Users/Gp3gp3gp/Documents/DBC_Stuff/phase-3/final-project/TripleB/app/models/alert_issue.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/Gp3gp3gp/Documents/DBC_Stuff/phase-3/final-project/TripleB/app/models/issue.rb": [
-        1,
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1442681926
+    "timestamp": 1442685633
   }
 }
