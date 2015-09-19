@@ -94,6 +94,12 @@ describe AlertsController do
           @alert.reload
           expect(@alert.status).to eq("in progress")
         end
+        it 'redirects to the updated alert' do
+          @alert = create(:alert, status: "incomplete")
+          patch :update, id: @alert, alert: attributes_for(:alert,
+            status: "in progress")
+          expect(response).to redirect_to @alert
+        end
       end
     end
   end
