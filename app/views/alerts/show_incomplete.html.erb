@@ -13,6 +13,8 @@
 	<%= link_to 'Delete Alert', alert_path(@alert), method: :delete, data: {confirm: 'Are you sure?' }%>
 <% else %>
 	<%= form_for @alert do |f| %>
+    <%= f.hidden_field :status, value: "in progress" %>
+    <%= f.hidden_field :mechanic_id, value: current_user.id %>
 	  <%= f.submit "Help #{@alert.creator.first_name}" %>
 	<% end %>
 <% end %>

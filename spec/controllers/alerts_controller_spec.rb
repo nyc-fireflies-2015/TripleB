@@ -37,7 +37,7 @@ describe AlertsController do
       end
     end
     context 'alert is in progress' do
-      xit "renders the :show_in_progress template" do
+      it "renders the :show_in_progress template" do
         alert = create(:alert, status: 'in progress')
         get :show, id: alert.id
         expect(response).to render_template :show_in_progress
@@ -80,6 +80,42 @@ describe AlertsController do
       it 'redirects to the new alert page' do
         post :create, alert: attributes_for(:alert, description: nil)
         expect(response).to redirect_to new_alert_path
+      end
+    end
+  end
+
+  describe "PATCH #update" do
+    context 'user is a mechanic' do
+
+      context 'alert is incomplete' do
+
+        it 'changes the alert status to in progress' do
+          @alert = create(:alert, status: "incomplete")
+          patch :update, id: @alert, alert: attributes_for(:alert,
+          status: "in progress")
+          @alert.reload
+          expect(@alert.status).to eq("in progress")
+        end
+
+        it 'redirects to the updated alert' do
+          @alert = create(:alert, status: "incomplete")
+          patch :update, id: @alert, alert: attributes_for(:alert,
+            status: "in progress")
+          expect(response).to redirect_to @alert
+        end
+
+      end
+
+      context 'alert is in progress' do
+        context "mechanic is the alert's mechanic" do
+          it 'changes the alert status back to incomplete' do
+            @mechanic = create(:user)
+            @alert = create(:alert, status: 'in progress', mechanic: @mechanic)
+            patch :update, id: @alert, alert: attributes_for(:alert, status: 'incomplete')
+            @alert.reload
+            expect(@alert.status).to eq("incomplete")
+          end
+        end
       end
     end
   end
