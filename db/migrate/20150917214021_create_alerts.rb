@@ -2,10 +2,11 @@ class CreateAlerts < ActiveRecord::Migration
   def change
     create_table :alerts do |t|
       t.references :mechanic
-      t.references :creator
-      t.integer :latitude, null: false
-      t.integer :longitude, null: false
+      t.references :creator, null: false
+      t.integer :latitude
+      t.integer :longitude
       t.string :status, default: 'incomplete'
+      t.string :description, null: false
 
       t.timestamps null: false
     end
