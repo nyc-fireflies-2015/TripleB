@@ -1,8 +1,17 @@
 <%= link_to "Create an alert", new_alert_path %>
-<ul>
+
+<div class="river">
   <% @alerts.each do |alert| %>
-    <li>
-      <%= link_to alert.description, alert_path(alert) %>
-    </li>
+        <div class="alert-container">
+          <div class="alert-description">
+            <%= link_to alert.description, alert_path(alert) %>
+          </div>
+          <div class="alert-status">
+            <%= alert.status %>
+          </div>
+          <div class="alert-coords">
+            <%= alert.latitude %>, <%= alert.longitude %>
+          </div>
+        </div>
   <% end %>
-</ul>
+</div>
