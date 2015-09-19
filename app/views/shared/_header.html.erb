@@ -1,12 +1,21 @@
 <div class="contain-to-grid sticky">
-  <nav class="top-bar row" data-topbar role="navigation" data-options="sticky_on: large">
-    <div class="large-10 columns"><%= link_to "Triple B", :root %></div>
-    <% if signed_in? %>
-      <div class="large-1 columns"><%= link_to current_user.username, user_path(id: current_user.id) %></div>
-      <div class="large-1 columns"><%= link_to "Logout", session_path(id: current_user.id), method: :delete %></div>
-    <% else %>
-      <div class="large-1 columns"><%= link_to "Login", login_path %></div>
-      <div class="large-1 columns"><%= link_to "Sign up", new_user_path %></div>
-    <% end %>
+  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+    <ul class="title-area">
+      <li class="name">
+        <h1><%= link_to "Triple B", :root %></h1>
+      </li>
+    </ul>
+
+    <section class="top-bar-section">
+      <ul class="right">
+      <% if signed_in? %>
+        <li class="active"><%= link_to current_user.username, user_path(id: current_user.id) %></li>
+        <li class="active"><%= link_to "Logout", session_path(id: current_user.id), method: :delete %></li>
+      <% else %>
+        <li class="active"><%= link_to "Login", login_path %></li>
+        <li class="active"><%= link_to "Sign up", new_user_path %></li>
+      <% end %>
+    </ul>
+    </section>
   </nav>
 </div>
