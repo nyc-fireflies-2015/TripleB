@@ -40,7 +40,7 @@ class AlertsController < ApplicationController
   private
 
   def alert_params
-    params.require(:alert).permit(:creator_id, :mechanic_id, :latitude, :longitude, :status, :description)
+    params.require(:alert).permit(:creator_id, :mechanic_id, :latitude, :longitude, :status, :description, :all_tags)
   end
 
 end
