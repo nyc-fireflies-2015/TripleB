@@ -29,10 +29,26 @@ describe AlertsController do
   end
 
   describe "GET #show" do
-    it "renders the :show template" do
-      alert = create(:alert)
-      get :show, id: alert.id
-      expect(response).to render_template :show
+    context 'alert is incomplete' do
+      xit "renders the :show_incomplete template" do
+        alert = create(:alert, status: 'incomplete')
+        get :show, id: alert.id
+        expect(response).to render_template :show_incomplete
+      end
+    end
+    context 'alert is in progress' do
+      xit "renders the :show_in_progress template" do
+        alert = create(:alert, status: 'in progress')
+        get :show, id: alert.id
+        expect(response).to render_template :show_in_progress
+      end
+    end
+    context 'alert is complete' do
+      xit "renders the :show_complete template" do
+        alert = create(:alert, status: 'complete')
+        get :show, id: alert.id
+        expect(response).to render_template :show_complete
+      end
     end
   end
 
