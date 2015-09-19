@@ -37,7 +37,7 @@ describe AlertsController do
       end
     end
     context 'alert is in progress' do
-      xit "renders the :show_in_progress template" do
+      it "renders the :show_in_progress template" do
         alert = create(:alert, status: 'in progress')
         get :show, id: alert.id
         expect(response).to render_template :show_in_progress

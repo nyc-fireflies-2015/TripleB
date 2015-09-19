@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Gp3gp3gp/Documents/DBC_Stuff/phase-3/final-project/TripleB/app/controllers/alerts_controller.rb": [
+      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/controllers/alerts_controller.rb": [
         1,
         null,
         1,
@@ -14,24 +14,21 @@
         null,
         1,
         1,
-        null,
-        null,
         1,
         0,
-        0,
-        0,
-        0,
+        1,
+        1,
         null,
         0,
         null,
         null,
         null,
         1,
-        0,
-        0,
-        0,
+        4,
+        4,
+        2,
         null,
-        0,
+        2,
         null,
         null,
         null,
@@ -47,12 +44,12 @@
         1,
         null,
         1,
-        0,
+        4,
         null,
         null,
         null
       ],
-      "/Users/Gp3gp3gp/Documents/DBC_Stuff/phase-3/final-project/TripleB/app/controllers/application_controller.rb": [
+      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -70,7 +67,7 @@
         null,
         null
       ],
-      "/Users/Gp3gp3gp/Documents/DBC_Stuff/phase-3/final-project/TripleB/app/models/alert.rb": [
+      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/models/alert.rb": [
         1,
         1,
         1,
@@ -78,9 +75,20 @@
         1,
         null,
         1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
         null
       ],
-      "/Users/Gp3gp3gp/Documents/DBC_Stuff/phase-3/final-project/TripleB/app/models/user.rb": [
+      "/Users/laurengallinaro/Desktop/DBC/Fireflies/tripleb/TripleB/app/models/user.rb": [
         1,
         1,
         1,
@@ -93,6 +101,6 @@
         null
       ]
     },
-    "timestamp": 1442685633
+    "timestamp": 1442698664
   }
 }
