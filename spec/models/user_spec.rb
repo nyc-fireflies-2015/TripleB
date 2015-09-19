@@ -11,9 +11,6 @@ describe User do
       should have_many :created_alerts
     end
 
-    it 'should have many alerts' do
-      should have_many :alert_issues
-    end
 
     it 'should have many alerts' do
       should have_many :issues
