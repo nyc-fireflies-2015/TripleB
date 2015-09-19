@@ -35,6 +35,12 @@ describe Alert do
       expect(alert.errors[:description]).to include("can't be blank")
     end
 
+    it 'is invalid without a creator' do
+      alert = build(:alert, creator: nil)
+      alert.valid?
+      expect(alert.errors[:creator]).to include("can't be blank")
+    end
+
   end
 
 end
