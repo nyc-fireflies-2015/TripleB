@@ -1,8 +1,11 @@
 class AlertsController < ApplicationController
 
   def index
-    # @alerts = Alert.includes(:tags).where("tags.name" => params[:alert][:tags], "status" => "incomplete").limit(50).order(created_at: :desc)
-    @alerts = Alert.where(status: "incomplete").limit(50).order(created_at: :desc)
+    if params[:tag]
+      @alerts = Alert.includes(:tags).where("tags.name" => params[:tag], "status" => "incomplete").limit(50).order(created_at: :desc)
+    else
+      @alerts = Alert.where(status: "incomplete").limit(50).order(created_at: :desc)
+    end
   end
 
   def new
