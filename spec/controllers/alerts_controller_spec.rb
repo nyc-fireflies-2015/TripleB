@@ -28,13 +28,13 @@ describe AlertsController do
     end
   end
 
-  # describe "GET #show" do
-  #   it "renders the :show template" do
-  #     @alert = create(:alert)
-  #     get :show, id: @alert.id
-  #     expect(response).to render_template :show
-  #   end
-  # end
+  describe "GET #show" do
+    it "renders the :show template" do
+      alert = create(:alert)
+      get :show, id: alert.id
+      expect(response).to render_template :show
+    end
+  end
 
 
   # describe 'POST #create' do
