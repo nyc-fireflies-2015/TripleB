@@ -15,6 +15,19 @@ describe AlertsController do
     end
   end
 
+  describe "GET #new" do
+    it "renders the :new template" do
+      get :new
+      expect(response).to render_template :new
+    end
+
+    it "assigns a new alert" do
+      @alert = create(:alert)
+      get :new
+      expect(assigns(:alert)).to be_a_new(Alert)
+    end
+  end
+
   # describe "GET #show" do
   #   it "renders the :show template" do
   #     @alert = create(:alert)
@@ -23,17 +36,6 @@ describe AlertsController do
   #   end
   # end
 
-  # describe "GET #new" do
-  #   it "renders the :new template" do
-  #     get :new
-  #     expect(response).to render_template :new
-  #   end
-  #   it "assigns a new alert" do
-  #     @alert = create(:alert)
-  #     get :new
-  #     expect(assigns(:alert)).to be_a_new(Alert)
-  #   end
-  # end
 
   # describe 'POST #create' do
   #   before :each do
