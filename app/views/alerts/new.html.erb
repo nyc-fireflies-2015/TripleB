@@ -1,7 +1,10 @@
 <div id="alert_form">
 <%= form_for @alert do |f| %>
+  <%= f.label :description %>
   <%= f.text_field :description %>
   <%= f.text_field :all_tags %>
+  <%= f.hidden_field :latitude %>
+  <%= f.hidden_field :longitude %>
   <%= f.submit %>
 <% end %>
 </div>

@@ -3,8 +3,10 @@ $(document).ready(function(){
 
   <button onclick= "getLocation()">get location</button>
   var x = document.getElementById("lat_long");
+  var latitutde;
+  var longitude;
 
-  $('#alert_form').on("submit",function(){
+  $('#alert_form').load(function(){
     function getLocation(){
       if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(showPosition)
@@ -15,10 +17,11 @@ $(document).ready(function(){
     }
 
     function showPosition(position){
-      x.innerHTML = "Latitude:" + position.coords.latitude +"<br>Longitude:" + position.coords.longitude;
+      latitude = position.coords.latitude;
+      longitude = position.coords.longitude;
     }
-
     getLocation();
+
 
   })
 
