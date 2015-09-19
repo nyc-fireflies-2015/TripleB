@@ -49,6 +49,10 @@ describe AlertsController do
           post :create, alert: attributes_for(:alert)
         }.to change(Alert, :count).by(1)
       end
+      it "redirects to the alert's show page" do
+        post :create, alert: attributes_for(:alert)
+        expect(response).to redirect_to Alert.last
+      end
     end
   end
 
