@@ -6,14 +6,14 @@
 	<h2>Your Created Alerts</h2>
 	<ul>
 		<% @created_alerts.each do |alert| %>
-			<li><%= link_to alert.created_at, alert_path(alert) %></li>
+			<li><%= link_to alert.time_diff, alert_path(alert) %></li>
 		<% end %>
 	</ul>
 
 		<h2>Your Accepted Alerts</h2>
 	<ul>
 		<% @alerts.each do |alert| %>
-			<li><%= link_to alert.created_at, alert_path(alert) %></li>
+			<li><%= link_to alert.time_diff, alert_path(alert) %></li>
 		<% end %>
 	</ul>
 
