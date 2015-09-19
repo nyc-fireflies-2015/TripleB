@@ -30,7 +30,7 @@ describe AlertsController do
 
   describe "GET #show" do
     context 'alert is incomplete' do
-      xit "renders the :show_incomplete template" do
+      it "renders the :show_incomplete template" do
         alert = create(:alert, status: 'incomplete')
         get :show, id: alert.id
         expect(response).to render_template :show_incomplete
@@ -44,7 +44,7 @@ describe AlertsController do
       end
     end
     context 'alert is complete' do
-      xit "renders the :show_complete template" do
+      it "renders the :show_complete template" do
         alert = create(:alert, status: 'complete')
         get :show, id: alert.id
         expect(response).to render_template :show_complete
