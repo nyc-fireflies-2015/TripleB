@@ -83,4 +83,8 @@ describe AlertsController do
       end
     end
   end
+
+  describe "PATCH #update" do
+    it
+  end
 end
