@@ -13,7 +13,8 @@ class AlertsController < ApplicationController
   end
 
   def create
-    if alert = current_user.created_alerts.create(alert_params)
+    alert = current_user.created_alerts.build(alert_params)
+    if alert.save
       redirect_to alert
     else
       redirect_to new_alert_path
