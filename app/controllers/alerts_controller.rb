@@ -22,7 +22,7 @@ class AlertsController < ApplicationController
 
   def update
   	alert = Alert.find_by(id: params[:id])
-  	if alert.update_attributes(mechanic_id: current_user.id, status: "in progress")
+  	if alert.update_attributes(mechanic: current_user, status: "in progress")
   		redirect_to alerts_path
   	else
   		redirect_to edit_alert_path(alert)
