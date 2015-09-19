@@ -1,9 +1,49 @@
 <%= form_for @user do |f| %>
-  <p><%= f.text_field :username, placeholder: "Username" %></p>
-  <p><%= f.password_field :password, placeholder: "Password" %></p>
-  <p><%= f.text_field :first_name, placeholder: "First Name" %></p>
-  <p><%= f.text_field :last_name, placeholder: "Last Name" %></p>
-  <p><%= f.text_field :email, placeholder: "Email" %></p>
-  <p><%= f.text_field :phone, placeholder: "Phone" %></p>
-  <p><%= f.submit 'Signup' %></p>
+  <div class="row">
+    <div class="small-10">
+      <div class="row">
+        <div class="small-2 columns">
+          <%= f.label :username, class: "right inline" %>
+        </div>
+        <div class="small-4 columns">
+          <%= f.text_field :username %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.label :password, class: "right inline" %>
+        </div>
+        <div class="small-4 columns">
+          <%= f.password_field :password %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-2 columns">
+          <%= f.label :first_name, class: "right inline" %>
+        </div>
+        <div class="small-4 columns">
+          <%= f.text_field :first_name %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.label :last_name, class: "right inline" %>
+        </div>
+        <div class="small-4 columns">
+          <%= f.text_field :last_name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-2 columns">
+          <%= f.label :email, class: "right inline" %>
+        </div>
+        <div class="small-4 columns">
+          <%= f.text_field :email %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.label :phone, class: "right inline" %>
+        </div>
+        <div class="small-4 columns">
+          <%= f.text_field :phone %>
+        </div>
+      </div>
+    </div>
+  </div>
+    <%= f.submit 'Signup', class: "columns center" %>
 <% end %>
