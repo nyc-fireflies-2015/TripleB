@@ -63,13 +63,13 @@ describe UsersController do
       get :edit, id: @user
     end
 
-    it 'updates a user\'s attributes' do
+    it "updates a user's attributes" do
       patch :update, id: @user.id, user: attributes_for(:user, first_name: 'Billy')
       @user.reload
       expect(@user.first_name).to eq 'Billy'
     end
 
-    it 'redirects to the user\'s profile' do
+    it "redirects to the user's profile" do
       patch :update, id: @user.id, user: attributes_for(:user)
       @user.reload
       expect(response).to redirect_to @user
