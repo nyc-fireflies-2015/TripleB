@@ -3,3 +3,25 @@
   <%= f.text_field :all_tags %>
   <%= f.submit %>
 <% end %>
+
+
+<p id="lat_long"></p>
+
+<button onclick= "getLocation()">get location</button>
+<script>
+var x = document.getElementById("lat_long");
+
+function getLocation(){
+  if (navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(showPosition)
+  }
+  else {
+    x.innerHTML = "geolocation not supported"
+  }
+}
+
+function showPosition(position){
+  x.innerHTML = "Latitude:" + position.coords.latitude +"<br>Longitude:" + position.coords.longitude;
+}
+
+</script>
