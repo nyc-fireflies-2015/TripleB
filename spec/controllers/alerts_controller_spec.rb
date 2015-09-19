@@ -36,6 +36,22 @@ describe AlertsController do
     end
   end
 
+  describe "POST #create" do
+    before :each do
+      user = create(:user)
+      stub_current_user user
+      session[:user_id] = user.id
+    end
+
+    context "with valid attributes" do
+      it "saves a new alert in the database" do
+        expect {
+          post :create, alert: attributes_for(:alert)
+        }.to change(Alert, :count).by(1)
+      end
+    end
+  end
+
 
   # describe 'POST #create' do
   #   before :each do
