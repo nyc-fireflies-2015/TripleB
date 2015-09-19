@@ -20,21 +20,12 @@ class AlertsController < ApplicationController
     end
   end
 
-  def destroy
-    @alert = Alert.find(params[:id])
-    if @alert.destroy
-      redirect_to "/alerts"
-    else
-      redirect_to alerts_path(alert)
-    end
-  end
-
   def update
-  	@alert = Alert.find(params[:id])
-  	if @alert.update_attributes(status: params[:status])
-  		redirect_to "/alerts"
+  	alert = Alert.find_by(id: params[:id])
+  	if alert.update_attributes(mechanic_id: current_user.id, status: "in progress")
+  		redirect_to alerts_path
   	else
-  		redirect_to edit_alert_path(@alert)
+  		redirect_to edit_alert_path(alert)
   	end
   end
 
