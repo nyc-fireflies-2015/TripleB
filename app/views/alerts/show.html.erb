@@ -1,3 +1,5 @@
 <h1>Alert status: <%= @alert.status %></h1>
 <h3><%= @alert.creator.first_name %> needs help</h3>
-<p><%= @alert_issue.description %></p>
+<%= form_for @alert do |f| %>
+  <%= f.submit "Help #{@alert.creator.first_name}" %>
+<% end %>

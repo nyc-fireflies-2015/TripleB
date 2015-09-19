@@ -1,6 +1,72 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/Alex/Desktop/TripleB/app/controllers/alerts_controller.rb": [
+        1,
+        null,
+        1,
+        3,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        4,
+        4,
+        2,
+        null,
+        2,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        null
+      ],
+      "/Users/Alex/Desktop/TripleB/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        7,
+        null,
+        1,
+        null,
+        1,
+        10,
+        null,
+        1,
+        null,
+        null
+      ],
       "/Users/Alex/Desktop/TripleB/app/controllers/sessions_controller.rb": [
         1,
         null,
@@ -24,24 +90,6 @@
         null,
         null
       ],
-      "/Users/Alex/Desktop/TripleB/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        4,
-        null,
-        1,
-        null,
-        1,
-        10,
-        null,
-        1,
-        null,
-        null
-      ],
       "/Users/Alex/Desktop/TripleB/app/controllers/users_controller.rb": [
         1,
         null,
@@ -61,6 +109,8 @@
         null,
         1,
         1,
+        1,
+        1,
         null,
         null,
         1,
@@ -85,23 +135,32 @@
         null,
         null
       ],
-      "/Users/Alex/Desktop/TripleB/app/models/alert_issue.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
       "/Users/Alex/Desktop/TripleB/app/models/alert.rb": [
         1,
         1,
         1,
         1,
         1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
         null
       ],
-      "/Users/Alex/Desktop/TripleB/app/models/issue.rb": [
+      "/Users/Alex/Desktop/TripleB/app/models/tag.rb": [
         1,
         1,
+        1,
+        null,
         1,
         null
       ],
@@ -121,16 +180,12 @@
         1,
         null,
         1,
-        null,
+        3,
         null,
         null,
         null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1442612560
-=======
-    "timestamp": 1442608978
->>>>>>> 4c84771a369805e357400c4a529ec07474f0124b
+    "timestamp": 1442698728
   }
 }

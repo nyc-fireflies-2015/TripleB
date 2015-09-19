@@ -1,46 +1,46 @@
 class AlertsController < ApplicationController
 
   def index
-    @alerts = Alert.all
+    @alerts = Alert.limit(50).order(created_at: :desc)
   end
 
   def new
     @alert = Alert.new
-    @issues = Issue.all
   end
 
   def show
-    @alert = Alert.find(params[:id])
-    # This is using first only because for basic crud walkthough we're only using one issue.  This will be addressed in the future.
-    @alert_issue = @alert.alert_issues.first
-  end
-
-  def create
-    @alert = Alert.new(creator_id: current_user.id, latitude: 0, longitude: 0)
-    if @alert.save
-      @alert.alert_issues.create(issue_id: params[:issues], description: params[:description])
-      redirect_to "/alerts"
+    @alert = Alert.find_by(id: params[:id])
+    if @alert.status == 'incomplete'
+      render :show_incomplete
+    elsif @alert.status == 'in progress'
+      render :show_in_progress
     else
-      redirect_to "/alerts/new"
+      render :show_complete
     end
   end
 
-  def destroy
-    @alert = Alert.find(params[:id])
-    if @alert.destroy
-      redirect_to "/alerts"
+  def create
+    alert = current_user.created_alerts.build(alert_params)
+    if alert.save
+      redirect_to alert
     else
-      redirect_to alerts_path(alert)
+      redirect_to new_alert_path
     end
   end
 
   def update
-  	@alert = Alert.find(params[:id])
-  	if @alert.update_attributes(status: params[:status])
-  		redirect_to "/alerts"
+  	alert = Alert.find_by(id: params[:id])
+  	if alert.update_attributes(mechanic: current_user, status: "in progress")
+  		redirect_to alerts_path
   	else
-  		redirect_to edit_alert_path(@alert)
+  		redirect_to edit_alert_path(alert)
   	end
+  end
+
+  private
+
+  def alert_params
+    params.require(:alert).permit(:creator_id, :mechanic_id, :latitude, :longitude, :status, :description, :all_tags)
   end
 
 end

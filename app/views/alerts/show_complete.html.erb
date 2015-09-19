@@ -1,0 +1,8 @@
+<h1>Alert status: <%= @alert.status %> </h1>
+<% if @alert.creator == current_user%>
+  <h3><%= @alert.mechanic.username%> has offered to help!</h3>
+<% else %>
+  <h3>Created by <%= @alert.creator.username%> </h3>
+<%end%>
+<h4>This alert was posted <%=@alert.time_diff%> from <%=@alert.latitude%>, <%=@alert.longitude%></h4>
+<p><%=@alert.description%></p>
