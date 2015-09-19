@@ -1,6 +1,8 @@
 <h1>Alert status: <%= @alert.status %> </h1>
 <% if @alert.creator == current_user%>
-  <h3><%= @alert.mechanic.username%> has offered to help!</h3>
+  <h3><%= @alert.mechanic.username%> was your mechanic</h3>
+<% elsif @alert.mechanic == current_user %>
+  <h3>Thanks for helping <%= @alert.creator.first_name %></h3>
 <% else %>
   <h3>Created by <%= @alert.creator.username%> </h3>
 <%end%>
