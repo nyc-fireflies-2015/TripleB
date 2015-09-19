@@ -61,7 +61,7 @@ describe AlertsController do
           post :create, alert: attributes_for(:alert, description: nil)
         }.to change(Alert, :count).by(0)
       end
-      xit 'redirects to the new alert page' do
+      it 'redirects to the new alert page' do
         post :create, alert: attributes_for(:alert, description: nil)
         expect(response).to redirect_to new_alert_path
       end
