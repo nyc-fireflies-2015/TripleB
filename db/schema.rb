@@ -16,26 +16,26 @@ ActiveRecord::Schema.define(version: 20150917214128) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "alert_issues", force: :cascade do |t|
-    t.integer  "issue_id"
+  create_table "alert_tags", force: :cascade do |t|
+    t.integer  "tags_id"
     t.integer  "alert_id"
-    t.string   "description", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "alerts", force: :cascade do |t|
     t.integer  "mechanic_id"
-    t.integer  "creator_id"
-    t.integer  "latitude",                           null: false
-    t.integer  "longitude",                          null: false
+    t.integer  "creator_id",                         null: false
+    t.integer  "latitude"
+    t.integer  "longitude"
     t.string   "status",      default: "incomplete"
+    t.string   "description",                        null: false
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
   end
 
-  create_table "issues", force: :cascade do |t|
-    t.string   "part",       null: false
+  create_table "tags", force: :cascade do |t|
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
