@@ -2,7 +2,7 @@
 <ul>
   <% @alerts.each do |alert| %>
     <li>
-      <%= link_to alert.creator.username, alert_path(alert) %>
+      <%= link_to alert.time_diff, alert_path(alert) %>
     </li>
   <% end %>
 </ul>
