@@ -54,40 +54,17 @@ describe AlertsController do
         expect(response).to redirect_to Alert.last
       end
     end
+
+    context 'with invalid attributes' do
+      it 'does not save a new alert in the database' do
+        expect {
+          post :create, alert: attributes_for(:alert, description: nil)
+        }.to change(Alert, :count).by(0)
+      end
+      xit 'redirects to the new alert page' do
+        post :create, alert: attributes_for(:alert, description: nil)
+        expect(response).to redirect_to new_alert_path
+      end
+    end
   end
-
-
-  # describe 'POST #create' do
-  #   before :each do
-  #     user = create(:user)
-  #     stub_current_user user
-  #     session[:user_id] = user.id
-  #   end
-  #   it "creates a new alert with valid attributes" do
-  #     expect{
-  #         get :new
-  #         post :create, creator_id: 1, latitude: 0, longitude: 0, description: "test"
-  #     }.to change(Alert, :count).by(1)
-  #   end
-  #   it "redirects to alerts index page" do
-  #     post :create, creator_id: 1, latitude: 0, longitude: 0, description: "test"
-  #     expect(response).to redirect_to alerts_path
-  #   end
-  # end
-
-  # describe "DELETE #destroy" do
-  #   before :each do
-  #     @alert = create(:alert)
-  #   end
-  #   it "destroys an alert" do
-  #     expect{
-  #         delete :destroy, id: @alert.id
-  #     }.to change(Alert, :count).by(-1)
-  #   end
-  #   it "redirects to alerts index page" do
-  #     delete :destroy, id: @alert.id
-  #     expect(response).to redirect_to alerts_path
-  #   end
-  # end
-
 end
