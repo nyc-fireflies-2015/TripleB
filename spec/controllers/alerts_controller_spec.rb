@@ -85,8 +85,10 @@ describe AlertsController do
   end
 
   describe "PATCH #update" do
-    context 'alert is incomplete' do
-      context 'user is a mechanic' do
+    context 'user is a mechanic' do
+
+      context 'alert is incomplete' do
+
         it 'changes the alert status to in progress' do
           @alert = create(:alert, status: "incomplete")
           patch :update, id: @alert, alert: attributes_for(:alert,
@@ -94,11 +96,24 @@ describe AlertsController do
           @alert.reload
           expect(@alert.status).to eq("in progress")
         end
+
         it 'redirects to the updated alert' do
           @alert = create(:alert, status: "incomplete")
           patch :update, id: @alert, alert: attributes_for(:alert,
             status: "in progress")
           expect(response).to redirect_to @alert
+        end
+
+      end
+
+      context 'alert is in progress' do
+        context "mechanic is the alert's mechanic" do
+          it 'changes the alert status back to incomplete' do
+            @alert = create(:alert, status: 'in progress')
+            patch :update, id: @alert, alert: attributes_for(:alert, status: 'incomplete')
+            @alert.reload
+            expect(@alert.status).to eq("incomplete")
+          end
         end
       end
     end
