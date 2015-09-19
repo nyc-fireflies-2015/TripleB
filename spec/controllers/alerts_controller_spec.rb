@@ -109,7 +109,8 @@ describe AlertsController do
       context 'alert is in progress' do
         context "mechanic is the alert's mechanic" do
           it 'changes the alert status back to incomplete' do
-            @alert = create(:alert, status: 'in progress')
+            @mechanic = create(:user)
+            @alert = create(:alert, status: 'in progress', mechanic: @mechanic)
             patch :update, id: @alert, alert: attributes_for(:alert, status: 'incomplete')
             @alert.reload
             expect(@alert.status).to eq("incomplete")
