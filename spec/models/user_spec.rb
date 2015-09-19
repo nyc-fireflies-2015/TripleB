@@ -1,26 +1,6 @@
 require 'rails_helper'
 
 describe User do
-  context 'associations' do
-
-    it 'should have many alerts' do
-      should have_many :alerts
-    end
-
-    it 'should have many created_alerts' do
-      should have_many :created_alerts
-    end
-
-    it 'should have many alerts' do
-      should have_many :alert_issues
-    end
-
-    it 'should have many alerts' do
-      should have_many :issues
-    end
-
-  end
-
   it "has a valid factory" do
     expect(build(:user)).to be_valid
   end
