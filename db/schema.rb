@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150917214128) do
   enable_extension "plpgsql"
 
   create_table "alert_tags", force: :cascade do |t|
-    t.integer  "tags_id"
+    t.integer  "tag_id"
     t.integer  "alert_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
