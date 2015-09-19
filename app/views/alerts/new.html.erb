@@ -1,5 +1,4 @@
-<%= form_for @alert do |a| %>
-  <%= select_tag "issues", options_from_collection_for_select(@issues, "id", "part") %>
-  <%= text_field_tag(:description) %>
-  <%= a.submit %>
+<%= form_for @alert do |f| %>
+  <%= f.text_field :description %>
+  <%= f.submit %>
 <% end %>
