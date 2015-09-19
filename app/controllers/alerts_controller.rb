@@ -6,7 +6,6 @@ class AlertsController < ApplicationController
 
   def new
     @alert = Alert.new
-    @issues = Issue.all
   end
 
   def show
