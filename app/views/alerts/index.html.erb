@@ -3,6 +3,9 @@
 <div class="river">
   <% @alerts.each do |alert| %>
         <div class="alert-container">
+          <div class="alert-creator">
+            <%= alert.creator.username %>
+          </div>
           <div class="alert-description">
             <%= link_to alert.description, alert_path(alert) %>
           </div>
