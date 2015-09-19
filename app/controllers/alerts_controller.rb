@@ -10,6 +10,13 @@ class AlertsController < ApplicationController
 
   def show
     @alert = Alert.find_by(id: params[:id])
+    if @alert.status == 'incomplete'
+      render :show_incomplete
+    elsif @alert.status == 'in progress'
+      render :show_in_progress
+    else
+      render :show_complete
+    end
   end
 
   def create
