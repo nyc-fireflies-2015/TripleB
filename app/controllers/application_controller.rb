@@ -13,4 +13,9 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def redirect_deleted_alert
+    alert = Alert.find_by(id: params[:id])
+    redirect_to alerts_path if alert.nil?
+  end
+
 end
