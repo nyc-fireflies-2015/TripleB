@@ -2,8 +2,8 @@
 <h3><%= @alert.creator.first_name %> needs help</h3>
 <div>Description: <%= @alert.description %></div>
 <div>Created <%= @alert.time_diff %> ago</div>
-<div>Latitude: <%= @alert.latitude %></div>
-<div>Longitude: <%= @alert.longitude %></div>
+<div id="lat" style="display: none;"><%= @alert.latitude %></div>
+<div id="lng" style="display: none;"><%= @alert.longitude %></div>
 <% @alert.tags.each do |tag| %>
 	<div><%= tag.name %></div>
 <% end %>
