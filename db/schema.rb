@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20150917214128) do
     t.string   "first_name",      null: false
     t.string   "last_name",       null: false
     t.string   "username",        null: false
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "email",           null: false
     t.string   "phone",           null: false
     t.string   "password_digest", null: false
