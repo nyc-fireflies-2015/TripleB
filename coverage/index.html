@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-20T10:33:40-04:00">2015-09-20T10:33:40-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-20T14:37:16-04:00">2015-09-20T14:37:16-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">90.57%</span></span>
+    (<span class="covered_percent"><span class="green">93.52%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.55
+         1.58
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>8</b> files in total.
-    <b>106</b> relevant lines. 
-    <span class="green"><b>96</b> lines covered</span> and
-    <span class="red"><b>10</b> lines missed </span>
+    <b>9</b> files in total.
+    <b>108</b> relevant lines. 
+    <span class="green"><b>101</b> lines covered</span> and
+    <span class="red"><b>7</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -53,7 +53,7 @@
       <tr>
         <td class="strong"><a href="#739393a78e842508bd8371068ae985377509da37" class="src_link" title="app/controllers/alerts_controller.rb">app/controllers/alerts_controller.rb</a></td>
         <td class="green strong">93.33 %</td>
-        <td>55</td>
+        <td>56</td>
         <td>30</td>
         <td>28</td>
         <td>2</td>
@@ -102,12 +102,22 @@
       
       <tr>
         <td class="strong"><a href="#240dda9baa0f582be4ddf630f95c2ff89eee936a" class="src_link" title="app/models/alert.rb">app/models/alert.rb</a></td>
-        <td class="red strong">73.68 %</td>
-        <td>30</td>
-        <td>19</td>
-        <td>14</td>
-        <td>5</td>
-        <td>0.7</td>
+        <td class="yellow strong">88.89 %</td>
+        <td>29</td>
+        <td>18</td>
+        <td>16</td>
+        <td>2</td>
+        <td>0.9</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#88baa0824bc0ed5911cb76816d9c82eafcaeae84" class="src_link" title="app/models/alert_tag.rb">app/models/alert_tag.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>4</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -171,7 +181,7 @@
       <tr>
         <td class="strong"><a href="#739393a78e842508bd8371068ae985377509da37" class="src_link" title="app/controllers/alerts_controller.rb">app/controllers/alerts_controller.rb</a></td>
         <td class="green strong">93.33 %</td>
-        <td>55</td>
+        <td>56</td>
         <td>30</td>
         <td>28</td>
         <td>2</td>
@@ -226,20 +236,20 @@
           <div class="file_list_container" id="Models">
   <h2>
     <span class="group_name">Models</span>
-    (<span class="covered_percent"><span class="yellow">83.87%</span></span>
+    (<span class="covered_percent"><span class="green">93.94%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.82
+         0.95
        </span>
     </span> hits/line)
   </h2>
   <a name="Models"></a>
   <div>
-    <b>3</b> files in total.
-    <b>31</b> relevant lines. 
-    <span class="green"><b>26</b> lines covered</span> and
-    <span class="red"><b>5</b> lines missed </span>
+    <b>4</b> files in total.
+    <b>33</b> relevant lines. 
+    <span class="green"><b>31</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -257,12 +267,22 @@
       
       <tr>
         <td class="strong"><a href="#240dda9baa0f582be4ddf630f95c2ff89eee936a" class="src_link" title="app/models/alert.rb">app/models/alert.rb</a></td>
-        <td class="red strong">73.68 %</td>
-        <td>30</td>
-        <td>19</td>
-        <td>14</td>
-        <td>5</td>
-        <td>0.7</td>
+        <td class="yellow strong">88.89 %</td>
+        <td>29</td>
+        <td>18</td>
+        <td>16</td>
+        <td>2</td>
+        <td>0.9</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#88baa0824bc0ed5911cb76816d9c82eafcaeae84" class="src_link" title="app/models/alert_tag.rb">app/models/alert_tag.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>4</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -647,109 +667,115 @@
           <code class="ruby">  	if alert.update_attributes(alert_params)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">      # TextMessage.send</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="39">
           <span class="hits">3</span>
           
           <code class="ruby">  		redirect_to alert</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">  	else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="40">
+        <li class="missed" data-hits="0" data-linenumber="41">
           
           
           <code class="ruby">  		redirect_to edit_alert_path(alert)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby">  	end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="never" data-hits="" data-linenumber="43">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="44">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="45">
+        <li class="covered" data-hits="2" data-linenumber="46">
           <span class="hits">2</span>
           
           <code class="ruby">    Alert.find_by(id: params[:id]).destroy</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="46">
+        <li class="covered" data-hits="2" data-linenumber="47">
           <span class="hits">2</span>
           
           <code class="ruby">    redirect_to alerts_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="49">
+        <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="51">
+        <li class="covered" data-hits="1" data-linenumber="52">
           <span class="hits">1</span>
           
           <code class="ruby">  def alert_params</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="52">
+        <li class="covered" data-hits="7" data-linenumber="53">
           <span class="hits">7</span>
           
           <code class="ruby">    params.require(:alert).permit(:creator_id, :mechanic_id, :latitude, :longitude, :status, :description, :all_tags)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby">end</code>
@@ -1356,11 +1382,11 @@
         <div class="source_table" id="240dda9baa0f582be4ddf630f95c2ff89eee936a">
   <div class="header">
     <h3>app/models/alert.rb</h3>
-    <h4><span class="red">73.68 %</span> covered</h4>
+    <h4><span class="yellow">88.89 %</span> covered</h4>
     <div>
-      <b>19</b> relevant lines. 
-      <span class="green"><b>14</b> lines covered</span> and
-      <span class="red"><b>5</b> lines missed.</span>
+      <b>18</b> relevant lines. 
+      <span class="green"><b>16</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -1487,61 +1513,97 @@
           <code class="ruby">  def all_tags=(names)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
-          
-          
-          <code class="ruby">    require &#39;pry&#39;; binding.pry</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
           
           <code class="ruby">    self.tags = names.split(&quot;,&quot;).map do |name|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
-          
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
           
           <code class="ruby">      Tag.where(name: name.strip).first_or_create!</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
           <code class="ruby">  def all_tags</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="28">
+        <li class="missed" data-hits="0" data-linenumber="27">
           
           
           <code class="ruby">    self.tags.map(&amp;:name).join(&quot;, &quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="88baa0824bc0ed5911cb76816d9c82eafcaeae84">
+  <div class="header">
+    <h3>app/models/alert_tag.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class AlertTag &lt; ActiveRecord::Base</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  belongs_to :alert</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  belongs_to :tag</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby">end</code>

@@ -35,6 +35,10 @@ describe Alert do
       alert.update_attributes(created_at: Time.current - 3.5.hours)
       expect(alert.time_diff).to eq '3 hours and 30 minutes ago'
     end
+
+    it 'converts a string into Tag objects' do
+      expect{build(:alert, all_tags: 'frame, tube')}.to change(Tag, :count).by 2
+    end
     
   end
 
