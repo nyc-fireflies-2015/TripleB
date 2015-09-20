@@ -12,7 +12,7 @@
 <% if current_user == @alert.creator %>
 	<%= link_to 'Delete Alert', alert_path(@alert), method: :delete, data: {confirm: 'Are you sure?' }%>
 <% else %>
-	<%= form_for @alert do |f| %>
+	<%= form_for @alert, data: {confirm: 'Are you sure?  This will send your phone number the person in need your phone number.'} do |f| %>
     <%= f.hidden_field :status, value: "in progress" %>
     <%= f.hidden_field :mechanic_id, value: current_user.id %>
 	  <%= f.submit "Help #{@alert.creator.first_name}" %>
