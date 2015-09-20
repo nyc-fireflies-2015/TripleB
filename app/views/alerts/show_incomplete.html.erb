@@ -15,5 +15,6 @@
     <%= f.hidden_field :status, value: "in progress" %>
     <%= f.hidden_field :mechanic_id, value: current_user.id %>
 	  <%= f.submit "Help #{@alert.creator.first_name}" %>
-	<% end %>
+  <% end %>
+
 <% end %>
