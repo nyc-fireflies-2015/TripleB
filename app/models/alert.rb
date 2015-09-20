@@ -18,6 +18,7 @@ class Alert < ActiveRecord::Base
   end
 
   def all_tags=(names)
+    require 'pry'; binding.pry
     self.tags = names.split(",").map do |name|
       Tag.where(name: name.strip).first_or_create!
     end
