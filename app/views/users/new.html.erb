@@ -1,49 +1,19 @@
 <%= form_for @user do |f| %>
   <div class="row">
-    <div class="small-10">
-      <div class="row">
-        <div class="small-2 columns">
-          <%= f.label :username, class: "right inline" %>
-        </div>
-        <div class="small-4 columns">
-          <%= f.text_field :username %>
-        </div>
-        <div class="small-2 columns">
-          <%= f.label :password, class: "right inline" %>
-        </div>
-        <div class="small-4 columns">
-          <%= f.password_field :password %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="small-2 columns">
-          <%= f.label :first_name, class: "right inline" %>
-        </div>
-        <div class="small-4 columns">
-          <%= f.text_field :first_name %>
-        </div>
-        <div class="small-2 columns">
-          <%= f.label :last_name, class: "right inline" %>
-        </div>
-        <div class="small-4 columns">
-          <%= f.text_field :last_name %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="small-2 columns">
-          <%= f.label :email, class: "right inline" %>
-        </div>
-        <div class="small-4 columns">
-          <%= f.text_field :email %>
-        </div>
-        <div class="small-2 columns">
-          <%= f.label :phone, class: "right inline" %>
-        </div>
-        <div class="small-4 columns">
-          <%= f.text_field :phone %>
-        </div>
-      </div>
+    <div class='small-12 medium-7 large-5 columns'>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+      <%= f.submit 'Signup', class: 'button' %>
     </div>
   </div>
-    <%= f.submit 'Signup', class: "columns center" %>
 <% end %>
