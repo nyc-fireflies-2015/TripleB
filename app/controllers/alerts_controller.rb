@@ -29,6 +29,7 @@ class AlertsController < ApplicationController
     if alert.save
       redirect_to alert
     else
+      flash[:error] = alert.errors.full_messages.to_sentence
       redirect_to new_alert_path
     end
   end
