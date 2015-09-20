@@ -1,16 +1,16 @@
 <h1>Alert status: <%= @alert.status %></h1>
-<h3><%= @alert.creator.first_name %> needs help</h3>
 <p><%= @alert.description %></p>
-<p>Posted at: <%= @alert.created_at %></p>
+<p>Posted <%= @alert.time_diff %> by <%= @alert.creator.first_name %></p>
 <p>Latitude: <%= @alert.latitude %></p>
 <p>Longitude: <%= @alert.longitude %></p>
 <div>
   <% @alert.tags.each do |tag| %>
-    <p><%= tag %>, </p>
+    <p>Tags: <%= tag.name %> </p>
   <% end %>
 </div>
 <div>
   <% if @alert.creator == current_user %>
+  <p><%= @alert.mechanic.first_name%> has offered to help!<p>
     <%= form_for @alert do |f| %>
       <%= f.hidden_field :status, value: "complete" %>
       <%= f.submit "Complete this alert" %>
