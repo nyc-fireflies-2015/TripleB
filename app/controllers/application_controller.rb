@@ -13,16 +13,13 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-<<<<<<< HEAD
   def authorized?(user)
     user == current_user
   end
   helper_method :authorized?
-=======
+
   def redirect_deleted_alert
     alert = Alert.find_by(id: params[:id])
     redirect_to alerts_path if alert.nil?
   end
-
->>>>>>> 09a96ca3d1c7ff399597c37529f4108a8d462dbe
 end
