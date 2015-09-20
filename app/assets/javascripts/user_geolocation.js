@@ -10,8 +10,8 @@ $(document).ready(function(){
         url:"/users/" + userId,
         method:"PATCH",
         data:{ latitude: lat, longitude: longit }
-        }).done(function(response){
-          alert(response)
+        }).done(function(){
+          alert("your update is finished")
         })
 
     }
