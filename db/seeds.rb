@@ -20,7 +20,7 @@ alert2.mechanic = users[2]
 alert2.alert_tags.create(tag_id: 2)
 alert2.save
 
-alert3 = users[0].created_alerts.create(latitude: 40.689300,longitude: -73.957153,status: status[2],description: "busted brake cable, can't stop!")
+alert3 = users[0].created_alerts.create(latitude: 40.689300,longitude: -73.957153,status: status[0],description: "busted brake cable, can't stop!")
 alert3.mechanic = users[2]
 alert3.alert_tags.create(tag_id: 3)
 alert3.save
@@ -29,7 +29,7 @@ alert4 = users[3].created_alerts.create(latitude: 40.721215,longitude: -73.96204
 alert4.alert_tags.create(tag_id: 4)
 alert4.save
 
-alert5 = users[4].created_alerts.create(latitude: 40.711171,longitude: -73.960916,status: status[1], description: "rode through a tack convention and now my tire is flat :(")
+alert5 = users[4].created_alerts.create(latitude: 40.711171,longitude: -73.960916,status: status[0], description: "rode through a tack convention and now my tire is flat :(")
 alert5.mechanic = users[5]
 alert5.alert_tags.create(tag_id: 5)
 alert5.save
