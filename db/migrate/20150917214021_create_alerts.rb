@@ -3,8 +3,8 @@ class CreateAlerts < ActiveRecord::Migration
     create_table :alerts do |t|
       t.references :mechanic
       t.references :creator, null: false
-      t.integer :latitude
-      t.integer :longitude
+      t.float :latitude
+      t.float :longitude
       t.string :status, default: 'incomplete'
       t.string :description, null: false
 
