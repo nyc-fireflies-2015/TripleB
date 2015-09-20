@@ -1,11 +1,11 @@
 <h1>Alert status: <%= @alert.status %></h1>
 <p><%= @alert.description %></p>
-<p>Posted at: <%= @alert.created_at %></p>
+<p>Posted <%= @alert.time_diff %> by <%= @alert.creator.first_name %></p>
 <p>Latitude: <%= @alert.latitude %></p>
 <p>Longitude: <%= @alert.longitude %></p>
 <div>
   <% @alert.tags.each do |tag| %>
-    <p><%= tag %>, </p>
+    <p>Tags: <%= tag.name %> </p>
   <% end %>
 </div>
 <div>
