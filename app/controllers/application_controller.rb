@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def authorized?(user)
+    user == current_user
+  end
+  helper_method :authorized?
 end
