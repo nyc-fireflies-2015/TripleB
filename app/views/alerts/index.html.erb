@@ -1,5 +1,12 @@
 <%= link_to "Create an alert", new_alert_path %>
 
+<%= form_tag("/alerts", method: "get") do %>
+  <%= label_tag(:tag, "Search for:") %>
+  <%= text_field_tag(:tag) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
 <div class="river">
   <% @alerts.each do |alert| %>
     <div class="alert-container">
