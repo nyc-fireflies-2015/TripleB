@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     elsif full_diff[:months] > 0
       "#{full_diff[:months]} months and #{full_diff[:days]} days ago"
     elsif full_diff[:days] > 0
-      "#{full_diff[:days]} days ago"
+      "#{full_diff[:days]} days and #{full_diff[:hours]} ago"
     elsif full_diff[:hours] > 0
       "#{full_diff[:hours]} hours and #{full_diff[:minutes]} minutes ago"
     else
