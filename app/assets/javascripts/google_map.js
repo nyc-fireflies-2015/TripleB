@@ -1,9 +1,18 @@
-function initMap(lat, lng) {
+function initMap() {
+  var lat = $('#lat').text();
+  var lng = $('#lng').text();
+  var myLatLng = {lat: Number(lat), lng: Number(lng)};
   // Create a map object and specify the DOM element for display.
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: lat, lng: lng},
+    center: myLatLng,
     scrollwheel: false,
     zoom: 15
+  });
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
   });
 
   var bikeLayer = new google.maps.BicyclingLayer();
@@ -11,9 +20,5 @@ function initMap(lat, lng) {
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-  navigator.geolocation.getCurrentPosition(function(position){
-    console.log(position);
-    initMap(position.coords.latitude, position.coords.longitude);
-  });
-
+  initMap();
 })
