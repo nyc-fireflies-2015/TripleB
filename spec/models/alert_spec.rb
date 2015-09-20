@@ -36,8 +36,12 @@ describe Alert do
       expect(alert.time_diff).to eq '3 hours and 30 minutes ago'
     end
 
-    it 'converts a string into Tag objects' do
-      expect{build(:alert, all_tags: 'frame, tube')}.to change(Tag, :count).by 2
+    it 'converts a string into a Tag object' do
+      expect{build(:alert, all_tags: 'frame')}.to change(Tag, :count).by 1
+    end
+
+    it 'splits and converts a string into a Tag objects' do
+      expect{build(:alert, all_tags: 'tube, brake, chain')}.to change(Tag, :count).by 3
     end
     
   end
