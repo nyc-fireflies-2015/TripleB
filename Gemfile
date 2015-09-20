@@ -13,6 +13,7 @@ gem 'pry-rails', :group => :development
 gem 'foundation-rails'
 gem 'time_difference'
 gem 'twilio-ruby'
+gem 'phonelib'
 
 group :development, :test do
 
