@@ -16,20 +16,24 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find(params[:id])
-    @created_alerts = @user.created_alerts
-    @alerts = @user.alerts
+  	@user = User.find_by(id: params[:id])
+		if !@user
+			redirect_to :root
+		else
+    	@created_alerts = @user.created_alerts
+    	@alerts = @user.alerts
+		end
   end
 
   def edit
-  	@user = User.find(params[:id])
-		if !authorized?(@user)
+  	@user = User.find_by(id: params[:id])
+		if !@user || !authorized?(@user)
 			redirect_to :root
 		end
   end
 
   def update
-  	@user = User.find(params[:id])
+  	@user = User.find_by(id: params[:id])
   	if @user.update_attributes(user_params)
   		redirect_to @user
   	else
