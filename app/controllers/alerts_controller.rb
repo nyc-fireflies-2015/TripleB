@@ -35,6 +35,7 @@ class AlertsController < ApplicationController
   def update
   	alert = Alert.find_by(id: params[:id])
   	if alert.update_attributes(alert_params)
+      # TextMessage.send
   		redirect_to alert
   	else
   		redirect_to edit_alert_path(alert)

@@ -12,6 +12,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry-rails', :group => :development
 gem 'foundation-rails'
 gem 'time_difference'
+gem 'twilio-ruby'
 
 group :development, :test do
 
