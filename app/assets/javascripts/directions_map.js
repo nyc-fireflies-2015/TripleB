@@ -1,5 +1,5 @@
 
-function initMap() {
+function initDirMap() {
   var lat = $('#lat').text();
   var lng = $('#lng').text();
   var latMech = $('#lat_mech').text();
@@ -39,5 +39,5 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, 
 };
 
 document.addEventListener('DOMContentLoaded', function(){
-  initMap();
+  initDirMap();
 })
