@@ -119,4 +119,19 @@ describe AlertsController do
       end
     end
   end
+
+  describe "DELETE #destroy" do
+    before :each do
+        @alert = create(:alert)
+    end
+
+    it 'deletes the alert' do
+      expect{delete :destroy, id: @alert.id}.to change(Alert, :count).by -1
+    end
+
+    it 'redirects to index' do
+      delete :destroy, id: @alert.id
+      expect(response).to redirect_to alerts_path
+    end
+  end
 end
