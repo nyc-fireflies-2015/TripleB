@@ -17,7 +17,7 @@
     <% end %>
     <div id='lat_mech' style="display: none;"><%= @alert.mechanic.latitude %></div>
     <div id='lng_mech' style="display: none;"><%= @alert.mechanic.longitude %></div>
-    <div class="map"></div>
+    <div class="direction_map"></div>
   <% end %>
 
   <% if @alert.mechanic == current_user %>
@@ -28,6 +28,6 @@
     <% end %>
     <div id='lat_mech' style="display: none;"><%= @alert.mechanic.latitude %></div>
     <div id='lng_mech' style="display: none;"><%= @alert.mechanic.longitude %></div>
-    <div class="map"></div>
+    <div class="direction_map"></div>
   <% end %>
 </div>
