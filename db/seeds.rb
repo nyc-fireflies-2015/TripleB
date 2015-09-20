@@ -1,6 +1,8 @@
-5.times do
-  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,username: Faker::Internet.user_name, email: Faker::Internet.free_email, phone: Faker::PhoneNumber.phone_number, password: "1234")
-end
+u1 = User.create(first_name: "John", last_name: "Doe" ,username: "mrdoe", email: "a@gmail.com", phone: "111-222-3333", password: "1234")
+u2 = User.create(first_name: "Jane", last_name: "Doe" ,username: "mrsdoe", email: "b@gmail.com", phone: "222-333-4444" , password: "1234")
+u3 = User.create(first_name: "Anaximander", last_name: "of Ionia" ,username: "philo123" , email: "c@gmail.com", phone: "333-444-5555" , password: "1234")
+u4 = User.create(first_name: "Artaxerxes", last_name: "of Persia" ,username: "Rex01", email:"d@gmail.com" , phone: "444-555-6666", password: "1234")
+u5 = User.create(first_name: "Romulus", last_name: "de Roma",username: "roma4lyfe" , email: "e@gmail.com", phone: "555-666-7777", password: "1234")
 
 tags = ["brake pad","chain","brake cable","tube", "tire", "crankset","fork"]
 
