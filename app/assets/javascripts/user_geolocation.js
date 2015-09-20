@@ -1,8 +1,7 @@
 $(document).ready(function(){
 
 
-  $('#send_help_form').on("submit",function(){
-
+  $(window).load(function(){
 
     function updatePos(lat,longit){
       var userId = document.getElementById("user_id").innerHTML;
@@ -13,7 +12,6 @@ $(document).ready(function(){
         }).done(function(){
           alert("your update is finished")
         })
-
     }
 
     function showPosition(position){
@@ -28,6 +26,8 @@ $(document).ready(function(){
       }
     }
     getLocation();
+
   })
+
 
 });
