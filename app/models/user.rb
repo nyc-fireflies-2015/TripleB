@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :tags, through: :alert_tags
 
   validates :first_name, :last_name, :username, :email, :phone,  presence: true
-  validates :email, :username, uniqueness: true
+  validates :email, :username, :phone, : uniqueness: true
 
   def full_name
     [first_name, last_name].join(' ')
