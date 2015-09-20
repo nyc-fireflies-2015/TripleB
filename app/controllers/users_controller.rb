@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   		session[:user_id] = user.id
   		redirect_to alerts_path
   	else
-  		redirect_to '/signup'
+      flash[:error] = user.errors.full_messages.to_sentence
+  		redirect_to signup_path
   	end
   end
 
