@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20150917214128) do
   create_table "alerts", force: :cascade do |t|
     t.integer  "mechanic_id"
     t.integer  "creator_id",                         null: false
-    t.integer  "latitude"
-    t.integer  "longitude"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "status",      default: "incomplete"
     t.string   "description",                        null: false
     t.datetime "created_at",                         null: false
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20150917214128) do
     t.string   "first_name",      null: false
     t.string   "last_name",       null: false
     t.string   "username",        null: false
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "email",           null: false
     t.string   "phone",           null: false
     t.string   "password_digest", null: false

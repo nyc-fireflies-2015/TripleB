@@ -7,14 +7,14 @@
 <% @alert.tags.each do |tag| %>
 	<div><%= tag.name %></div>
 <% end %>
-
-
+<div id="user_id" style="display: none;"><%= current_user.id %></div>
 <% if current_user == @alert.creator %>
-	<%= link_to 'Delete Alert', alert_path(@alert), method: :delete, data: {confirm: 'Are you sure?' }%>
+	<%= link_to 'Delete Alert'%>
 <% else %>
-	<%= form_for @alert, data: {confirm: 'Are you sure?  This will send your phone number the person in need your phone number.'} do |f| %>
+	<%= form_for @alert do |f| %>
     <%= f.hidden_field :status, value: "in progress" %>
     <%= f.hidden_field :mechanic_id, value: current_user.id %>
 	  <%= f.submit "Help #{@alert.creator.first_name}" %>
 	<% end %>
+</div>
 <% end %>

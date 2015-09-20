@@ -1,3 +1,4 @@
+require 'pry'
 class UsersController < ApplicationController
 
 	def new
@@ -34,18 +35,21 @@ class UsersController < ApplicationController
 
   def update
   	@user = User.find_by(id: params[:id])
-  	if @user.update_attributes(user_params)
-  		redirect_to @user
-  	else
-  		redirect_to edit_user_path(@user)
-  	end
+    if request.xhr?
+      @user.update_attributes(latitude: params[:latitude], longitude: params[:longitude])
+    else
+      if @user.update_attributes(user_params)
+    		redirect_to @user
+    	else
+    		redirect_to edit_user_path(@user)
+    	end
+    end
   end
-
 
   private
 
   def user_params
-    params.require(:user).permit(:username,:password,:first_name,:last_name,:email,:phone)
+    params.require(:user).permit(:username,:password,:first_name,:last_name,:email,:phone,:latitude,:longitude)
   end
 
 end

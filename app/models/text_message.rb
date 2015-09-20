@@ -9,7 +9,7 @@ class TextMessage < ActiveRecord::Base
     @client.account.messages.create({
       :from => '+19292003142',
       :to => '+19542950857',
-      :body => 'hello this is another test',
+      :body => 'Help is on the way',
 })
   end
 
