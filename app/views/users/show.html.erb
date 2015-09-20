@@ -3,7 +3,9 @@
 		<%= link_to 'Edit', edit_user_path(@user) %>
 	<% end %>
 
-	<h1>Welcome <%= @user.first_name %></h1>
+	<%= image_tag("http://vectorlogofree.com/wp-content/uploads/2014/02/25231-github-cat-in-a-circle-icon-vector-icon-vector-eps.png") %>
+	<h1>Welcome <%= @user.full_name %></h1>
+	<div>Member Since: <%= @user.time_diff %></div>
 
 	<div class='row' style="width: 100%;">
 		<div class='large-6 column text-center'>
