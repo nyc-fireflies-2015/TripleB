@@ -1,10 +1,27 @@
-<div id="login_header">
-  <%= link_to "Triple B", :root %>
-  <% if signed_in? %>
-    <%= link_to current_user.username, user_path(id: current_user.id) %>
-    <%= link_to "Logout", session_path(id: current_user.id), method: :delete %>
-  <% else %>
-    <%= link_to "Login", login_path %>
-    <%= link_to "Sign up", new_user_path %>
-  <% end %>
+<div class="contain-to-grid sticky">
+  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+    <ul class="title-area">
+      <li class="name">
+        <h1><%= link_to "Triple B", :root %></h1>
+      </li>
+      <li class="has-form">
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+      </li>
+
+    </ul>
+
+    <section class="top-bar-section">
+      <ul class="right">
+      <% if signed_in? %>
+        <li class="active"><%= link_to "Create an alert", new_alert_path %></li>
+        <li class="active"><%= link_to current_user.username, user_path(id: current_user.id) %></li>
+        <li class="active"><%= link_to "Logout", session_path(id: current_user.id), method: :delete %></li>
+      <% else %>
+        <li class="active"><%= link_to "Login", login_path %></li>
+        <li class="active"><%= link_to "Sign up", new_user_path %></li>
+      <% end %>
+    </ul>
+
+    </section>
+  </nav>
 </div>

@@ -65,6 +65,9 @@ GEM
     faker (1.5.0)
       i18n (~> 0.5)
     ffi (1.9.10)
+    foundation-rails (5.5.2.1)
+      railties (>= 3.1.0)
+      sass (>= 3.3.0, < 3.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -201,6 +204,7 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails
   faker
+  foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
   launchy
