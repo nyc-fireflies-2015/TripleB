@@ -2,22 +2,16 @@ $(document).ready(function(){
 
 
   $('#send_help_form').on("submit",function(){
-    var userId = document.getElementById("user_id").innerHTML;
-    console.log(userId)
 
-    function getLocation(){
-      if (navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(showPosition)
-      }
-    }
 
     function updatePos(lat,longit){
+      var userId = document.getElementById("user_id").innerHTML;
       $.ajax({
         url:"/users/" + userId,
         method:"PATCH",
         data:{ latitude: lat, longitude: longit }
         }).done(function(response){
-          console.log(response)
+          alert(response)
         })
 
     }
@@ -28,6 +22,11 @@ $(document).ready(function(){
       updatePos(latitude,longitude);
     }
 
+    function getLocation(){
+      if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition)
+      }
+    }
     getLocation();
   })
 
