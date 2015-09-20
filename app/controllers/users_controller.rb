@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        UserMailer.welcome_email(@user).deliver
+        # UserMailer.welcome_email(@user).deliver
         session[:user_id] = @user.id
 
         format.html { redirect_to alerts_path }
