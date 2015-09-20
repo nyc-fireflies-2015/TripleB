@@ -1,8 +1,8 @@
 <h1>Alert status: <%= @alert.status %></h1>
 <p><%= @alert.description %></p>
 <p>Posted <%= @alert.time_diff %> by <%= @alert.creator.first_name %></p>
-<p>Latitude: <%= @alert.latitude %></p>
-<p>Longitude: <%= @alert.longitude %></p>
+<div id="lat" style="display: none;"><%= @alert.latitude %></div>
+<div id="lng" style="display: none;"><%= @alert.longitude %></div>
 <div>
   <% @alert.tags.each do |tag| %>
     <p>Tags: <%= tag.name %> </p>
@@ -15,6 +15,9 @@
       <%= f.hidden_field :status, value: "complete" %>
       <%= f.submit "Complete this alert" %>
     <% end %>
+    <div id='lat_mech' style="display: none;"><%= @alert.mechanic.latitude %></div>
+    <div id='lng_mech' style="display: none;"><%= @alert.mechanic.longitude %></div>
+    <div class="map"></div>
   <% end %>
 
   <% if @alert.mechanic == current_user %>
@@ -23,5 +26,8 @@
       <%= f.hidden_field :mechanic_id, value: nil %>
       <%= f.submit "Cancel this alert" %>
     <% end %>
+    <div id='lat_mech' style="display: none;"><%= @alert.mechanic.latitude %></div>
+    <div id='lng_mech' style="display: none;"><%= @alert.mechanic.longitude %></div>
+    <div class="map"></div>
   <% end %>
 </div>
