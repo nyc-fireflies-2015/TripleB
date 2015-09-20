@@ -17,7 +17,6 @@ $(document).ready(function(){
     function showPosition(position){
       latitude = position.coords.latitude;
       longitude = position.coords.longitude;
-      alert(latitude)
       $('#latitude').val(latitude);
       $('#longitude').val(longitude);
     }
