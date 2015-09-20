@@ -1,5 +1,5 @@
 <div id="alert_form">
-<%= form_for @alert do |f| %>
+<%= form_for @alert, id:"alert_form" do |f| %>
   <%= f.label :description %>
   <%= f.text_field :description %>
   <%= f.label :tags %>
