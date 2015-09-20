@@ -30,10 +30,16 @@ describe Alert do
 
   context 'model methods' do
 
-    it 'calculates the time difference' do
+    it 'calculates the time difference greater than an hour' do
       alert = build(:alert)
       alert.update_attributes(created_at: Time.current - 3.5.hours)
       expect(alert.time_diff).to eq '3 hours and 30 minutes ago'
+    end
+
+    it 'calculates time time less than an hour' do
+      alert = build(:alert)
+      alert.update_attributes(created_at: Time.current - 20.minutes)
+      expect(alert.time_diff).to eq '20 minutes ago'
     end
 
     it 'converts a string into a Tag object' do
