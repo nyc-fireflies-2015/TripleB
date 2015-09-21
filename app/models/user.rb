@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :tags, through: :alert_tags
 
   validates :first_name, :last_name, :username, :email, :phone,  presence: true
-  validates :email, :username, :phone, uniqueness: true
+  validates :email, :username, uniqueness: true
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 
   def full_name
