@@ -1,12 +1,18 @@
 <section class="block" id="login-page">
   <div class="centered">
+    <div class='row'>
+      <div class='small-12 columns'>
+        <h3 id="header-login">Log in to your account</h3>
+      </div>
+    </div>
     <%= form_tag sessions_path, method: :post do %>
       <div class="row">
         <div class='small-12 columns'>
-          <%= label_tag :username %>
-          <%= text_field_tag :username %>
-          <%= label_tag :password %>
-          <%= password_field_tag :password %>
+          <div id="password-div">
+          <%= text_field_tag :username, nil, placeholder: "Username" %>
+          <%= password_field_tag :password, nil, placeholder: "Password"%>
+          </div>
+          <h6><%= link_to "Don't have an account?", signup_path %></h6>
           <%= submit_tag 'Log In', class: 'button small secondary expand radius' %>
         </div>
       </div>
