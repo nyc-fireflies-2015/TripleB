@@ -7,6 +7,11 @@
 	<h1>Welcome <%= @user.full_name %></h1>
 	<div>Member Since: <%= @user.time_diff %></div>
 
+	<% if @user.bio.empty? %>
+		<%= link_to 'Click Here To Edit', edit_user_path(@user) %>
+	<% else %>
+		<div>Bio: <%= @user.bio %></div>
+	<% end %>
 
 	<div class='row' style="width: 100%;">
 		<div class='large-6 column text-center'>
