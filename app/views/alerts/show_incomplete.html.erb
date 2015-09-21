@@ -16,6 +16,8 @@
 	<%= form_for @alert do |f| %>
     <%= f.hidden_field :status, value: "in progress" %>
     <%= f.hidden_field :mechanic_id, value: current_user.id %>
+    <input type='hidden' name="google[distance]" id="distance" value=""/>
+    <input type='hidden' name="google[duration]" id="duration" value=""/>
 	  <%= f.submit "Help #{@alert.creator.first_name}" %>
 	<% end %>
 </div>
