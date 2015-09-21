@@ -1,4 +1,3 @@
-require 'pry'
 class UsersController < ApplicationController
 
 	def new
@@ -7,16 +6,16 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
-    
+
     respond_to do |format|
       if @user.save
         UserMailer.welcome_email(@user).deliver
         session[:user_id] = @user.id
- 
+
         format.html { redirect_to alerts_path }
         format.json { render json: @user, status: :created, location: @user }
       else
-        format.html { 
+        format.html {
           flash[:error] = @user.errors.full_messages.to_sentence
           redirect_to signup_path
         }
