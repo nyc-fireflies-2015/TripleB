@@ -45,11 +45,26 @@
   }
   position: relative;
   height: 3em;
-  bottom: 2em;
+  bottom: 3em;
   background-color: #252419;
+}
+
+#password-div {
+  padding-bottom: 3em;
 }
 
 #login-page {
   height: 90%;
   background-color: #00aac8;
+  h3 {
+    padding-bottom: 3em;
+    text-align: left;
+  }
+  h3, a {
+    color: #faf9df;
+    opacity: .7;
+  }
+  a {
+    text-decoration: underline;
+  }
 }
