@@ -4,16 +4,20 @@
 <div>Created <%= @alert.time_diff %> ago</div>
 <div id="lat" style="display: none;"><%= @alert.latitude %></div>
 <div id="lng" style="display: none;"><%= @alert.longitude %></div>
+<div id='current_lat' style="display: none;"><%= current_user.latitude %></div>
+<div id='current_lng' style="display: none;"><%= current_user.longitude %></div>
+
 <% @alert.tags.each do |tag| %>
 	<div><%= tag.name %></div>
 <% end %>
-<div id="user_id" style="display: none;"><%= current_user.id %></div>
 <% if current_user == @alert.creator %>
 	<%= link_to 'Delete Alert'%>
 <% else %>
 	<%= form_for @alert do |f| %>
     <%= f.hidden_field :status, value: "in progress" %>
     <%= f.hidden_field :mechanic_id, value: current_user.id %>
+    <input type='hidden' name="google[distance]" id="distance" value=""/>
+    <input type='hidden' name="google[duration]" id="duration" value=""/>
 	  <%= f.submit "Help #{@alert.creator.first_name}" %>
 	<% end %>
 </div>
