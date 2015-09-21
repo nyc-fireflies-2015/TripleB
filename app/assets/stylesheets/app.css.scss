@@ -54,11 +54,13 @@
 }
 
 #login-page {
+  .logo {
+    margin-bottom: 0.5em;
+  }
   height: 90%;
   background-color: #00aac8;
   h3 {
     padding-bottom: 3em;
-    text-align: left;
   }
   h3, a {
     color: #faf9df;
