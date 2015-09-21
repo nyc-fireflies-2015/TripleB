@@ -13,13 +13,11 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
 
         format.html { redirect_to alerts_path }
-        format.json { render json: @user, status: :created, location: @user }
       else
         format.html {
           flash[:error] = @user.errors.full_messages.to_sentence
           redirect_to signup_path
         }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -58,6 +56,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username,:password,:first_name,:last_name,:email,:phone,:latitude,:longitude, :bio, :avatar_url)
+  end
+
+  def location_params
+    params.require(:location).permit(:latitude,:longitude)
   end
 
 end
