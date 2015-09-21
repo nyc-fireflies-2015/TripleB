@@ -36,12 +36,17 @@ class AlertsController < ApplicationController
 
   def update
   	alert = Alert.find_by(id: params[:id])
-    # dist = "5 miles"
     if alert.update_attributes(alert_params)
-        # This is commented out to prevent texts from being sent during testing
-        # TextMessage.send_to_mechanic(alert.creator.full_name, alert.creator.phone,dist) &&
-        # TextMessage.send_to_user(alert.mechanic.full_name, alert.mechanic.phone,dist) if alert.status == "in progress"
-  		redirect_to alert
+      if !!alert.mechanic == true
+        dist = params[:google][:distance]
+        dur = params[:google][:duration]
+        # This clearly needs to be seperated out
+        TextMessage.send_to_mechanic(alert.creator.full_name, alert.mechanic.phone, alert.creator.phone,dist,dur) &&
+        TextMessage.send_to_user(alert.mechanic.full_name, alert.mechanic.phone,alert.creator.phone,dist,dur)
+        redirect_to alert
+      else
+        redirect_to alert
+      end
   	else
   		redirect_to edit_alert_path(alert)
   	end
