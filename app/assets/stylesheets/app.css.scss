@@ -5,3 +5,13 @@
 .location_map {
   height:500px;
 }
+
+#homepage-hero {
+    background: url(asset-path('Flat-Tire.jpg')) repeat scroll 0 center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    padding: 100px 20px 0;
+    position: relative;
+    text-align: center;
+}
