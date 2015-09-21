@@ -4,6 +4,7 @@ class Tag < ActiveRecord::Base
 
   validates :name, presence: true
 
+  #ZM: +1
   def self.top
     select('tags.*, COUNT(alert_tags.id) AS tag_count').
       joins(:alert_tags).

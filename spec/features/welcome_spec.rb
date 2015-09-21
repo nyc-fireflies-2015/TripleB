@@ -12,6 +12,7 @@ feature "User visits the site" do
       user = create(:user)
       log_in user
       expect(page).to have_content("Logout")
+      #ZM: NO! Remove this commented out code, and this comment 
       # expect(page).not_to have_content("Login")
     end
   end

@@ -1,3 +1,5 @@
+#ZM: This table feels a little big to me I feel like lat / long can be part of another table used 
+# in tandem with an alert... maybe with a type? profile vs alert? 
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|

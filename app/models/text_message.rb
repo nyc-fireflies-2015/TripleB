@@ -1,3 +1,5 @@
+#ZM: No! No! No! No! No! No! These keys need to be removed from a plain .rb file and moved into an ENV
+# This is not secuire and anyone can find your phone number and keys
 
 class TextMessage < ActiveRecord::Base
 

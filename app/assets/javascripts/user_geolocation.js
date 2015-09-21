@@ -1,3 +1,4 @@
+// Be cognisent of your spacing, tabs, and white space
 $(document).ready(function(){
 
 

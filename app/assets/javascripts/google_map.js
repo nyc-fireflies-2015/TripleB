@@ -1,3 +1,4 @@
+//ZM:  Feels like we should have some OOJS here
 
 function initMap(pos) {
   // Create a map object and specify the DOM element for display.

@@ -6,6 +6,8 @@ class Alert < ActiveRecord::Base
 
   validates :description, :creator, presence: true
 
+  #ZM: This seems like an operation that could be extracted / tested and composted of
+  #ZM: module TimeService
   def time_diff
     start_time = self.created_at
     end_time = DateTime.now

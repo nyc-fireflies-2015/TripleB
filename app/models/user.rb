@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
     [first_name, last_name].join(' ')
   end
 
+  #ZM: This does not belong here, it's more of a view helper then a specifc model
   def time_diff
     start_time = self.created_at
     end_time = DateTime.now

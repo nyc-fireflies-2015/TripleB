@@ -7,9 +7,12 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
 
+    #ZM: How many times do you render this in HTML vs in JSON? 
     respond_to do |format|
       if @user.save
-        UserMailer.welcome_email(@user).deliver
+        UserMailer.welcome_email(@user).deliver_now
+        #TextDoer.help_on_the_way(@alert).deliver_now
+
         session[:user_id] = @user.id
 
         format.html { redirect_to alerts_path }
@@ -26,7 +29,12 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find_by(id: params[:id])
-		if !@user
+    #ZM: Reduce nesting here... keep things as least nested as possible
+    #redirect_to :root unless @user
+    #@created_alerts = @user.created_alerts
+    #@alerts = @user.alerts
+		
+    if !@user
 			redirect_to :root
 		else
     	@created_alerts = @user.created_alerts
@@ -43,9 +51,12 @@ class UsersController < ApplicationController
 
   def update
   	@user = User.find_by(id: params[:id])
+    #ZM: You use request.xhr here vs respond_to in the create block. You should standardize to one or the other 
     if request.xhr?
       @user.update_attributes(latitude: params[:latitude], longitude: params[:longitude])
     else
+    #ZM: Again reduce nesting 
+    # redirect_to unless @user.update_attr(user_params)
       if @user.update_attributes(user_params)
     		redirect_to @user
     	else

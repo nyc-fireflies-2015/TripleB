@@ -1,3 +1,4 @@
+//ZM: I am going to ask you to walk me through this.
 
 function initDirMap() {
   var lat = $('#lat').text();

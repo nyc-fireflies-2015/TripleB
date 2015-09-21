@@ -3,6 +3,7 @@
 </div>
 <ul class='row no-bullet'>
   <% @alerts.each do |alert| %>
+  <!-- ZM: You can make an _alert  partial --> 
   <div class='small-11 large-6 small-centered columns'>
     <li><%= link_to alert.description, alert_path(alert) %></li>
     <ul>

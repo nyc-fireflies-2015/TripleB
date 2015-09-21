@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
   def authorized?(user)
     user == current_user
   end
+  
+  #ZM: Move this to the top of the page
   helper_method :authorized?
 
   def redirect_deleted_alert
