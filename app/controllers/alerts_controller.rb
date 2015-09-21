@@ -37,7 +37,7 @@ class AlertsController < ApplicationController
   def update
   	alert = Alert.find_by(id: params[:id])
     if alert.update_attributes(alert_params)
-      if !!alert.mechanic == true
+      if !!alert.mechanic == true && alert.status == 'in progress'
         dist = params[:google][:distance]
         dur = params[:google][:duration]
         # This clearly needs to be seperated out
