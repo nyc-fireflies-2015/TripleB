@@ -47,9 +47,9 @@ class AlertsController < ApplicationController
       else
         redirect_to alert
       end
-    else
-      redirect_to edit_alert_path(alert)
-    end
+  	else
+  		redirect_to edit_alert_path(alert)
+  	end
   end
 
   def destroy
