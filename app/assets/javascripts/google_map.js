@@ -23,7 +23,12 @@ function initMap(pos) {
 var service = new google.maps.DistanceMatrixService();
 
 function callback(response, status) {
-  console.log(response, status);
+  // debugger
+  // console.log(response, status);
+  var distance = response.rows[0].elements[0].distance.text;
+  var duration = response.rows[0].elements[0].duration.text;
+  $('#distance').val(distance);
+  $('#duration').val(duration);
 
 }
 
