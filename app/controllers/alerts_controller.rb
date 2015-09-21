@@ -37,7 +37,9 @@ class AlertsController < ApplicationController
   def update
   	alert = Alert.find_by(id: params[:id])
   	if alert.update_attributes(alert_params)
-      # TextMessage.send
+      twilio = TextMessage.new("5 miles")
+      twilio.send_to_mechanic()
+      twilio.send_to_user()
   		redirect_to alert
   	else
   		redirect_to edit_alert_path(alert)
