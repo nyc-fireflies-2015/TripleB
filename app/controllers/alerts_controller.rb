@@ -1,4 +1,3 @@
-require 'pry'
 class AlertsController < ApplicationController
   before_action :redirect_deleted_alert, only: [:show,:update]
   def index
