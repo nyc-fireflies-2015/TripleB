@@ -36,15 +36,17 @@ class AlertsController < ApplicationController
 
   def update
   	alert = Alert.find_by(id: params[:id])
-    if alert.status == "in progress" && params[:google]
-      dist = params[:google][:distance]
-      dur = params[:google][:duration]
-      # This clearly needs to be seperated out
-      TextMessage.send_to_mechanic(alert.creator.full_name, alert.mechanic.phone, alert.creator.phone,dist,dur) &&
-      TextMessage.send_to_user(alert.mechanic.full_name, alert.mechanic.phone,alert.creator.phone,dist,dur)
-    end
     if alert.update_attributes(alert_params)
-      redirect_to alert
+      if !!alert.mechanic == true
+        dist = params[:google][:distance]
+        dur = params[:google][:duration]
+        # This clearly needs to be seperated out
+        TextMessage.send_to_mechanic(alert.creator.full_name, alert.mechanic.phone, alert.creator.phone,dist,dur) &&
+        TextMessage.send_to_user(alert.mechanic.full_name, alert.mechanic.phone,alert.creator.phone,dist,dur)
+        redirect_to alert
+      else
+        redirect_to alert
+      end
   	else
   		redirect_to edit_alert_path(alert)
   	end
