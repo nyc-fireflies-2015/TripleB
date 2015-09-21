@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 20150917214128) do
     t.string   "email",           null: false
     t.string   "phone",           null: false
     t.string   "password_digest", null: false
+    t.string   "bio"
+    t.string   "avatar_url"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

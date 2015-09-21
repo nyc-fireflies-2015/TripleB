@@ -26,7 +26,7 @@ alert3.alert_tags.create(tag_id: 3)
 alert3.save
 
 alert4 = users[3].created_alerts.create(latitude: 40.721215,longitude: -73.962044,status: status[0],description: "rode over a rock, need an extra tube")
-alert4.alert_tags.create(tag_id: 4)
+alert4.alert_tags.create(tag_id: 5)
 alert4.save
 
 alert5 = users[4].created_alerts.create(latitude: 40.711171,longitude: -73.960916,status: status[0], description: "rode through a tack convention and now my tire is flat :(")
@@ -36,5 +36,5 @@ alert5.save
 
 alert6 = users[4].created_alerts.create(latitude: 40.752761,longitude: -73.975263,status: status[2], description: "my bike split in half where is the nearest repair shop!??")
 alert6.mechanic = users[6]
-alert6.alert_tags.create(tag_id: 7)
+alert6.alert_tags.create(tag_id: 5)
 alert6.save
