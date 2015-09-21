@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
-  
-  has_many :created_alerts, class_name: 'Alert', foreign_key: :creator_id
+
+  has_many :alerts, class_name: 'Alert', foreign_key: :creator_id
   has_many :receipts, class_name: 'Receipt', foreign_key: :mechanic_id
   has_many :locations, as: :locatable
 
