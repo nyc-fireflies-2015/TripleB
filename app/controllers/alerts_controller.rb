@@ -1,5 +1,6 @@
 class AlertsController < ApplicationController
   before_action :redirect_deleted_alert, only: [:show,:update]
+  before_action :redirect_not_signed_in, only: :show
   def index
     @popular_tags = Tag.top
     if params[:tag]

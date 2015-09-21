@@ -22,4 +22,9 @@ class ApplicationController < ActionController::Base
     alert = Alert.find_by(id: params[:id])
     redirect_to alerts_path if alert.nil?
   end
+
+  def redirect_not_signed_in
+    alert = Alert.find_by(id: params[:id])
+    redirect_to alerts_path unless signed_in?
+  end
 end
