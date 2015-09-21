@@ -12,7 +12,7 @@ class TextMessage < ActiveRecord::Base
     @client.account.messages.create({
       :from => '+19292003142',
       :to => '+1' + user_number,
-      :body => "Thanks for offering to help, you are {distance} away from {user}. Get in touch with them by texting {user_number}",
+      :body => "Thanks for offering to help, you are {@distance} away from {user}. Get in touch with them by texting {user_number}",
     })
   end
 
@@ -20,7 +20,7 @@ class TextMessage < ActiveRecord::Base
     @client.account.messages.create({
       :from => '+19292003142',
       :to => '+1' + mech_number,
-      :body => "Help is on the way, {mechanic} is {distance} away. Get in touch with them by texting {mech_number}",
+      :body => "Help is on the way, {mechanic} is {@distance} away. Get in touch with them by texting {mech_number}",
     })
   end
 
