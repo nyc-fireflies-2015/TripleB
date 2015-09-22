@@ -5,7 +5,7 @@
   <% @locations.each do |location| %>
   <div class='small-11 large-6 small-centered columns'>
     <% if location.locatable_type == "Alert" %>
-    <%= location.locatable.description %>
+    <%= link_to location.locatable.description, location.locatable %>
     <% end %>
   </div>
   <% end %>
