@@ -39,12 +39,22 @@
     margin-bottom: 0;
   }
   .alert-listing {
+    p {
+      font-size: 80%;
+      position: relative;
+      text-align: left;
+      bottom: 4em;
+      left: 3.5em;
+      color: #bdc2c6;
+      width: 75%;
+      margin: 0;
+    }
     h4 {
       width: 85%;
       position: relative;
       bottom: 3em;
       margin-bottom: 0;
-      left: 4em;
+      left: 2.5em;
       text-align: left;
       color: #00aac8;
       opacity: 0.7;
