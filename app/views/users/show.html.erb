@@ -17,22 +17,19 @@
 		<div class='large-6 column text-center'>
 			<h2>Your Created Alerts</h2>
 			<ul>
-				<% @created_alerts.each do |alert| %>
-					<li><%= link_to alert.time_diff, alert_path(alert) %></li>
+				<% @alerts.each do |alert| %>
+					<li><%= link_to alert.description, alert_path(alert) %></li>
 				<% end %>
 			</ul>
 		</div>
 
 		<div class='large-6 column text-center'>
-			<h2>Your Accepted Alerts</h2>
+			<h2>Your Reciepts</h2>
 			<ul>
-				<% @alerts.each do |alert| %>
-					<li><%= link_to alert.time_diff, alert_path(alert) %></li>
+				<% @receipts.each do |receipt| %>
+					<li><%= link_to receipt.alert.description,   receipt.alert %></li>
 				<% end %>
 			</ul>
 		</div>
 	</div>
-	<p><%=@user.latitude%>
-	<%=@user.longitude%></p>
-
 </div>

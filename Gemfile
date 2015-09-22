@@ -13,7 +13,10 @@ gem 'pry-rails', :group => :development
 gem 'foundation-rails'
 gem 'time_difference'
 gem 'twilio-ruby'
+gem 'rails_12factor'
 gem 'phonelib'
+gem 'geokit-rails'
+
 
 group :development, :test do
 
@@ -21,13 +24,13 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'faker'
   gem 'simplecov'
 
 end
 
 group :test do
 
+  gem 'faker'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'

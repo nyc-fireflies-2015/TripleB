@@ -9,17 +9,16 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        UserMailer.welcome_email(@user).deliver
         session[:user_id] = @user.id
+        current_location = @user.create_location(latitude: params[:location][:latitude], longitude: params[:location][:longitude])
 
-        format.html { redirect_to alerts_path }
-        format.json { render json: @user, status: :created, location: @user }
+        UserMailer.welcome_email(@user).deliver
+        format.html { redirect_to :root }
       else
         format.html {
           flash[:error] = @user.errors.full_messages.to_sentence
           redirect_to signup_path
         }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -29,8 +28,8 @@ class UsersController < ApplicationController
 		if !@user
 			redirect_to :root
 		else
-    	@created_alerts = @user.created_alerts
     	@alerts = @user.alerts
+    	@receipts = @user.receipts
 		end
   end
 
@@ -44,7 +43,7 @@ class UsersController < ApplicationController
   def update
   	@user = User.find_by(id: params[:id])
     if request.xhr?
-      @user.update_attributes(latitude: params[:latitude], longitude: params[:longitude])
+      @user.location.update_attributes(latitude: params[:location][:latitude], longitude: params[:location][:longitude])
     else
       if @user.update_attributes(user_params)
     		redirect_to @user
@@ -57,7 +56,11 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username,:password,:first_name,:last_name,:email,:phone,:latitude,:longitude, :bio, :avatar_url)
+    params.require(:user).permit(:username,:password,:first_name,:last_name,:email,:phone, :bio, :avatar_url)
+  end
+
+  def location_params
+    params.require(:location).permit(:latitude,:longitude)
   end
 
 end
