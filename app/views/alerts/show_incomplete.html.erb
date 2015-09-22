@@ -14,9 +14,11 @@
 <% else %>
   <%= form_for @alert do |f| %>
     <%= f.hidden_field :status, value: "in progress" %>
-    <%= f.hidden_field :mechanic_id, value: current_user.id %>
-    <input type='hidden' name="google[distance]" id="distance" value=""/>
-    <input type='hidden' name="google[duration]" id="duration" value=""/>
+    <input type='hidden' name="receipt[mechanic_id]" value="<%= current_user.id %>"/>
+    <input type='hidden' name="receipt[distance]" id="distance" value=""/>
+    <input type='hidden' name="receipt[duration]" id="duration" value=""/>
+    <input type='hidden' name="mechanic[latitude]" id="current_lat" value="<%= current_user.location.latitude %>" />
+    <input type='hidden' name="mechanic[longitude]" id="current_lng" value="<%= current_user.location.longitude %>" />
     <%= f.submit "Help #{@alert.creator.first_name}" %>
   <% end %>
 </div>

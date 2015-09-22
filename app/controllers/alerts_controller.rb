@@ -3,7 +3,7 @@ class AlertsController < ApplicationController
 
   def index
     # @alerts = Alert.where(status: "incomplete").limit(50).order(created_at: :desc)
-     @locations = Location.within(100, :origin => current_user.location)
+     @locations = Location.within(1000, :origin => current_user.location)
   end
 
   def new
@@ -24,7 +24,6 @@ class AlertsController < ApplicationController
   def create
     alert = current_user.alerts.build(alert_params)
     if alert.save
-      require 'pry';binding.pry
       location = alert.create_location(location_params)
       alert.update_attributes(location_id: location.id)
       redirect_to alert
@@ -35,14 +34,20 @@ class AlertsController < ApplicationController
   end
 
   def update
-  	alert = Alert.find_by(id: params[:id])
+    alert = Alert.find_by(id: params[:id])
+    receipt = alert.build_receipt(receipt_params)
     if alert.update_attributes(alert_params)
-      if !!alert.mechanic == true && alert.status == 'in progress'
-        dist = params[:google][:distance]
-        dur = params[:google][:duration]
-        # This clearly needs to be seperated out
-        TextMessage.send_to_mechanic(alert.creator.full_name, alert.mechanic.phone, alert.creator.phone,dist,dur) &&
-        TextMessage.send_to_user(alert.mechanic.full_name, alert.mechanic.phone,alert.creator.phone,dist,dur)
+      if receipt.save && alert.status == 'in progress'
+        mechanic_location = receipt.create_location(mechanic_params)
+        receipt.update_attributes(location_id: mechanic_location.id)
+      require 'pry';binding.pry
+        dist = params[:receipt][:distance]
+        dur = params[:receipt][:duration]
+        # TextMessage.send_to_mechanic(alert.creator.full_name, alert.mechanic.phone, alert.creator.phone,dist,dur) &&
+        # TextMessage.send_to_user(alert.mechanic.full_name, alert.mechanic.phone,alert.creator.phone,dist,dur)
+        redirect_to alert
+      elsif alert.status == 'incomplete'
+        alert.receipt.destroy
         redirect_to alert
       else
         redirect_to alert
@@ -65,6 +70,14 @@ class AlertsController < ApplicationController
 
   def location_params
     params.require(:location).permit(:latitude, :longitude)
+  end
+
+  def receipt_params
+    params.require(:receipt).permit(:mechanic_id, :distance, :duration)
+  end
+
+  def mechanic_params
+    params.require(:mechanic).permit(:latitude, :longitude)
   end
 
 end
