@@ -25,13 +25,21 @@
 }
 
 .location_map {
-  position: fixed;
+  display: relative;
   height: 15em;
+  top: -1.5em;
 }
-
 #create-alert-page {
-  height: 100%;
+  .centered {
+    position: relative;
+    height: 100%;
+  }
   background-color: #00aac8;
+}
+.foot-wrapper {
+  position: relative;
+  height: 5em;
+  padding-top: 5em;
 }
 #homepage-hero-signed-in {
     background: url(asset-path('bwbike.jpg')) repeat scroll 45% center;
