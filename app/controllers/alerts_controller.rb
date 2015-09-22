@@ -3,7 +3,8 @@ class AlertsController < ApplicationController
 
   def index
     # @alerts = Alert.where(status: "incomplete").limit(50).order(created_at: :desc)
-     @locations = Location.within(1000, :origin => current_user.location)
+    @alerts = Alert.by_location(10, current_user.location)
+     # @locations = Location.within(10, :origin => current_user.location)
   end
 
   def new
@@ -23,7 +24,6 @@ class AlertsController < ApplicationController
 
   def create
     alert = current_user.alerts.build(alert_params)
-      require 'pry';binding.pry
     if alert.save
       location = alert.create_location(latitude: params[:location][:latitude], longitude: params[:location][:longitude])
       alert.update_attributes(location_id: location.id)
