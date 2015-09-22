@@ -2,7 +2,14 @@
   <section id='homepage-hero-signed-in' class='block-splash'>
     <div class='centered'>
       <div class='profile-layer'>
-        text
+        <div class='row'>
+          <div class='small-5 small-centered columns'>
+            <h3><%= current_user.full_name %></h3>
+          </div>
+          <div class='small-5 small-centered columns'>
+            <h6><%= current_user.email %></h6>
+          </div>
+        </div>
       </div>
       <div class='row'>
         <div class='small-centered columns'>
