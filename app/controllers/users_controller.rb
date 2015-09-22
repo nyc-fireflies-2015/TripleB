@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         current_location = @user.create_location(latitude: params[:location][:latitude], longitude: params[:location][:longitude])
 
         UserMailer.welcome_email(@user).deliver
-        format.html { redirect_to alerts_path }
+        format.html { redirect_to :root }
       else
         format.html {
           flash[:error] = @user.errors.full_messages.to_sentence
