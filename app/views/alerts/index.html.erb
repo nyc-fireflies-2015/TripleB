@@ -1,10 +1,21 @@
-<div class='row'>
-  <h1 class='small-11 small-centered columns'>Alerts located near you</h1>
-</div>
-<ul class='row no-bullet'>
+<section class='block' id='alert-index-page'>
+  <div id='alert-index-map' class='user_position_map'></div>
+  <div class='centered'>
+  <div id='current_user_lat' style="display: none;"><%= current_user.location.latitude %></div>
+  <div id='current_user_lng' style="display: none;"><%= current_user.location.longitude %></div>
+  <%= image_tag current_user.avatar_url, size: '60', class: 'avatar'%>
+  <h2>Alerts in your area</h2>
   <% @alerts.each do |alert| %>
-  <div class='small-11 large-6 small-centered columns'>
-    <%= link_to alert.description, alert %>
+  <div class='row alert-listing'>
+    <a href='/alerts/<%= alert.id %>'>
+    <div class='small-12 small-centered columns'>
+      <%= image_tag alert.creator.avatar_url, size: '50', class: 'avatar' %>
+      <h4><%= alert.creator.full_name %></h4>
+      <p><%= alert.description %></p>
+      <%= image_tag 'location_icon.png', size: '22', class: 'location-icon' %>
+    </div>
+    </a>
   </div>
   <% end %>
-</ul>
+</div>
+</section>
