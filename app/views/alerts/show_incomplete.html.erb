@@ -1,10 +1,10 @@
 <section class='block' id='alert-incomplete-page'>
   <div class="location_map"></div>
     <div class="centered">
-      <div id="lat" style="display: none;"><%= @alert.latitude %></div>
-      <div id="lng" style="display: none;"><%= @alert.longitude %></div>
-      <div id='current_lat' style="display: none;"><%= current_user.latitude %></div>
-      <div id='current_lng' style="display: none;"><%= current_user.longitude %></div>
+      <div id="lat" style="display: none;"><%= @alert.location.latitude %></div>
+      <div id="lng" style="display: none;"><%= @alert.location.longitude %></div>
+      <div id='current_lat' style="display: none;"><%= current_user.location.latitude %></div>
+      <div id='current_lng' style="display: none;"><%= current_user.location.longitude %></div>
       </div>
       <div class='row'>
         <div class='small-12 columns', id="creator_header">
