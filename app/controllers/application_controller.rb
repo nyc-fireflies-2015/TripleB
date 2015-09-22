@@ -13,8 +13,8 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-  def authorized?(user)
-    user == current_user
+  def authorized?
+    redirect_to :root unless params[:id].to_i == session[:user_id]
   end
   helper_method :authorized?
 
