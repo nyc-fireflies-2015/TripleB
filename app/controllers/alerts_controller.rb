@@ -24,7 +24,7 @@ class AlertsController < ApplicationController
   def create
     alert = current_user.alerts.build(alert_params)
     if alert.save
-      require 'pry';binding.pry
+
       location = alert.create_location(location_params)
       alert.update_attributes(location_id: location.id)
       redirect_to alert
