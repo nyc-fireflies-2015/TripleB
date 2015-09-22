@@ -1,19 +1,26 @@
-<%= form_for @user do |f| %>
-  <div class="row">
-    <div class='small-12 medium-7 large-5 columns'>
-      <%= f.label :username %>
-      <%= f.text_field :username %>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-      <%= f.label :phone %>
-      <%= f.text_field :phone %>
-      <%= f.submit 'Signup', class: 'button' %>
+<section class='block' id='signup-page'>
+  <div class="centered">
+    <div class='row'>
+      <div class='small-12 columns'>
+        <h3><%= image_tag "bike_logo_white.png", size: '30', class: 'logo' %> Sign up for an account</h3>
+      </div>
     </div>
+    <%= form_for @user do |f| %>
+      <div class="row">
+        <div class='small-12 columns'>
+          <div id='sign-up-form'>
+            <%= f.text_field :username, placeholder: "Username" %>
+            <%= f.password_field :password, placeholder: "Password" %>
+            <%= f.text_field :first_name, placeholder: "First Name" %>
+            <%= f.text_field :last_name, placeholder: "Last Name" %>
+            <%= f.text_field :email, placeholder: "Email" %>
+            <%= f.text_field :phone, placeholder: "Phone Number" %>
+            <input type='hidden' name="location[latitude]" id="latitude" value=""/>
+            <input type='hidden' name="location[longitude]" id="longitude" value=""/>
+            <%= f.submit 'Signup', class: 'button small secondary expand radius' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</section>

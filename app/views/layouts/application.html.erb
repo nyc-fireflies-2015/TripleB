@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Triple B" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Tripl_B" %></title>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_f9Nmfc9EU2ltkH3-Tcg3qrO6THZGZW4"></script>
 
     <%= stylesheet_link_tag    "application" %>
@@ -22,6 +22,5 @@
       <div id="user_id" style="display: none;"><%= current_user.id %></div>
     <% end %>
     <%= yield %>
-
   </body>
 </html>
