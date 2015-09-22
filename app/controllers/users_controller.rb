@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     # on sign up, create a users location object
     respond_to do |format|
       if @user.save
-        current_location = @user.create_location(latitude: params[:latitude], longitude: params[:longitude])
+        current_location = @user.create_location(latitude: params[:location][:latitude], longitude: params[:location][:longitude])
         @user.update_attributes(location_id: current_location.id)
         UserMailer.welcome_email(@user).deliver
         session[:user_id] = @user.id
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   	@user = User.find_by(id: params[:id])
     if request.xhr?
       # update users location
-      @user.location.update_attributes(latitude: params[:latitude], longitude: params[:longitude])
+      @user.location.update_attributes(latitude: params[:location][:latitude], longitude: params[:location][:longitude])
       # current_location = @user.create_location(latitude: params[:latitude], longitude: params[:longitude])
       # @user.update_attributes(location_id: current_location.id)
       # @user.update_attributes(latitude: params[:latitude], longitude: params[:longitude])
