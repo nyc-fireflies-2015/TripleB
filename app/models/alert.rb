@@ -7,7 +7,8 @@ class Alert < ActiveRecord::Base
   validates :description, :creator, presence: true
 
   def self.by_location(radius, location)
-    Location.within(radius, :origin => location).where(locatable_type: 'Alert').map {|curr_locale| curr_locale.locatable}
+    @all_alerts = Location.within(radius, :origin => location).where(locatable_type: 'Alert').map {|curr_locale| curr_locale.locatable}
+    @all_alerts.select {|alert| alert.status == 'incomplete'}
   end
 
   def time_diff
