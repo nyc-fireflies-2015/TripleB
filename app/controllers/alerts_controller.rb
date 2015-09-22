@@ -24,7 +24,6 @@ class AlertsController < ApplicationController
     alert = current_user.alerts.build(alert_params)
     if alert.save
       location = alert.create_location(latitude: params[:location][:latitude], longitude: params[:location][:longitude])
-      alert.update_attributes(location_id: location.id)
       redirect_to alert
     else
       flash[:error] = alert.errors.full_messages.to_sentence
@@ -38,7 +37,6 @@ class AlertsController < ApplicationController
       if alert.status == 'in progress'
         receipt = alert.create_receipt(receipt_params)
         mechanic_location = receipt.create_location(mechanic_params)
-        receipt.update_attributes(location_id: mechanic_location.id)
         dist = params[:receipt][:distance]
         dur = params[:receipt][:duration]
         # TextMessage.send_to_mechanic(alert.creator.full_name, alert.mechanic.phone, alert.creator.phone,dist,dur) &&
