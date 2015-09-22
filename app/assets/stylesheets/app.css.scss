@@ -30,9 +30,13 @@
 }
 
 #alert-index-page {
+  .small-12 {
+    height: 50px
+  }
   h2 {
     color: #faf9df;
     margin-top: -1.5em;
+    margin-bottom: 0;
   }
   .alert-listing {
     h4 {
@@ -50,7 +54,7 @@
     margin-top: 1em;
       .avatar {
         bottom: 4%;
-        right: 40%;
+        right: 45%;
       }
     }
   }
