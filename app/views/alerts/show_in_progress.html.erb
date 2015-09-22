@@ -1,33 +1,30 @@
 <h1>Alert status: <%= @alert.status %></h1>
 <p><%= @alert.description %></p>
 <p>Posted <%= @alert.time_diff %> by <%= @alert.creator.first_name %></p>
-<div id="lat" style="display: none;"><%= @alert.latitude %></div>
-<div id="lng" style="display: none;"><%= @alert.longitude %></div>
-<div>
-  <% @alert.tags.each do |tag| %>
-    <p>Tags: <%= tag.name %> </p>
-  <% end %>
-</div>
+<div id="lat" style="display: none;"><%= @alert.location.latitude %></div>
+<div id="lng" style="display: none;"><%= @alert.location.longitude %></div>
+
 <div>
   <% if @alert.creator == current_user %>
-  <p><%= @alert.mechanic.first_name%> has offered to help!<p>
+  <p><%= @alert.receipt.mechanic.first_name%> has offered to help!<p>
     <%= form_for @alert do |f| %>
       <%= f.hidden_field :status, value: "complete" %>
       <%= f.submit "Complete this alert" %>
     <% end %>
-    <div id='lat_mech' style="display: none;"><%= @alert.mechanic.latitude %></div>
-    <div id='lng_mech' style="display: none;"><%= @alert.mechanic.longitude %></div>
+    <div id='lat_mech' style="display: none;"><%= @alert.receipt.location.latitude %></div>
+    <div id='lng_mech' style="display: none;"><%= @alert.receipt.location.longitude %></div>
     <div class="direction_map"></div>
   <% end %>
 
-  <% if @alert.mechanic == current_user %>
+  <% if @alert.receipt.mechanic == current_user %>
     <%= form_for @alert do |f| %>
       <%= f.hidden_field :status, value: "incomplete" %>
+      <!-- destroy the alert's receipt -->
       <%= f.hidden_field :mechanic_id, value: nil %>
       <%= f.submit "Cancel this alert" %>
     <% end %>
-    <div id='lat_mech' style="display: none;"><%= @alert.mechanic.latitude %></div>
-    <div id='lng_mech' style="display: none;"><%= @alert.mechanic.longitude %></div>
+    <div id='lat_mech' style="display: none;"><%= @alert.receipt.location.latitude %></div>
+    <div id='lng_mech' style="display: none;"><%= @alert.receipt.location.longitude %></div>
     <div class="direction_map"></div>
   <% end %>
 </div>

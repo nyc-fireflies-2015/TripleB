@@ -4,12 +4,7 @@
 <ul class='row no-bullet'>
   <% @alerts.each do |alert| %>
   <div class='small-11 large-6 small-centered columns'>
-    <li><%= link_to alert.description, alert_path(alert) %></li>
-    <ul>
-      <li><%= alert.creator.username %></li>
-      <li><%= alert.status %></li>
-      <li><%= alert.latitude %>, <%= alert.longitude %></li>
-    </ul>
+    <%= link_to alert.description, alert %>
   </div>
   <% end %>
 </ul>

@@ -15,6 +15,8 @@ gem 'time_difference'
 gem 'twilio-ruby'
 gem 'rails_12factor'
 gem 'phonelib'
+gem 'geokit-rails'
+
 
 group :development, :test do
 

@@ -15,6 +15,8 @@
             <%= f.text_field :last_name, placeholder: "Last Name" %>
             <%= f.text_field :email, placeholder: "Email" %>
             <%= f.text_field :phone, placeholder: "Phone Number" %>
+            <input type='hidden' name="location[latitude]" id="latitude" value=""/>
+            <input type='hidden' name="location[longitude]" id="longitude" value=""/>
             <%= f.submit 'Signup', class: 'button small secondary expand radius' %>
           </div>
         </div>
@@ -22,4 +24,3 @@
     <% end %>
   </div>
 </section>
-<%= render partial: "shared/footer" %>

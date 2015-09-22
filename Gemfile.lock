@@ -66,6 +66,10 @@ GEM
     foundation-rails (5.5.2.1)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
+    geokit (1.10.0)
+    geokit-rails (2.1.0)
+      geokit (~> 1.5)
+      rails (>= 3.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -213,6 +217,7 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails
   foundation-rails
+  geokit-rails
   jbuilder (~> 2.0)
   jquery-rails
   launchy
