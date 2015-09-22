@@ -1,10 +1,14 @@
 class Alert < ActiveRecord::Base
   belongs_to :creator, class_name: "User"
-  has_one :location, as: :locatable
+  has_one :location, as: :locatable, dependent: :destroy
   has_one :receipt
 
 
   validates :description, :creator, presence: true
+
+  def self.by_location(radius, location)
+    Location.within(radius, :origin => location).where(locatable_type: 'Alert').map {|curr_locale| curr_locale.locatable}
+  end
 
   def time_diff
     start_time = self.created_at
@@ -16,4 +20,5 @@ class Alert < ActiveRecord::Base
       "#{full_diff[:minutes]} minutes ago"
     end
   end
+
 end

@@ -1,10 +1,10 @@
 <h1>Alert status: <%= @alert.status %> </h1>
 <% if @alert.creator == current_user%>
-  <h3><%= @alert.mechanic.first_name%> was your mechanic</h3>
-<% elsif @alert.mechanic == current_user %>
+  <h3><%= @alert.receipt.mechanic.first_name%> was your mechanic</h3>
+<% elsif @alert.receipt.mechanic == current_user %>
   <h3>Thanks for helping <%= @alert.creator.first_name %></h3>
 <% else %>
   <h3>Created by <%= @alert.creator.first_name%> </h3>
 <%end%>
-<h4>This alert was posted <%=@alert.time_diff%> from <%=@alert.latitude%>, <%=@alert.longitude%></h4>
+<h4>This alert was posted <%=@alert.time_diff%> from <%=@alert.location.latitude%>, <%=@alert.location.longitude%></h4>
 <p><%=@alert.description%></p>
