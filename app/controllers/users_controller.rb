@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+before_action :authorized?, only: [:show,:edit]
+
 	def new
 		@user = User.new()
 	end
@@ -23,19 +25,13 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find_by(id: params[:id])
-		if !@user
-			redirect_to :root
-		else
-    	@alerts = @user.alerts
-    	@receipts = @user.receipts
-		end
+    @alerts = @user.alerts
+    @receipts = @user.receipts
+
   end
 
   def edit
   	@user = User.find_by(id: params[:id])
-		if !@user || !authorized?(@user)
-			redirect_to :root
-		end
   end
 
   def update
