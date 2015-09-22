@@ -1,7 +1,4 @@
 <div>
-	<% if authorized?(@user)%>
-		<%= link_to 'Edit', edit_user_path(@user) %>
-	<% end %>
 
 	<%= image_tag(@user.avatar_url) %>
 	<h1>Welcome <%= @user.full_name %></h1>
