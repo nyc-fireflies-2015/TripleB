@@ -2,7 +2,7 @@
   <div class="location_map"></div>
   <div class='centered'>
 
-    <%= form_for @alert, id:"alert_form" do |f| %>
+    <%= form_tag alerts_path(@alert), method: 'post', id:"alert_form" do %>
       <div class='row'>
         <div class='small-12 small-centered columns'>
           <p>Provide a description to a mechanic and be as</p><p>specific as possible. You'll recieve a text from</p><p>your mechanic when they're on their way.</p>
@@ -10,10 +10,10 @@
       </div>
       <div class='row'>
         <div class='small-10 small-centered columns'>
-          <%= f.text_area :description, rows: '3', placeholder: 'Ex:"Popped a tube, need a size X replacement.' %>
+          <%= text_area_tag :description, 'Ex:"Popped a tube, need a size X replacement.', rows: '3' %>
           <input type='hidden' name="alert[latitude]" id="latitude" value=""/>
           <input type='hidden' name="alert[longitude]" id="longitude" value=""/>
-          <%= f.submit %>
+          <%= image_submit_tag 'new_alert_circle_logo.png', height: '50', class: 'new_alert_logo' %>
         </div>
       </div>
     <% end %>
