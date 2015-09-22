@@ -1,6 +1,7 @@
 <section class='block' id='create-alert-page'>
   <div class="location_map"></div>
   <div class='centered'>
+  <%= image_tag current_user.avatar_url, size: '60', class: 'avatar'%>
 
     <%= form_tag alerts_path(@alert), method: 'post', id:"alert_form" do %>
       <div class='row'>
