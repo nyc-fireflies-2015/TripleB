@@ -29,8 +29,8 @@ class UsersController < ApplicationController
 		if !@user
 			redirect_to :root
 		else
-    	@created_alerts = @user.created_alerts
     	@alerts = @user.alerts
+    	@receipts = @user.receipts
 		end
   end
 
@@ -44,7 +44,6 @@ class UsersController < ApplicationController
   def update
   	@user = User.find_by(id: params[:id])
     if request.xhr?
-      # update users location
       @user.location.update_attributes(latitude: params[:location][:latitude], longitude: params[:location][:longitude])
       # current_location = @user.create_location(latitude: params[:latitude], longitude: params[:longitude])
       # @user.update_attributes(location_id: current_location.id)
