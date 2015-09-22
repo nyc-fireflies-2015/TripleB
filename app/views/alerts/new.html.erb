@@ -1,9 +1,26 @@
-<%= form_for @alert, id:"alert_form" do |f| %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :tags %>
-  <%= f.text_field :all_tags %>
-  <input type='hidden' name="alert[latitude]" id="latitude" value=""/>
-  <input type='hidden' name="alert[longitude]" id="longitude" value=""/>
-  <%= f.submit %>
-<% end %>
+<section class='block' id='create-alert-page'>
+  <div class="user_position_map"></div>
+  <div class='centered'>
+  <div id='current_user_lat' style="display: none;"><%= current_user.latitude %></div>
+  <div id='current_user_lng' style="display: none;"><%= current_user.longitude %></div
+  <%= image_tag current_user.avatar_url, size: '60', class: 'avatar'%>
+
+    <%= form_tag alerts_path(@alert), method: 'post', id:"alert_form" do %>
+      <div class='row'>
+        <div class='small-12 small-centered columns'>
+          <p>Provide a description to a mechanic and be as</p><p>specific as possible. You'll recieve a text from</p><p>your mechanic when they're on their way.</p>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='small-10 small-centered columns'>
+          <%= text_area_tag :description, 'Ex:"Popped a tube, need a size X replacement.', rows: '3' %>
+          <input type='hidden' name="alert[latitude]" id="latitude" value=""/>
+          <input type='hidden' name="alert[longitude]" id="longitude" value=""/>
+
+          <%= image_submit_tag 'new_alert_circle_logo.png', height: '50', class: 'new_alert_logo' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
+<%= render partial: "shared/footer" %>
