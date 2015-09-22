@@ -1,6 +1,8 @@
 <section class='block' id='create-alert-page'>
   <div class="location_map"></div>
   <div class='centered'>
+  <div id='current_user_lat' style="display: none;"><%= current_user.latitude %></div>
+  <div id='current_user_lng' style="display: none;"><%= current_user.longitude %></div>
   <%= image_tag current_user.avatar_url, size: '60', class: 'avatar'%>
 
     <%= form_tag alerts_path(@alert), method: 'post', id:"alert_form" do %>
