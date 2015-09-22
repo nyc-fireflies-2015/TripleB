@@ -1,0 +1,32 @@
+.location_map {
+  margin-top: -32em;
+  height: 15em;
+}
+
+section#alert-incomplete-page {
+  .avatar {
+    border-style: solid;
+    border-color: #faf9df;
+    border-width: 3px;
+    position: absolute;
+    border-radius: 100%;
+    bottom: 1.5em;
+    left: 7.5em;
+  }
+  p {
+    font-size: .8em;
+    text-align: left;
+    line-height: 0%;
+    color: #faf9df;
+  }
+  .new_alert_logo {
+    margin-top: -1em;
+  }
+  .centered {
+    position: relative;
+    height: 1em;
+    top: 2em;
+  }
+  height: 90%;
+  background-color: #00aac8;
+}
