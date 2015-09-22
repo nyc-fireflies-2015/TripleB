@@ -23,8 +23,9 @@ class AlertsController < ApplicationController
 
   def create
     alert = current_user.alerts.build(alert_params)
+      require 'pry';binding.pry
     if alert.save
-      location = alert.create_location(location_params)
+      location = alert.create_location(latitude: params[:location][:latitude], longitude: params[:location][:longitude])
       alert.update_attributes(location_id: location.id)
       redirect_to alert
     else
@@ -35,23 +36,19 @@ class AlertsController < ApplicationController
 
   def update
     alert = Alert.find_by(id: params[:id])
-    receipt = alert.build_receipt(receipt_params)
     if alert.update_attributes(alert_params)
-      if receipt.save && alert.status == 'in progress'
+      if alert.status == 'in progress'
+        receipt = alert.create_receipt(receipt_params)
         mechanic_location = receipt.create_location(mechanic_params)
         receipt.update_attributes(location_id: mechanic_location.id)
-      require 'pry';binding.pry
         dist = params[:receipt][:distance]
         dur = params[:receipt][:duration]
         # TextMessage.send_to_mechanic(alert.creator.full_name, alert.mechanic.phone, alert.creator.phone,dist,dur) &&
         # TextMessage.send_to_user(alert.mechanic.full_name, alert.mechanic.phone,alert.creator.phone,dist,dur)
-        redirect_to alert
       elsif alert.status == 'incomplete'
         alert.receipt.destroy
-        redirect_to alert
-      else
-        redirect_to alert
       end
+      redirect_to alert
   	else
   		redirect_to edit_alert_path(alert)
   	end
