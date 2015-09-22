@@ -90,7 +90,7 @@ $include-html-global-classes: $include-html-classes;
 // @import url(https://fonts.googleapis.com/css?family=Lato);
 $font-family-sans-serif: "Lato", Helvetica, Roboto, Arial, sans-serif;
 // @import url(https://fonts.googleapis.com/css?family=Merriweather);
-$font-family-serif: 'Merriweather', Cambria, "Times New Roman", Times, serif;
+// $font-family-serif: 'Merriweather', Cambria, "Times New Roman", Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
@@ -249,7 +249,7 @@ $secondary-color: #bdc2c6;
 // $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
-$paragraph-font-family: $font-family-serif;
+// $paragraph-font-family: $font-family-serif;
 // $paragraph-font-weight: $font-weight-normal;
 // $paragraph-font-size: 1rem;
 // $paragraph-line-height: 1.6;
