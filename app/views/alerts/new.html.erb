@@ -1,9 +1,7 @@
 <%= form_for @alert, id:"alert_form" do |f| %>
   <%= f.label :description %>
   <%= f.text_field :description %>
-  <%= f.label :tags %>
-  <%= f.text_field :all_tags %>
-  <input type='hidden' name="alert[latitude]" id="latitude" value=""/>
-  <input type='hidden' name="alert[longitude]" id="longitude" value=""/>
+  <input type='hidden' name="location[latitude]" id="latitude" value=""/>
+  <input type='hidden' name="location[longitude]" id="longitude" value=""/>
   <%= f.submit %>
 <% end %>

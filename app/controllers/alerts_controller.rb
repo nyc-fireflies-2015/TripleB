@@ -23,8 +23,11 @@ class AlertsController < ApplicationController
   end
 
   def create
-    alert = current_user.created_alerts.build(alert_params)
+    alert = current_user.alerts.build(alert_params)
     if alert.save
+      require 'pry';binding.pry
+      location = alert.create_location(location_params)
+      alert.update_attributes(location_id: location.id)
       redirect_to alert
     else
       flash[:error] = alert.errors.full_messages.to_sentence
@@ -58,7 +61,11 @@ class AlertsController < ApplicationController
   private
 
   def alert_params
-    params.require(:alert).permit(:creator_id, :mechanic_id, :latitude, :longitude, :status, :description, :all_tags)
+    params.require(:alert).permit(:creator_id, :status, :description)
+  end
+
+  def location_params
+    params.require(:location).permit(:latitude, :longitude)
   end
 
 end

@@ -19,6 +19,7 @@ $(document).ready(function(){
       longitude = position.coords.longitude;
       $('#latitude').val(latitude);
       $('#longitude').val(longitude);
+      debugger
     }
 
     getLocation();

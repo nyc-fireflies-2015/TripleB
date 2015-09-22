@@ -2,6 +2,12 @@
 <h3><%= @alert.creator.first_name %> needs help</h3>
 <div>Description: <%= @alert.description %></div>
 <div>Created <%= @alert.time_diff %> ago</div>
+
+<div id="lat" style="display: none;"><%= @alert.location.latitude %></div>
+<div id="lng" style="display: none;"><%= @alert.location.longitude %></div>
+<div id='current_lat' style="display: none;"><%= current_user.location.latitude %></div>
+<div id='current_lng' style="display: none;"><%= current_user.location.longitude %></div>
+
 <div id="user_id" style="display: none;"><%= current_user.id %></div>
 <% if current_user == @alert.creator %>
   <%= link_to 'Delete Alert', @alert, method: :delete %>
