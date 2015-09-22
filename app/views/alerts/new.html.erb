@@ -1,7 +1,18 @@
-<%= form_for @alert, id:"alert_form" do |f| %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <input type='hidden' name="location[latitude]" id="latitude" value=""/>
-  <input type='hidden' name="location[longitude]" id="longitude" value=""/>
-  <%= f.submit %>
-<% end %>
+<section class='block' id='create-alert-page'>
+  <div class="location_map"></div>
+  <div class='centered'>
+
+    <%= form_for @alert, id:"alert_form" do |f| %>
+      <div class='row'>
+        <div class='small-12 columns'>
+          <%= f.label :description %>
+          <%= f.text_field :description %>
+          <input type='hidden' name="location[latitude]" id="latitude" value=""/>
+          <input type='hidden' name="location[longitude]" id="longitude" value=""/>
+          <%= f.submit %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<div class='foot-wrapper'><%= render partial: "shared/footer" %></div>
+</section>
