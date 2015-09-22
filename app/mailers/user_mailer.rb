@@ -1,6 +1,8 @@
-class UserMailer < ApplicationMailer
+class UserMailer < ActionMailer::Base
 	default from: 'triplebteams@gmail.com'
- 
+  layout 'mailer'
+
+
   def welcome_email(user)
     @user = user
     @url  = 'http://localhost:3000/login'
