@@ -4,6 +4,8 @@ class AlertsController < ApplicationController
   def index
     # @alerts = Alert.where(status: "incomplete").limit(50).order(created_at: :desc)
     @alerts = Alert.by_location(10, current_user.location)
+    # require "pry"
+    # binding.pry
      # @locations = Location.within(10, :origin => current_user.location)
   end
 
