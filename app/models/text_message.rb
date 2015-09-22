@@ -1,4 +1,3 @@
-
 class TextMessage < ActiveRecord::Base
 
   def self.config
