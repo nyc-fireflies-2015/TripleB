@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :alerts, class_name: 'Alert', foreign_key: :creator_id
   has_many :receipts, class_name: 'Receipt', foreign_key: :mechanic_id
-  has_many :locations, as: :locatable
+  has_one :location, as: :locatable
 
 
   validates :first_name, :last_name, :username, :email, :phone,  presence: true

@@ -1,13 +1,9 @@
 class AlertsController < ApplicationController
   before_action :redirect_deleted_alert, only: [:show,:update]
-  
+
   def index
-    @popular_tags = Tag.top
-    if params[:tag]
-      @alerts = Alert.includes(:tags).where("tags.name" => params[:tag], "status" => "incomplete").limit(50).order(created_at: :desc)
-    else
-      @alerts = Alert.where(status: "incomplete").limit(50).order(created_at: :desc)
-    end
+    # @alerts = Alert.where(status: "incomplete").limit(50).order(created_at: :desc)
+     @locations = Location.within(10, :origin => current_user.location)
   end
 
   def new

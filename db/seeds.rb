@@ -8,21 +8,26 @@ users = User.all
 
 
 alert1 = users[0].alerts.create(description: "brake pads are balding")
-location1 = alert1.create_location(latitude: 50.672203,longitude: -73.989809)
+location1 = alert1.create_location(latitude: 40.70637,longitude: -74.0091672)
 alert1.update_attributes(location_id: location1.id)
+users[0].update_attributes(location_id: location1.id)
 
-alert2 = users[0].alerts.create(description: "brake pads are balding")
-location2 = alert1.create_location(latitude: 51.672203,longitude: -72.989809)
+alert2 = users[1].alerts.create(description: "brake pads are balding")
+location2 = alert2.create_location(latitude: 40.70637,longitude: -74.0091674)
 alert2.update_attributes(location_id: location2.id)
+users[1].update_attributes(location_id: location2.id)
 
-alert3 = users[0].alerts.create(description: "brake pads are balding")
-location3 = alert1.create_location(latitude: 50.72203,longitude: -71.989809)
+alert3 = users[2].alerts.create(description: "brake pads are balding")
+location3 = alert3.create_location(latitude: 40.70637,longitude: -74.0091672)
 alert3.update_attributes(location_id: location3.id)
+users[2].update_attributes(location_id: location3.id)
 
-alert4 = users[0].alerts.create(description: "brake pads are balding")
-location4 = alert1.create_location(latitude: 50.72203,longitude: -73.989809)
+alert4 = users[3].alerts.create(description: "brake pads are balding")
+location4 = alert4.create_location(latitude: 40.70637,longitude: -74.0091671)
 alert4.update_attributes(location_id: location4.id)
+users[3].update_attributes(location_id: location4.id)
 
-alert5 = users[0].alerts.create(description: "brake pads are balding")
-location5 = alert1.create_location(latitude: 10.672203,longitude: -73.989809)
+alert5 = users[4].alerts.create(description: "brake pads are balding")
+location5 = alert5.create_location(latitude: 10.70637,longitude: -74.0091675)
 alert5.update_attributes(location_id: location5.id)
+users[4].update_attributes(location_id: location5.id)

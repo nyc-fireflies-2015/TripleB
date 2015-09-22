@@ -42,7 +42,9 @@ class UsersController < ApplicationController
   def update
   	@user = User.find_by(id: params[:id])
     if request.xhr?
-      @user.update_attributes(latitude: params[:latitude], longitude: params[:longitude])
+      current_location = @user.create_location(latitude: params[:latitude], longitude: params[:longitude])
+      @user.update_attributes(location_id: current_location.id)
+      # @user.update_attributes(latitude: params[:latitude], longitude: params[:longitude])
     else
       if @user.update_attributes(user_params)
     		redirect_to @user
