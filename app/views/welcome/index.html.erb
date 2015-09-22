@@ -1,6 +1,18 @@
 <% if signed_in? %>
-  <section id='homepage-hero-signed-in' class='block'>
-
+  <section id='homepage-hero-signed-in' class='block-splash'>
+    <div class='centered'>
+      <div class='profile-layer'>
+        text
+      </div>
+      <div class='row'>
+        <div class='small-centered columns'>
+          <%= link_to "I need assistance", new_alert_path, class: 'button small expant radius hero-button alert' %>
+        </div>
+        <div class='small-centered columns'>
+          <%= link_to "I can lend a hand", alerts_path, class: 'button small expant radius hero-button success' %>
+        </div>
+      </div>
+    </div>
   </section>
 <% else %>
   <section id="homepage-hero" class="block">
