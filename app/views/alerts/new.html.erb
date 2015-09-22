@@ -11,7 +11,7 @@
       </div>
       <div class='row'>
         <div class='small-10 small-centered columns'>
-          <%= text_area_tag :description, 'Ex:"Popped a tube, need a size X replacement.', rows: '3' %>
+          <%= text_area_tag "alert[description]", 'Ex:"Popped a tube, need a size X replacement.', rows: '3' %>
           <input type='hidden' name="location[latitude]" id="latitude" value=""/>
           <input type='hidden' name="location[longitude]" id="longitude" value=""/>
           <%= image_submit_tag 'new_alert_circle_logo.png', height: '50', class: 'new_alert_logo' %>
