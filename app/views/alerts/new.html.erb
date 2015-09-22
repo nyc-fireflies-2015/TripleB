@@ -4,11 +4,13 @@
 
     <%= form_for @alert, id:"alert_form" do |f| %>
       <div class='row'>
-        <div class='small-12 columns'>
-          <%= f.label :description %>
-          <%= f.text_field :description %>
-          <%= f.label :tags %>
-          <%= f.text_field :all_tags %>
+        <div class='small-12 small-centered columns'>
+          <p>Provide a description to a mechanic and be as</p><p>specific as possible. You'll recieve a text from</p><p>your mechanic when they're on their way.</p>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='small-10 small-centered columns'>
+          <%= f.text_area :description, rows: '4' %>
           <input type='hidden' name="alert[latitude]" id="latitude" value=""/>
           <input type='hidden' name="alert[longitude]" id="longitude" value=""/>
           <%= f.submit %>
@@ -16,5 +18,5 @@
       </div>
     <% end %>
   </div>
-<div class='foot-wrapper'><%= render partial: "shared/footer" %></div>
 </section>
+<%= render partial: "shared/footer" %>
