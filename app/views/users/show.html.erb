@@ -18,7 +18,7 @@
 			<h2>Your Created Alerts</h2>
 			<ul>
 				<% @alerts.each do |alert| %>
-					<li><%= link_to alert.time_diff, alert_path(alert) %></li>
+					<li><%= link_to alert.description, alert_path(alert) %></li>
 				<% end %>
 			</ul>
 		</div>
@@ -27,7 +27,7 @@
 			<h2>Your Reciepts</h2>
 			<ul>
 				<% @receipts.each do |receipt| %>
-					<li><%= link_to reciept.alert.time_diff, alert_path(alert) %></li>
+					<li><%= link_to receipt.alert.description,   receipt.alert %></li>
 				<% end %>
 			</ul>
 		</div>
