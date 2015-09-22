@@ -25,21 +25,23 @@
 }
 
 .location_map {
-  display: relative;
+  margin-top: -32em;
   height: 15em;
-  top: -1.5em;
 }
-#create-alert-page {
+
+section#create-alert-page {
+  p {
+    font-size: .8em;
+    line-height: 0.5%;
+    color: #faf9df;
+  }
   .centered {
     position: relative;
-    height: 100%;
+    height: 1em;
+    top: 2em;
   }
+  height: 90%;
   background-color: #00aac8;
-}
-.foot-wrapper {
-  position: relative;
-  height: 5em;
-  padding-top: 5em;
 }
 #homepage-hero-signed-in {
     background: url(asset-path('bwbike.jpg')) repeat scroll 45% center;
