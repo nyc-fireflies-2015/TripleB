@@ -8,8 +8,9 @@
   <% @alerts.each do |alert| %>
   <div class='row alert-listing'>
     <div class='small-12 small-centered columns'>
-      <%= image_tag alert.creator.avatar_url, size: '60', class: 'avatar' %>
+      <%= image_tag alert.creator.avatar_url, size: '50', class: 'avatar' %>
       <h4><%= alert.creator.full_name %></h4>
+      <p><%= alert.description %></p>
     </div>
   </div>
   <% end %>
