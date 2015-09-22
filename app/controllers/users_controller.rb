@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       if @user.save
         current_location = @user.create_location(latitude: params[:latitude], longitude: params[:longitude])
         @user.update_attributes(location_id: current_location.id)
-        # UserMailer.welcome_email(@user).deliver
+        UserMailer.welcome_email(@user).deliver
         session[:user_id] = @user.id
 
         format.html { redirect_to alerts_path }
