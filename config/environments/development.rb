@@ -24,8 +24,8 @@ Rails.application.configure do
     domain: "gmail.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV[TEAM_EMAIL],
-    password: ENV[TEAM_EMAIL_PW]
+    user_name: 'triplebteams@gmail.com',
+    password: 'triplebteam'
   }
 
   # Print deprecation notices to the Rails logger.
