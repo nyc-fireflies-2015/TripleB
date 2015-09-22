@@ -4,7 +4,9 @@
 <ul class='row no-bullet'>
   <% @locations.each do |location| %>
   <div class='small-11 large-6 small-centered columns'>
-    <%= location.locatable %>
+    <% if location.locatable_type == "Alert" %>
+    <%= location.locatable.description %>
+    <% end %>
   </div>
   <% end %>
 </ul>
