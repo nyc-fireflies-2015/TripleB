@@ -11,8 +11,7 @@ class Alert < ActiveRecord::Base
   validates :description, :creator, presence: true
 
   def self.by_location(radius, location)
-    @all_alerts = Location.within(radius, :origin => location).where(locatable_type: 'Alert').map {|curr_locale| curr_locale.locatable}
-    @all_alerts.select {|alert| alert.status == 'incomplete'}
+    @all_alerts = Location.within(radius, :origin => location).where(locatable_type: 'Alert').map {|curr_locale| curr_locale.locatable if curr_locale.locatable.status == "incomplete"  }
   end
 
 
