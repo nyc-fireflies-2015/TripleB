@@ -29,8 +29,8 @@ class UsersController < ApplicationController
 		if !@user
 			redirect_to :root
 		else
-    	@created_alerts = @user.created_alerts
-    	@alerts = @user.alerts
+    	@created_alerts = @user.alerts
+    	@alerts = @user.receipts
 		end
   end
 
