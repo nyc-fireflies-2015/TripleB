@@ -5,10 +5,16 @@
       <div id="lng" style="display: none;"><%= @alert.longitude %></div>
       <div id='current_lat' style="display: none;"><%= current_user.latitude %></div>
       <div id='current_lng' style="display: none;"><%= current_user.longitude %></div>
-      <h1>Alert status: <%= @alert.status %></h1>
-      <h3><%= @alert.creator.first_name %> needs help</h3>
+      <%= image_tag 'alert_logo_center.png', size: '60', class: 'alert_logo'%>
+      <div class='row'>
+        <div class='small-12 small-centered columns'>
+          <p><%= @alert.creator.first_name %></p>
+          <p>Alert status: <%= @alert.status %></p>
+          <p>Created <%= @alert.time_diff %> ago</p>
+        </div>
+    </div>
+
       <div>Description: <%= @alert.description %></div>
-      <div>Created <%= @alert.time_diff %> ago</div>
 
         <% if current_user == @alert.creator %>
           <%= link_to 'Delete Alert', @alert, method: :delete %>
