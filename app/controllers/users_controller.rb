@@ -6,12 +6,10 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        current_location = @user.create_location(latitude: params[:location][:latitude], longitude: params[:location][:longitude])
-
+        @user.create_location(location_params)
         UserMailer.welcome_email(@user).deliver
         format.html { redirect_to alerts_path }
       else
@@ -43,7 +41,7 @@ class UsersController < ApplicationController
   def update
   	@user = User.find_by(id: params[:id])
     if request.xhr?
-      @user.location.update_attributes(latitude: params[:location][:latitude], longitude: params[:location][:longitude])
+      @user.location.update_attributes(location_params)
     else
       if @user.update_attributes(user_params)
     		redirect_to @user
