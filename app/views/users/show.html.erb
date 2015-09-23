@@ -1,32 +1,44 @@
-<%= image_tag(@user.avatar_url) %>
-<% if authorized?(@user)%>
-	<%= link_to 'Edit', edit_user_path(@user) %>
-<% end %>
+<div id="user-profile-header">
+<div id='hero-image' class='hero-image'><%= image_tag 'bike_header.jpg'%></div>
+  <div id="user-show-edit-button">
+    <% if authorized?(@user)%>
 
-<%= @user.full_name %>
+    <%= link_to image_tag('edit_icon.png', size: '40', class: "trash-icon"), edit_user_path(@user) %>
+    <% end %>
+  </div>
+</div>
 
-<%= image_tag("blank_avatar.png") %>
+<section class='block' id='alert-index-page'>
+  <div class='centered'>
+    <%= image_tag(@user.avatar_url) %>
 
-<% if @user.bio.empty? %>
-	<%= link_to 'Click Here To Edit', edit_user_path(@user) %>
-<% else %>
-	<%= @user.bio %>
-<% end %>
+    <%= @user.full_name %>
 
-Accepted Alerts
-<% @receipts.each do |receipt| %>
-  <a href='/alerts/<%= receipt.alert.id %>'>
-  	<%= image_tag(receipt.alert.creator.avatar_url) %>
-  	<%= receipt.alert.creator.full_name %>
-  	<%= link_to receipt.alert.description, receipt.alert %>
-  </a>
-<% end %>
+    <%= image_tag("blank_avatar.png") %>
 
-Created Alerts
-<% @alerts.each do |alert| %>
-  <a href='/alerts/<%= alert.id %>'>
-  	<%= image_tag('location_icon.png') %>
-  	<%= alert.time_diff %>
-  	<%= alert.status.capitalize %>
-  </a>
-<% end %>
+    <% if @user.bio.empty? %>
+    <%= link_to 'Click Here To Edit', edit_user_path(@user) %>
+    <% else %>
+    <%= @user.bio %>
+    <% end %>
+
+    Accepted Alerts
+    <% @receipts.each do |receipt| %>
+    <a href='/alerts/<%= receipt.alert.id %>'>
+     <%= image_tag(receipt.alert.creator.avatar_url) %>
+     <%= receipt.alert.creator.full_name %>
+     <%= link_to receipt.alert.description, receipt.alert %>
+   </a>
+   <% end %>
+
+   Created Alerts
+   <% @alerts.each do |alert| %>
+   <a href='/alerts/<%= alert.id %>'>
+     <%= image_tag('location_icon.png') %>
+     <%= alert.time_diff %>
+     <%= alert.status.capitalize %>
+   </a>
+   <% end %>
+ </div>
+</div>
+</section>
