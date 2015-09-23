@@ -4,10 +4,10 @@
   <div id='current_user_lat' style="display: none;"><%= current_user.location.latitude %></div>
   <div id='current_user_lng' style="display: none;"><%= current_user.location.longitude %></div>
   <% @alerts.each do |alert| %>
-    <div class='latitude'><%=alert.location.latitude%></div>
+    <div class='latitude' style="display: none;"><%=alert.location.latitude%></div>
   <% end %>
   <% @alerts.each do |alert| %>
-    <div class='longitude'><%=alert.location.longitude%></div>
+    <div class='longitude' style="display: none;"><%=alert.location.longitude%></div>
   <% end %>
   <%= image_tag current_user.avatar_url, size: '60', class: 'avatar'%>
   <h2>Alerts in your area</h2>
