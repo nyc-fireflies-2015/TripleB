@@ -1,3 +1,5 @@
+<div class="location_map"></div>
+
 <h1>Alert status: <%= @alert.status %> </h1>
 <% if @alert.creator == current_user%>
   <h3><%= @alert.receipt.mechanic.first_name%> was your mechanic</h3>
