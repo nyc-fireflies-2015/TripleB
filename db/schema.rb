@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20150921202142) do
   end
 
   create_table "locations", force: :cascade do |t|
-    t.float    "latitude",       null: false
-    t.float    "longitude",      null: false
+    t.float    "latitude"
+    t.float    "longitude"
     t.integer  "locatable_id"
     t.string   "locatable_type"
     t.datetime "created_at",     null: false
