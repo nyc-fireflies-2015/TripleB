@@ -21,13 +21,13 @@ describe UsersController do
     it "creates a new user with valid attributes" do
       expect{
         get :new
-        post :create, user: attributes_for(:user)
+        post :create, user: attributes_for(:user), location: attributes_for(:location)
       }.to change(User, :count).by(1)
     end
 
     it "redirects to alerts index page" do
-      post :create, user: attributes_for(:user)
-      expect(response).to redirect_to alerts_path
+      post :create, user: attributes_for(:user), location: attributes_for(:location)
+      expect(response).to redirect_to :root
     end
   end
 
