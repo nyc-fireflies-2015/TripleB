@@ -139,12 +139,27 @@
     right: 12.75em;
     bottom: 0.5em;
   }
+  #on-way-name {
+    position: relative;
+    top: -2.5em;
+    left: 2.25em;  }
+  #on-way-img {
+    top: 0.25em;
+    left: -7em;  }
   .response {
     p#desc-cont {
       color: #bdc2c6;
       bottom: 10px;
       position: relative;
-      left: 0.6em;    }
+      left: 0.6em;
+    }
+      p#on-way {
+        color: #bdc2c6;
+        position: relative;
+        bottom: 4em;
+        left: 3em;
+
+      }
     h6 {
       color: #00aac8;
       opacity: 0.6;
@@ -154,10 +169,10 @@
     position: absolute;
     width: 100%;
     bottom: 0;
-    height: 12em;
+    height: 11em;
     .columns {
     background-color: white;
-    top: 5.75em;
+    top: 5em;
     border-radius: 3px;
     height: 3em;
     margin-top: -2.5em; }
@@ -171,13 +186,13 @@
     p#response-header {
     width: 0;
     color: #faf9df;
-    top: 0.5em;
+    top: -0.5em;
     left: 8px;
     letter-spacing: -0.25px;    }
     p#response-header-2 {
     width: 0;
     color: #faf9df;
-    top: 0.5em;
+    top: -0.5em;
     left: 8px;
     letter-spacing: -0.25px;    }
   }
