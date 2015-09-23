@@ -11,20 +11,22 @@
 	<div class="centered">
 		<%= image_tag 'alert__progress_logo_center.png', size: '50', class: 'alert_logo' %>
     <div class='row'>
-  		<%= image_tag @alert.creator.avatar_url, size: '60', class: 'avatar' %>
+      <%= image_tag @alert.creator.avatar_url, size: '60', class: 'avatar' %>
       <div class='small-8 small-centered columns'>
-    		<h3><%= @alert.creator.full_name %></h3>
+        <h3><%= @alert.creator.full_name %></h3>
       </div>
       <div class='small-12 small-centered columns'>
-    		<p>Posted <%= @alert.time_diff %></p>
-    		<h6><%= @alert.status.capitalize %></h6>
-    		<%= image_tag 'location_icon.png', size: '22', class: 'location-icon' %>
+        <p>Posted <%= @alert.time_diff %></p>
+        <h6><%= @alert.status.capitalize %></h6>
+        <%= image_tag 'location_icon.png', size: '22', class: 'location-icon' %>
       </div>
     </div>
   </div>
   <div class='response'>
     <div class='small-10 small-centered columns'>
-    <p id='desc-cont'><%= @alert.receipt.mechanic.full_name%> has responded and is on their way</p>
+		<%= image_tag @alert.receipt.mechanic.avatar_url, size: '40', class: 'avatar', id: 'on-way-img' %>
+      <h6 id='on-way-name'><%= @alert.receipt.mechanic.full_name%></h6>
+      <p id='on-way'>has responded and is on their way</p>
     </div>
 
     <% if @alert.creator == current_user %>
