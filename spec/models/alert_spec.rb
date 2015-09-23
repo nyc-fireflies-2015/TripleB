@@ -29,6 +29,12 @@ describe Alert do
   context 'time difference module' do
     it 'calculates the time difference greater than a day' do
       alert = build(:alert)
+      alert.update_attributes(created_at: Time.current - 3.years)
+      expect(alert.time_diff).to eq '2 years ago'
+    end
+
+    it 'calculates the time difference greater than a day' do
+      alert = build(:alert)
       alert.update_attributes(created_at: Time.current - 2.months)
       expect(alert.time_diff).to eq '2 months ago'
     end
