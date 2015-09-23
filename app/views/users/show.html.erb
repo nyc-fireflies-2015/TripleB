@@ -15,14 +15,18 @@
 
 Accepted Alerts
 <% @receipts.each do |receipt| %>
-	<%= image_tag(receipt.alert.creator.avatar_url) %>
-	<%= receipt.alert.creator.full_name %>
-	<%= link_to receipt.alert.description, receipt.alert %>
+  <a href='/alerts/<%= receipt.alert.id %>'>
+  	<%= image_tag(receipt.alert.creator.avatar_url) %>
+  	<%= receipt.alert.creator.full_name %>
+  	<%= link_to receipt.alert.description, receipt.alert %>
+  </a>
 <% end %>
 
 Created Alerts
 <% @alerts.each do |alert| %>
-	<%= image_tag('location_icon.png') %>
-	<%= alert.time_diff %>
-	<%= alert.status.capitalize %>
+  <a href='/alerts/<%= alert.id %>'>
+  	<%= image_tag('location_icon.png') %>
+  	<%= alert.time_diff %>
+  	<%= alert.status.capitalize %>
+  </a>
 <% end %>
