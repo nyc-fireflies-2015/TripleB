@@ -25,7 +25,7 @@ describe UsersController do
       }.to change(User, :count).by(1)
     end
 
-    it "redirects to alerts index page" do
+    it "redirects to the root page" do
       post :create, user: attributes_for(:user), location: attributes_for(:location)
       expect(response).to redirect_to :root
     end
