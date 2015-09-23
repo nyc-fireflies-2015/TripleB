@@ -1,4 +1,6 @@
 <div class="location_map"></div>
+<div id="lat" style="display: none;"><%= @alert.location.latitude %></div>
+<div id="lng" style="display: none;"><%= @alert.location.longitude %></div>
 
 <h1>Alert status: <%= @alert.status %> </h1>
 <% if @alert.creator == current_user%>
