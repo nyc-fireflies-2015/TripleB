@@ -26,7 +26,7 @@
           <h6>Description</h6>
           <p id='desc-cont'><%= @alert.description %></p>
         </div>
-        <a href="/alerts/#{@alert.id}" method="delete"><%= image_tag 'trash_icon.png', size: '40', class: "trash-icon" %></a>
+          <%= link_to image_tag('trash_icon.png', size: '40', class: "trash-icon"), @alert, method: :delete %>
     </div>
       <% else %>
         <%= form_for @alert do |f| %>
