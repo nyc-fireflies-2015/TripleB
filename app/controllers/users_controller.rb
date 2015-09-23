@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   	@user = User.find_by(id: params[:id])
     redirect_to :root unless @user
   	@alerts = @user.alerts
-  	@receipts = @user.receipts.includes(:alerts)
+  	@receipts = @user.receipts.includes(:alert)
   end
 
   def edit
