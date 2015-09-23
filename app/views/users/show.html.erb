@@ -1,5 +1,6 @@
 <div id="user-profile-header">
 <div id='hero-image' class='hero-image'><%= image_tag 'bike_header.jpg'%></div>
+    <%= image_tag @user.avatar_url, size: '100', id:"user-avatar" %>
   <div id="user-show-edit-button">
     <% if authorized?(@user)%>
 
@@ -8,13 +9,11 @@
   </div>
 </div>
 
-<section class='block' id='alert-index-page'>
+<section class='block' id='user-show-page'>
   <div class='centered'>
-    <%= image_tag(@user.avatar_url) %>
 
     <%= @user.full_name %>
 
-    <%= image_tag("blank_avatar.png") %>
 
     <% if @user.bio.empty? %>
     <%= link_to 'Click Here To Edit', edit_user_path(@user) %>
