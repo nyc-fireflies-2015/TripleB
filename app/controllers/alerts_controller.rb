@@ -3,7 +3,6 @@ class AlertsController < ApplicationController
 
   def index
     @alerts = Alert.by_location(10, current_user.location)
-    @jalerts = @alerts.to_json
   end
 
   def new
