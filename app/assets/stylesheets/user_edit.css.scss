@@ -1,20 +1,22 @@
 
-#signup-page{
+#user-edit-page{
   .logo {
     margin-bottom: 0.5em;
   }
   .centered{
-    height: 90%;
+    height: 100%;
   }
   h3 {
     text-align: left;
     color: #faf9df;
     opacity: .7;
+    padding-top:10px;
   }
-  height: 90%;
+  height: 110%;
   background-color: #00aac8;
 
 }
-#sign-up-form {
+#edit-user-form {
   padding-bottom: -0.5em;
 }
+
