@@ -15,7 +15,7 @@
 
 Created Alerts
 <% @alerts.each do |alert| %>
-	<%= image_tag(alert.mechanic.avatar_url) %>
+	<%= image_tag('location_icon.png') %>
 	<%= alert.time_diff %>
 	<%= alert.status.capitalize %>
 <% end %>
