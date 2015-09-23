@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe Alert do
   context 'validations' do
-
     it 'has a valid factory' do
       expect(build(:alert)).to be_valid
     end
@@ -25,11 +24,9 @@ describe Alert do
       alert.valid?
       expect(alert.errors[:creator]).to include("can't be blank")
     end
-
   end
 
   context 'time difference module methods' do
-
     it 'calculates the time difference greater than an hour' do
       alert = build(:alert)
       alert.update_attributes(created_at: Time.current - 3.5.hours)
@@ -41,7 +38,11 @@ describe Alert do
       alert.update_attributes(created_at: Time.current - 20.minutes)
       expect(alert.time_diff).to eq '20 minutes ago'
     end
-    
   end
 
+  context 'locate alerts' do
+    it 'returns incomplete alerts' do
+      
+    end
+  end
 end
