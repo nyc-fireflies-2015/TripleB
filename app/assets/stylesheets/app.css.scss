@@ -129,6 +129,32 @@
 }
 
 #alert-in-progress-page {
+
+  #mech-div {
+    background-color: white;
+    margin-top: -4.5em;
+    margin-bottom: 3em;  }
+
+
+    p#desc-cont-mech {
+      color: #bdc2c6;
+      bottom: 10px;
+      position: relative;
+      left: 0.6em;
+    }
+
+    #mech-cancel {
+      position: relative;
+      bottom: -5.5em;    }
+
+
+
+    p#response-header-mech {
+      width: 0;
+      color: white;
+      top: 0.5em;
+      left: 8px;
+      letter-spacing: -0.25px; }
   #cancel {
     position: absolute;
     right: 14.5em;
