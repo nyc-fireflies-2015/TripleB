@@ -25,12 +25,9 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find_by(id: params[:id])
-		if !@user
-			redirect_to :root
-		else
-    	@alerts = @user.alerts
-    	@receipts = @user.receipts
-		end
+    redirect_to :root unless @user
+  	@alerts = @user.alerts
+  	@receipts = @user.receipts
   end
 
   def edit
@@ -45,11 +42,8 @@ class UsersController < ApplicationController
     if request.xhr?
       @user.location.update_attributes(location_params)
     else
-      if @user.update_attributes(user_params)
-    		redirect_to @user
-    	else
-    		redirect_to edit_user_path(@user)
-    	end
+      redirect_to edit_user_path(@user) unless @user.update_attributes(user_params)
+  		redirect_to @user
     end
   end
 
