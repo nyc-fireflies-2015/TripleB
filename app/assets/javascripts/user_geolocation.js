@@ -6,9 +6,9 @@ $(document).ready(function(){
     function updatePos(lat,longit){
       var userId = document.getElementById("user_id").innerHTML;
       $.ajax({
-        url:"/users/" + userId,
+        url:"/users/"+userId,
         method:"PATCH",
-        data:{ latitude: lat, longitude: longit }
+        data: {location: { latitude: lat, longitude: longit }}
         }).done(function(){
           alert("your update is finished")
         })
