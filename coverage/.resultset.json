@@ -15,7 +15,7 @@
         1,
         null,
         1,
-        0,
+        3,
         null,
         null,
         null,
@@ -68,8 +68,23 @@
         null,
         null,
         null
+      ],
+      "/Users/Alex/Desktop/TripleB/app/models/location.rb": [
+        1,
+        1,
+        1,
+        3,
+        3,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1443028699
+    "timestamp": 1443035309
   }
 }

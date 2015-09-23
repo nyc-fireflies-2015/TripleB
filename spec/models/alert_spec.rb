@@ -42,7 +42,15 @@ describe Alert do
 
   context 'locate alerts' do
     it 'returns incomplete alerts' do
-      
+      user = create(:user)
+      user_location = create(:location, latitude: 40.706392, longitude: -74.00912454, locatable_id: user.id, locatable_type: user.class)
+      alert1 = create(:alert)
+      location1 = create(:location, latitude: 40.7063951, longitude: -74.00912459999999, locatable_id: alert1.id, locatable_type: alert1.class)
+      alert2 = create(:alert)
+      location2 = create(:location, latitude: 40.7063932, longitude: -74.009124524, locatable_id: alert2.id, locatable_type: alert2.class)
+      # require 'pry'; binding.pry
+      # expect{Alert.by_location(10, user.location)}.to change{Alert.count}.by 2
+      expect(Alert.by_location(10, user.location)).to match_array([alert1, alert2])
     end
   end
 end
