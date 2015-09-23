@@ -28,7 +28,7 @@ describe Alert do
 
   end
 
-  context 'module methods' do
+  context 'time difference module methods' do
 
     it 'calculates the time difference greater than an hour' do
       alert = build(:alert)
