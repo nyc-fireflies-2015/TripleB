@@ -39,8 +39,8 @@ class AlertsController < ApplicationController
         mechanic_location = receipt.create_location(mechanic_params)
         dist = params[:receipt][:distance]
         dur = params[:receipt][:duration]
-        TextMessage.send_to_mechanic(alert.creator.full_name, alert.mechanic.phone, alert.creator.phone,dist,dur) &&
-        TextMessage.send_to_user(alert.mechanic.full_name, alert.mechanic.phone,alert.creator.phone,dist,dur)
+        TextMessage.send_to_mechanic(alert.creator.full_name, receipt.mechanic.phone, alert.creator.phone,dist,dur) &&
+        TextMessage.send_to_user(receipt.mechanic.full_name, receipt.mechanic.phone,alert.creator.phone,dist,dur)
       elsif alert.status == 'incomplete'
         alert.receipt.destroy
       end
