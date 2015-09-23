@@ -8,8 +8,8 @@ between individual users. You'll never have carry your busted bike home again!
 
 Later versions will include payment/tip processing, as well as a map of participating bike shops.
 
-TripleB was built by:
-[George](https://github.com/gp3gp3gp3)
-[Lauren](https://github.com/GLNRO)
-[Ernesto](https://github.com/emjrdev)
+TripleB was built as a DevBootcamp final project by:
+[George](https://github.com/gp3gp3gp3),
+[Lauren](https://github.com/GLNRO),
+[Ernesto](https://github.com/emjrdev), and
 [Alex](https://github.com/xanderhuang)
