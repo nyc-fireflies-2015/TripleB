@@ -43,7 +43,7 @@
 
       <%= form_tag alert_path(@alert), method: 'patch', id: 'check' do %>
       <input value="complete" type="hidden" name="alert[status]" id="alert_status">
-      <%= image_submit_tag 'alert__complete_logo_center.png', width: '30', class: 'help-icon' %>
+      <%= image_submit_tag 'white_check.png', width: '30', class: 'help-icon' %>
       <% end %>
 
       <%= link_to image_tag('trash_icon.png', size: '30', class: "trash-icon"), @alert, method: :delete, class: 'help-icon', id: 'trash' %>
