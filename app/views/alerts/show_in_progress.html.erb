@@ -1,3 +1,5 @@
+<div class="direction_map"></div>
+
 <div id="lat" style="display: none;"><%= @alert.location.latitude %></div>
 <div id="lng" style="display: none;"><%= @alert.location.longitude %></div>
 <div id='current_lat' style="display: none;"><%= current_user.location.latitude %></div>
@@ -9,14 +11,15 @@
 <%= @alert.time_diff %>
 <%= @alert.status.capitalize %>
 <%= image_tag 'location_icon.png', size: '22', class: 'location-icon' %>
+Description
 <%= @alert.description %>
 <%= @alert.receipt.mechanic.full_name%> has responded and is on their way
 
 <div id='lat_mech' style="display: none;"><%= @alert.receipt.location.latitude %></div>
 <div id='lng_mech' style="display: none;"><%= @alert.receipt.location.longitude %></div>
-<div class="direction_map"></div>
 
   <% if @alert.creator == current_user %>
+    Cancel if your mechanic does not show or respond
     <%= form_tag alert_path(@alert), method: 'patch' do %>
     <input value="incomplete" type="hidden" name="alert[status]" id="alert_status">
     <%= image_submit_tag 'cancel_icon.png', width: '40', class: 'help-icon', style: 'background-color: black;' %>
@@ -27,10 +30,12 @@
     <%= image_submit_tag 'alert__complete_logo_center.png', width: '40', class: 'help-icon', style: 'background-color: black;' %>
     <% end %>
 
+    Delete if you no longer need assistance
     <%= link_to image_tag('trash_icon.png', size: '40', class: "trash-icon"), @alert, method: :delete, style: 'background-color: black;' %>
   <% end %>
 
   <% if @alert.receipt.mechanic == current_user %>
+    Remember to cancel the alert if you can no longer assist
     <%= form_tag alert_path(@alert), method: 'patch' do %>
     <input value="incomplete" type="hidden" name="alert[status]" id="alert_status">
     <%= image_submit_tag 'cancel_icon.png', width: '40', class: 'help-icon', style: 'background-color: black;' %>
