@@ -77,11 +77,11 @@ describe AlertsController do
     context "with valid attributes" do
       it "saves a new alert in the database" do
         expect {
-          post :create, alert: attributes_for(:alert)
+          post :create, alert: attributes_for(:alert), location: attributes_for(:location)
         }.to change(Alert, :count).by(1)
       end
       it "redirects to the alert's show page" do
-        post :create, alert: attributes_for(:alert)
+        post :create, alert: attributes_for(:alert), location: attributes_for(:location)
         expect(response).to redirect_to Alert.last
       end
     end
