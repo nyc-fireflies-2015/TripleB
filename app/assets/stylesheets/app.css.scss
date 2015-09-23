@@ -134,11 +134,22 @@
     right: 8.75em;
     bottom: 0.5em;
   }
-  .help-icon {
+  #cancel {
     position: absolute;
-    right: 12.75em;
+    right: 14.5em;
+    bottom: -0.25em;
+  }
+  #trash {
+    position: absolute;
+    right: 13.25em;
     bottom: 0.5em;
   }
+  #check {
+    position: absolute;
+    right: 13.25em;
+    bottom: 0.5em;
+  }
+
   #on-way-name {
     position: relative;
     top: -2.5em;
