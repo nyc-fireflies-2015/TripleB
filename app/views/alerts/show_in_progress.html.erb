@@ -36,17 +36,17 @@
         <h6>Description</h6>
         <p id='desc-cont'><%= @alert.description %></p>
       </div>
-      <%= form_tag alert_path(@alert), method: 'patch' do %>
+      <%= form_tag alert_path(@alert), method: 'patch', id: 'cancel' do %>
       <input value="incomplete" type="hidden" name="alert[status]" id="alert_status">
-      <%= image_submit_tag 'cancel_icon.png', width: '30', class: 'help-icon', style: 'background-color: black;' %>
+      <%= image_submit_tag 'cancel_icon.png', width: '30', class: 'help-icon' %>
       <% end %>
 
-      <%= form_tag alert_path(@alert), method: 'patch' do %>
+      <%= form_tag alert_path(@alert), method: 'patch', id: 'check' do %>
       <input value="complete" type="hidden" name="alert[status]" id="alert_status">
-      <%= image_submit_tag 'alert__complete_logo_center.png', width: '30', class: 'help-icon', style: 'background-color: black;' %>
+      <%= image_submit_tag 'alert__complete_logo_center.png', width: '30', class: 'help-icon' %>
       <% end %>
 
-      <%= link_to image_tag('trash_icon.png', size: '30', class: "trash-icon"), @alert, method: :delete, style: 'background-color: black;' %>
+      <%= link_to image_tag('trash_icon.png', size: '30', class: "trash-icon"), @alert, method: :delete, class: 'help-icon', id: 'trash' %>
     <% end %>
     <% if @alert.receipt.mechanic == current_user %>
       <p id='response-header'>Remember to cancel the alert if you can no longer assist</p>
