@@ -14,11 +14,13 @@
   </div>
 </div>
 
-<section class='block' id='user-show-page'>
-  <div class='centered'>
 
-
-    <%= @user.bio %>
+<section  id='user-show-page'>
+  <div class="centered">
+  <div id="bio">
+    <p><%= image_tag('profile_icon.png', size: '40', class: "trash-icon") %><p>
+    <p><%= @user.bio %></p>
+  </div>
 
     <h6>Accepted Alerts</h6>
     <% @receipts.each do |receipt| %>
@@ -42,5 +44,4 @@
    </a>
    <% end %>
  </div>
-</div>
 </section>
