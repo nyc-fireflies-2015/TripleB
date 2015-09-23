@@ -23,7 +23,9 @@
     </div>
   </div>
   <div class='response'>
-    <%= @alert.receipt.mechanic.full_name%> has responded and is on their way
+    <div class='small-10 small-centered columns'>
+    <p id='desc-cont'><%= @alert.receipt.mechanic.full_name%> has responded and is on their way</p>
+    </div>
 
     <% if @alert.creator == current_user %>
       <p id='response-header'>Cancel if your mechanic does not show or respond</p>
@@ -34,15 +36,15 @@
       </div>
       <%= form_tag alert_path(@alert), method: 'patch' do %>
       <input value="incomplete" type="hidden" name="alert[status]" id="alert_status">
-      <%= image_submit_tag 'cancel_icon.png', width: '40', class: 'help-icon', style: 'background-color: black;' %>
+      <%= image_submit_tag 'cancel_icon.png', width: '30', class: 'help-icon', style: 'background-color: black;' %>
       <% end %>
 
       <%= form_tag alert_path(@alert), method: 'patch' do %>
       <input value="complete" type="hidden" name="alert[status]" id="alert_status">
-      <%= image_submit_tag 'alert__complete_logo_center.png', width: '40', class: 'help-icon', style: 'background-color: black;' %>
+      <%= image_submit_tag 'alert__complete_logo_center.png', width: '30', class: 'help-icon', style: 'background-color: black;' %>
       <% end %>
 
-      <%= link_to image_tag('trash_icon.png', size: '40', class: "trash-icon"), @alert, method: :delete, style: 'background-color: black;' %>
+      <%= link_to image_tag('trash_icon.png', size: '30', class: "trash-icon"), @alert, method: :delete, style: 'background-color: black;' %>
     <% end %>
     <% if @alert.receipt.mechanic == current_user %>
       <p id='response-header'>Remember to cancel the alert if you can no longer assist</p>
@@ -52,7 +54,7 @@
       </div>
   		<%= form_tag alert_path(@alert), method: 'patch' do %>
   		<input value="incomplete" type="hidden" name="alert[status]" id="alert_status">
-  		<%= image_submit_tag 'cancel_icon.png', width: '40', class: 'help-icon', style: 'background-color: black;' %>
+  		<%= image_submit_tag 'cancel_icon.png', width: '30', class: 'help-icon', style: 'background-color: black;' %>
   		<% end %>
 		<% end %>
 	</div>
