@@ -33,12 +33,12 @@
           <h6>Description</h6>
           <p id='desc-cont'><%= @alert.description %></p>
         </div>
-        <%= form_for @alert do |f| %>
+        <%= form_tag alert_path(@alert), method: 'patch' do %>
           <input value="in progress" type="hidden" name="alert[status]" id="alert_status">
           <input value="<%= current_user.id %>" type="hidden" name="alert[mechanic_id]" id="alert_mechanic_id">
           <input type='hidden' name="google[distance]" id="distance" value=""/>
           <input type='hidden' name="google[duration]" id="duration" value=""/>
-          <%= f.submit "Help #{@alert.creator.first_name}" %>
+          <%= submit_tag "Help #{@alert.creator.first_name}" %>
           <% end %>
         <% end %>
       </div>
