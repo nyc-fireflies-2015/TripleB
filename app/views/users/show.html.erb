@@ -13,16 +13,16 @@
 	<%= @user.bio %>
 <% end %>
 
-Created Alerts
-<% @alerts.each do |alert| %>
-	<%= image_tag('location_icon.png') %>
-	<%= alert.time_diff %>
-	<%= alert.status.capitalize %>
-<% end %>
-
 Accepted Alerts
 <% @receipts.each do |receipt| %>
 	<%= image_tag(receipt.alert.creator.avatar_url) %>
 	<%= receipt.alert.creator.full_name %>
 	<%= link_to receipt.alert.description, receipt.alert %>
+<% end %>
+
+Created Alerts
+<% @alerts.each do |alert| %>
+	<%= image_tag('location_icon.png') %>
+	<%= alert.time_diff %>
+	<%= alert.status.capitalize %>
 <% end %>
