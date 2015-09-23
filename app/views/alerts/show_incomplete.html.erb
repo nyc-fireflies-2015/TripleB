@@ -38,6 +38,7 @@
           <input value="<%= current_user.location.longitude %>" type='hidden' name='mechanic[longitude]'>
           <input value="in progress" type="hidden" name="alert[status]" id="alert_status">
           <input value="<%= current_user.id %>" type="hidden" name="alert[mechanic_id]" id="alert_mechanic_id">
+          <input value="<%= current_user.id %>" type="hidden" name="receipt[mechanic_id]" id="recipt_mechanic_id">
           <input type='hidden' name="receipt[distance]" id="distance" value=""/>
           <input type='hidden' name="receipt[duration]" id="duration" value=""/>
           <%= image_submit_tag "help_icon2.png", width: '40', class: 'help-icon' %>
