@@ -17,6 +17,12 @@ describe SessionsController  do
       expect(response).to redirect_to root_path
       expect(session[:user_id]).to eq(user.id)
     end
+
+    it 'redirects to login page with invalid information' do
+      user = create(:user)
+      post :create, :username => user.username, :password => '12345'
+      expect(response).to redirect_to login_path
+    end
   end
 
   describe "DELETE #destroy" do
