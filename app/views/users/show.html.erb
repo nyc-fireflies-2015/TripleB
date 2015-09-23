@@ -17,27 +17,28 @@
 <section class='block' id='user-show-page'>
   <div class='centered'>
 
-    <% if @user.bio.empty? %>
-    <p><%= link_to 'Click Here To Edit', edit_user_path(@user) %></p>
-    <% else %>
-    <%= @user.bio %>
-    <% end %>
 
-    Accepted Alerts
+    <%= @user.bio %>
+
+    <h6>Accepted Alerts</h6>
     <% @receipts.each do |receipt| %>
     <a href='/alerts/<%= receipt.alert.id %>'>
-     <%= image_tag(receipt.alert.creator.avatar_url) %>
-     <%= receipt.alert.creator.full_name %>
-     <%= link_to receipt.alert.description, receipt.alert %>
+      <div id="alert-receipt-item">
+       <%= image_tag(receipt.alert.creator.avatar_url, size: '40', class: "trash-icon") %>
+       <%= receipt.alert.creator.full_name %>
+       <%= link_to receipt.alert.description, receipt.alert %>
+    </div>
    </a>
    <% end %>
 
-   Created Alerts
+   <h6>Created Alerts</h6>
    <% @alerts.each do |alert| %>
    <a href='/alerts/<%= alert.id %>'>
-     <%= image_tag('location_icon.png') %>
-     <%= alert.time_diff %>
-     <%= alert.status.capitalize %>
+     <div id="alert-item">
+       <%= image_tag('location_icon.png', size: '20', class: "trash-icon") %>
+       <%= alert.time_diff %>
+       <%= alert.status.capitalize %>
+    </div>
    </a>
    <% end %>
  </div>
