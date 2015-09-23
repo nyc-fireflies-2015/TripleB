@@ -1,37 +1,27 @@
+<div id="lat" style="display: none;"><%= @alert.location.latitude %></div>
+<div id="lng" style="display: none;"><%= @alert.location.longitude %></div>
+<div id='current_lat' style="display: none;"><%= current_user.location.latitude %></div>
+<div id='current_lng' style="display: none;"><%= current_user.location.longitude %></div>
+
 <section class='block' id='alert-incomplete-page'>
   <div class="location_map"></div>
     <div class="centered">
-      <div id="lat" style="display: none;"><%= @alert.location.latitude %></div>
-      <div id="lng" style="display: none;"><%= @alert.location.longitude %></div>
-      <div id='current_lat' style="display: none;"><%= current_user.location.latitude %></div>
-      <div id='current_lng' style="display: none;"><%= current_user.location.longitude %></div>
-      </div>
-      <div class='row'>
-        <div class='small-12 columns', id="creator_header">
-          <div class ='small-10 columns'>
-          <p><%= @alert.creator.first_name %></p>
-          <p>Alert status: <%= @alert.status %></p>
-          <p>Created <%= @alert.time_diff %> ago</p>
-        </div>
-          <%= image_tag 'alert_logo_center.png', size: '60', class: 'alert_logo'%>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='small-12 columns', id="description_header">
-          <div>Description: <%= @alert.description %></div>
-        </div>
-      </div>
-        <% if current_user == @alert.creator %>
-          <%= link_to 'Delete Alert', @alert, method: :delete %>
-        <% else %>
-          <%= form_for @alert do |f| %>
-            <%= f.hidden_field :status, value: "in progress" %>
-            <%= f.hidden_field :mechanic_id, value: current_user.id %>
-            <input type='hidden' name="google[distance]" id="distance" value=""/>
-            <input type='hidden' name="google[duration]" id="duration" value=""/>
-            <%= f.submit "Help #{@alert.creator.first_name}" %>
+      <p><%= @alert.creator.first_name %></p>
+      <p>Alert status: <%= @alert.status %></p>
+      <p>Created <%= @alert.time_diff %> ago</p>
+      <%= image_tag 'alert__progress_logo_center.png', size: '60', class: 'alert_logo'%>
+      <p>Description: <%= @alert.description %></p>
+      <% if current_user == @alert.creator %>
+        <%= link_to 'Delete Alert', @alert, method: :delete %>
+      <% else %>
+        <%= form_for @alert do |f| %>
+          <%= f.hidden_field :status, value: "in progress" %>
+          <%= f.hidden_field :mechanic_id, value: current_user.id %>
+          <input type='hidden' name="google[distance]" id="distance" value=""/>
+          <input type='hidden' name="google[duration]" id="duration" value=""/>
+          <%= f.submit "Help #{@alert.creator.first_name}" %>
           <% end %>
-
         <% end %>
+      </div>
     </div>
 </section>
