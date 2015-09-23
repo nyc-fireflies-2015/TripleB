@@ -47,17 +47,17 @@ ActiveRecord::Schema.define(version: 20150921202142) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name",                                                           null: false
-    t.string   "last_name",                                                            null: false
-    t.string   "username",                                                             null: false
-    t.string   "email",                                                                null: false
-    t.string   "phone",                                                                null: false
-    t.string   "password_digest",                                                      null: false
+    t.string   "first_name",                                                                                       null: false
+    t.string   "last_name",                                                                                        null: false
+    t.string   "username",                                                                                         null: false
+    t.string   "email",                                                                                            null: false
+    t.string   "phone",                                                                                            null: false
+    t.string   "password_digest",                                                                                  null: false
     t.string   "bio",             default: ""
-    t.string   "avatar_url",      default: "../../app/assets/images/blank_avatar.png"
+    t.string   "avatar_url",      default: "http://powerlearningny.com/wp-content/uploads/2014/04/blank_male.png"
     t.integer  "location_id"
-    t.datetime "created_at",                                                           null: false
-    t.datetime "updated_at",                                                           null: false
+    t.datetime "created_at",                                                                                       null: false
+    t.datetime "updated_at",                                                                                       null: false
   end
 
 end
