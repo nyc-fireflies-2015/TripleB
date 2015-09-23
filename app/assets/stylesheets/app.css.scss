@@ -129,11 +129,6 @@
 }
 
 #alert-in-progress-page {
-  .trash-icon {
-    position: absolute;
-    right: 8.75em;
-    bottom: 0.5em;
-  }
   #cancel {
     position: absolute;
     right: 14.5em;
@@ -141,13 +136,12 @@
   }
   #trash {
     position: absolute;
-    right: 13.25em;
-    bottom: 0.5em;
-  }
+    right: 3.5em;
+    bottom: 3px;  }
   #check {
     position: absolute;
-    right: 13.25em;
-    bottom: 0.5em;
+    right: 9em;
+    bottom: -0.25em;
   }
 
   #on-way-name {
