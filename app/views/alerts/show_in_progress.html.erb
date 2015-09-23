@@ -20,14 +20,13 @@
     <%= form_tag alert_path(@alert), method: 'patch' do %>
     <input value="complete" type="hidden" name="alert[status]" id="alert_status">
     <%= image_submit_tag 'alert__complete_logo_center.png', width: '40', class: 'help-icon' %>
-  <% end %>
+    <% end %>
+
   <% end %>
 
   <% if @alert.receipt.mechanic == current_user %>
-    <%= form_for @alert do |f| %>
-      <%= f.hidden_field :status, value: "incomplete" %>
-      <!-- destroy the alert's receipt -->
-      <%= f.hidden_field :mechanic_id, value: nil %>
-      <%= f.submit "Cancel this alert" %>
+    <%= form_tag alert_path(@alert), method: 'patch' do %>
+    <input value="incomplete" type="hidden" name="alert[status]" id="alert_status">
+    <%= image_submit_tag 'cancel_icon.png', width: '40', class: 'help-icon' %>
     <% end %>
   <% end %>
