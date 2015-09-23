@@ -1,45 +1,47 @@
-function newIndexMap(pos, map) {
-  var marker = new google.maps.Marker({
-    position: pos,
-    map: map,
-    title: 'Hello World!'
-  });
-
-  var bikeLayer = new google.maps.BicyclingLayer();
-  bikeLayer.setMap(map);
+var AlertMap = function(position, domElmForMap){
+  this.userPosition = position;
+  this.map = new google.maps.Map(domElmForMap, {center: this.userPosition, scrollwheel: false, zoom: 14 });
+  this.userMarker = this.createMarker(this.userPosition, 'this is you');
+  this.toggleBikeLayer();
 }
 
-var markers = function(lats,lngs,map){
-  var latitudes = lats
-  var longitudes = lngs
-  for (var i=0; i < lats.length; i++){
-    var coord = new google.maps.LatLng(lats[i],lngs[i]);
-    var marker = new google.maps.Marker({
-      position: coord,
-      map: map,
-      title: 'Hello World!'
-    })
-    marker.setMap(map);
+AlertMap.prototype.createMarker = function(position, label){
+  return new google.maps.Marker( {position: position, map: this.map, title: label });
+};
+
+AlertMap.prototype.toggleBikeLayer = function(){
+  var bikeLayer = new google.maps.BicyclingLayer();
+  bikeLayer.setMap(this.map);
+}
+
+AlertMap.prototype.addAlerts = function(alertCoordinates){
+  for(var i = 0; i <= alertCoordinates.length; i++){
+    this.addAlert(alertCoordinates[i]);
   }
 }
 
+AlertMap.prototype.addAlert = function(alertCoordinate){
+  var marker = this.createMarker(alertCoordinate, 'Needs Help')
+  marker.setMap(this.map)
+}
+
+var createCoordinate = function(latitude,longitude){
+  return { lat: Number(latitude), lng: Number(longitude) };
+};
+
 document.addEventListener('DOMContentLoaded', function(){
-  var lat = Number($('#current_user_lat').text());
-  var lng = Number($('#current_user_lng').text());
-  var myPosition = {lat: Number(lat), lng: Number(lng)};
+  if( $('#alert-index-map').length > 0 ){
+    var userPos = createCoordinate($('#current_user_lat').text(), $('#current_user_lng').text());
+    var mapDomElm = $('#alert-index-map')[0];
+    var alertMap = new AlertMap(userPos, mapDomElm);
 
+    var latitudes = $('.latitude').map(function(index,item){ return Number($(item).text());})
+    var longitudes = $('.longitude').map(function(index,item){ return Number($(item).text());})
 
-  var map = new google.maps.Map(document.getElementsByClassName('index_position_map')[0], {
-    center: myPosition,
-    scrollwheel: false,
-    zoom: 14
-  });
+    var alertCoordinates = latitudes.map(function(index, item){
+      return createCoordinate(item, longitudes[index]);
+    });
 
-
-  newIndexMap(myPosition, map);
-
-  var latitudes = $('.latitude').map(function(index,item){ return Number($(item).text());})
-  var longitudes = $('.longitude').map(function(index,item){ return Number($(item).text());})
-
-  markers(latitudes,longitudes,map)
+    alertMap.addAlerts(alertCoordinates);
+  }
 })
