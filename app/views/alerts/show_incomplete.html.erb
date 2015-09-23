@@ -6,11 +6,22 @@
 <section class='block' id='alert-incomplete-page'>
   <div class="location_map"></div>
     <div class="centered">
-      <p><%= @alert.creator.first_name %></p>
-      <p>Alert status: <%= @alert.status %></p>
-      <p>Created <%= @alert.time_diff %> ago</p>
-      <%= image_tag 'alert__progress_logo_center.png', size: '60', class: 'alert_logo'%>
-      <p>Description: <%= @alert.description %></p>
+      <%= image_tag 'alert_logo_center.png', size: '50', class: 'alert_logo'%>
+      <div class='row'>
+        <%= image_tag @alert.creator.avatar_url, size: '60', class: 'avatar' %>
+        <div class='small-8 small-centered columns'>
+          <h3><%= @alert.creator.full_name %></h3>
+        </div>
+        <div class='small-12 small-centered columns'>
+          <p>Posted <%= @alert.time_diff %></p>
+          <h6><%= @alert.status.capitalize %></h6>
+          <%= image_tag 'location_icon.png', size: '22', class: 'location-icon' %>
+        </div>
+      </div>
+    </div>
+    <div class='response'>
+      <p class='response'>Description: <%= @alert.description %></p>
+    </div>
       <% if current_user == @alert.creator %>
         <%= link_to 'Delete Alert', @alert, method: :delete %>
       <% else %>
@@ -22,6 +33,5 @@
           <%= f.submit "Help #{@alert.creator.first_name}" %>
           <% end %>
         <% end %>
-      </div>
     </div>
 </section>
