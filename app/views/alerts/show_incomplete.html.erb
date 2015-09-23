@@ -35,7 +35,7 @@
         </div>
         <%= form_for @alert do |f| %>
           <input value="in progress" type="hidden" name="alert[status]" id="alert_status">
-          <input value="2" type="hidden" name="alert[mechanic_id]" id="alert_mechanic_id">
+          <input value="<%= current_user.id %>" type="hidden" name="alert[mechanic_id]" id="alert_mechanic_id">
           <input type='hidden' name="google[distance]" id="distance" value=""/>
           <input type='hidden' name="google[duration]" id="duration" value=""/>
           <%= f.submit "Help #{@alert.creator.first_name}" %>
