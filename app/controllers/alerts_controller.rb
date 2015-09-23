@@ -23,7 +23,7 @@ class AlertsController < ApplicationController
   def create
     alert = current_user.alerts.build(alert_params)
     if alert.save
-      location = alert.create_location(latitude: params[:location][:latitude], longitude: params[:location][:longitude])
+      location = alert.create_location(location_params)
       redirect_to alert
     else
       flash[:error] = alert.errors.full_messages.to_sentence
