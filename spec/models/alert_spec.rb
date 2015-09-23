@@ -26,7 +26,13 @@ describe Alert do
     end
   end
 
-  context 'time difference module methods' do
+  context 'time difference module' do
+    it 'calculates the time difference greater than a day' do
+      alert = build(:alert)
+      alert.update_attributes(created_at: Time.current - 25.hours)
+      expect(alert.time_diff).to eq '1 days ago'
+    end
+
     it 'calculates the time difference greater than an hour' do
       alert = build(:alert)
       alert.update_attributes(created_at: Time.current - 3.5.hours)
