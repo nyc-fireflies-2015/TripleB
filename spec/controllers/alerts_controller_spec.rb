@@ -2,14 +2,29 @@ require 'rails_helper'
 
 describe AlertsController do
   describe "GET #index" do
+    before :each do
+
+    end
     it "populates with an array of alerts" do
+      user = create(:user)
+      session[:user_id] = user.id
+      user_location = create(:location, latitude: 40.706392, longitude: -74.00912454, locatable_id: user.id, locatable_type: user.class)
       alert1 = create(:alert)
+      location1 = create(:location, latitude: 40.7063951, longitude: -74.00912459999999, locatable_id: alert1.id, locatable_type: alert1.class)
       alert2 = create(:alert)
+      location2 = create(:location, latitude: 40.7063932, longitude: -74.009124524, locatable_id: alert2.id, locatable_type: alert2.class)
       get :index
       expect(assigns(:alerts)).to match_array([alert1, alert2])
     end
 
     it "renders the :index template" do
+      user = create(:user)
+      session[:user_id] = user.id
+      user_location = create(:location, latitude: 40.706392, longitude: -74.00912454, locatable_id: user.id, locatable_type: user.class)
+      alert1 = create(:alert)
+      location1 = create(:location, latitude: 40.7063951, longitude: -74.00912459999999, locatable_id: alert1.id, locatable_type: alert1.class)
+      alert2 = create(:alert)
+      location2 = create(:location, latitude: 40.7063932, longitude: -74.009124524, locatable_id: alert2.id, locatable_type: alert2.class)
       get :index
       expect(response).to render_template :index
     end
