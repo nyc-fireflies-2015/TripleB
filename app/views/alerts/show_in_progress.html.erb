@@ -12,16 +12,15 @@
 <%= @alert.description %>
 <%= @alert.receipt.mechanic.full_name%> has responded and is on their way
 
-
+<div id='lat_mech' style="display: none;"><%= @alert.receipt.location.latitude %></div>
+<div id='lng_mech' style="display: none;"><%= @alert.receipt.location.longitude %></div>
+<div class="direction_map"></div>
 
   <% if @alert.creator == current_user %>
-    <%= form_for @alert do |f| %>
-      <%= f.hidden_field :status, value: "complete" %>
-      <%= f.submit "Complete this alert" %>
-    <% end %>
-    <div id='lat_mech' style="display: none;"><%= @alert.receipt.location.latitude %></div>
-    <div id='lng_mech' style="display: none;"><%= @alert.receipt.location.longitude %></div>
-    <div class="direction_map"></div>
+    <%= form_tag alert_path(@alert), method: 'patch' do %>
+    <input value="complete" type="hidden" name="alert[status]" id="alert_status">
+    <%= image_submit_tag 'alert__complete_logo_center.png', width: '40', class: 'help-icon' %>
+  <% end %>
   <% end %>
 
   <% if @alert.receipt.mechanic == current_user %>
@@ -31,7 +30,4 @@
       <%= f.hidden_field :mechanic_id, value: nil %>
       <%= f.submit "Cancel this alert" %>
     <% end %>
-    <div id='lat_mech' style="display: none;"><%= @alert.receipt.location.latitude %></div>
-    <div id='lng_mech' style="display: none;"><%= @alert.receipt.location.longitude %></div>
-    <div class="direction_map"></div>
   <% end %>
