@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20150921202142) do
   end
 
   create_table "locations", force: :cascade do |t|
-    t.float    "latitude"
-    t.float    "longitude"
+    t.float    "latitude",       null: false
+    t.float    "longitude",      null: false
     t.integer  "locatable_id"
     t.string   "locatable_type"
     t.datetime "created_at",     null: false
@@ -37,11 +37,11 @@ ActiveRecord::Schema.define(version: 20150921202142) do
   add_index "locations", ["locatable_type", "locatable_id"], name: "index_locations_on_locatable_type_and_locatable_id", using: :btree
 
   create_table "receipts", force: :cascade do |t|
-    t.integer  "alert_id"
-    t.integer  "mechanic_id"
+    t.integer  "alert_id",    null: false
+    t.integer  "mechanic_id", null: false
     t.integer  "location_id"
-    t.integer  "distance"
-    t.integer  "duration"
+    t.integer  "distance",    null: false
+    t.integer  "duration",    null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
