@@ -38,7 +38,7 @@
           <input value="<%= current_user.id %>" type="hidden" name="alert[mechanic_id]" id="alert_mechanic_id">
           <input type='hidden' name="google[distance]" id="distance" value=""/>
           <input type='hidden' name="google[duration]" id="duration" value=""/>
-          <%= submit_tag "Help #{@alert.creator.first_name}" %>
+          <%= image_submit_tag "help_icon2.png", width: '40', class: 'trash-icon' %>
           <% end %>
         <% end %>
       </div>
