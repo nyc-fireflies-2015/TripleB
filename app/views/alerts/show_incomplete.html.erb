@@ -20,10 +20,14 @@
       </div>
     </div>
     <div class='response'>
-      <p class='response'>Description: <%= @alert.description %></p>
-    </div>
       <% if current_user == @alert.creator %>
-        <%= link_to 'Delete Alert', @alert, method: :delete %>
+        <p id='response-header'>Remember to delete this alert if you no longer need help</p>
+        <div class='small-10 small-centered columns'>
+          <h6>Description</h6>
+          <p id='desc-cont'><%= @alert.description %></p>
+        </div>
+        <a href="/alerts/#{@alert.id}" method="delete"><%= image_tag 'trash_icon.png', size: '40', class: "trash-icon" %></a>
+    </div>
       <% else %>
         <%= form_for @alert do |f| %>
           <%= f.hidden_field :status, value: "in progress" %>
