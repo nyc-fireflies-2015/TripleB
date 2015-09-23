@@ -28,26 +28,18 @@ describe Alert do
 
   end
 
-  context 'model methods' do
+  context 'time difference module methods' do
 
     it 'calculates the time difference greater than an hour' do
       alert = build(:alert)
       alert.update_attributes(created_at: Time.current - 3.5.hours)
-      expect(alert.time_diff).to eq '3 hours and 30 minutes ago'
+      expect(alert.time_diff).to eq '3 hours ago'
     end
 
     it 'calculates time time less than an hour' do
       alert = build(:alert)
       alert.update_attributes(created_at: Time.current - 20.minutes)
       expect(alert.time_diff).to eq '20 minutes ago'
-    end
-
-    it 'converts a string into a Tag object' do
-      expect{build(:alert, all_tags: 'frame')}.to change(Tag, :count).by 1
-    end
-
-    it 'splits and converts a string into a Tag objects' do
-      expect{build(:alert, all_tags: 'tube, brake, chain')}.to change(Tag, :count).by 3
     end
     
   end
