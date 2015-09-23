@@ -27,15 +27,20 @@
           <p id='desc-cont'><%= @alert.description %></p>
         </div>
           <%= link_to image_tag('trash_icon.png', size: '40', class: "trash-icon"), @alert, method: :delete %>
-    </div>
       <% else %>
+        <p id='response-header'>Respond to this alert to get in contact with <%= @alert.creator.first_name %></p>
+        <div class='small-10 small-centered columns'>
+          <h6>Description</h6>
+          <p id='desc-cont'><%= @alert.description %></p>
+        </div>
         <%= form_for @alert do |f| %>
-          <%= f.hidden_field :status, value: "in progress" %>
-          <%= f.hidden_field :mechanic_id, value: current_user.id %>
+          <input value="in progress" type="hidden" name="alert[status]" id="alert_status">
+          <input value="2" type="hidden" name="alert[mechanic_id]" id="alert_mechanic_id">
           <input type='hidden' name="google[distance]" id="distance" value=""/>
           <input type='hidden' name="google[duration]" id="duration" value=""/>
           <%= f.submit "Help #{@alert.creator.first_name}" %>
           <% end %>
         <% end %>
+      </div>
     </div>
 </section>
