@@ -1,32 +1,15 @@
 #TripleB
-##Triple A for Bikes
+##A roadside assistance community for bike riders
 
-- Product Manager | George Project Manager
-- Weekend starting time | 12:00pm
-- Alex | CRUD & Ajax
-- Ernesto | CRUD
-- Lauren | Tests & Front end
-- George | Tests & Front end
-- End of Day Code Reviews
-- Initialize Repo Wireframe mvp Draw Schema Set up Routes Set up circle & simple cov
-- User Credentials username name password payment info phone number
-- Users Stories As a user
+With a TripleB account, users can easily publish "alerts" which act as beacons to
+mechanics and other riders in the area. These other users can then respond to your alert
+and offer assistance. Upon offering assistance, phone numbers are shared and details can be worked out
+between individual users. You'll never have carry your busted bike home again!
 
-###Schema
-![](app/assets/images/Schema.png)
+Later versions will include payment/tip processing, as well as a map of participating bike shops.
 
-###MVP:
-- I can login with bcrypt/oauth
-- I can post an alert, with issues
-- I can read alert
-- I can respond to an alert
-- I can see distance/ETA of mechanic
-- I can receive text messages about the status of my mechanic from the application * email for mvp
-
-###STRETCH:
-- I can see bike shops
-- I can save my cc info
-- I can pay a mechanic
-- I can chat with the mechanic on the way(text message)
-- I can report a user
-- I can report a mechanic
+TripleB was built as a DevBootcamp final project by:
+[George](https://github.com/gp3gp3gp3),
+[Lauren](https://github.com/GLNRO),
+[Ernesto](https://github.com/emjrdev), and
+[Alex](https://github.com/xanderhuang)
