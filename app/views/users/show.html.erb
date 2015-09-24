@@ -16,10 +16,9 @@
 
 
 <section  id='user-show-page'>
-  <div class="centered">
   <div id="bio">
-    <p><%= image_tag('profile_icon.png', size: '40', class: "trash-icon") %><p>
-    <p><%= @user.bio %></p>
+      <%= image_tag('profile_icon.png', id:"bio-image", height: '10') %>
+      <p id="bio-text"><%= @user.bio%></p>
   </div>
 
     <h6>Accepted Alerts</h6>
@@ -27,8 +26,8 @@
     <a href='/alerts/<%= receipt.alert.id %>'>
       <div id="alert-receipt-item">
        <%= image_tag(receipt.alert.creator.avatar_url, size: '40', class: "trash-icon") %>
-       <%= receipt.alert.creator.full_name %>
-       <%= link_to receipt.alert.description, receipt.alert %>
+
+       <%= link_to receipt.alert.creator.full_name, receipt.alert %>
     </div>
    </a>
    <% end %>
@@ -43,5 +42,4 @@
     </div>
    </a>
    <% end %>
- </div>
 </section>
