@@ -119,7 +119,7 @@
     }
   position: relative;
   height: 20%;
-  width: 110%;
+  width: 109%;
   top: -6.6em;
   margin-left: -1em;
   opacity: .8;
@@ -138,8 +138,7 @@
 
 #create-alert-map {
   margin-top: -32em;
-  height: 15em;
-}
+  height: 12em;}
 
 #alert-incomplete-page {
   .trash-icon {
@@ -465,8 +464,10 @@ section#create-alert-page {
     height: 1em;
     top: 2em;
   }
-  height: 90%;
   background-color: #00aac8;
+  position: relative;
+  height: 20em;
+  bottom: -12em;
 }
 #homepage-hero-signed-in {
     background: url(asset-path('bwbike.jpg')) repeat scroll 45% center;
