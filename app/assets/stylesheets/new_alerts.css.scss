@@ -1,0 +1,33 @@
+#create-alert-map {
+  margin-top: -32em;
+  height: 12em;}
+
+section#create-alert-page {
+  .avatar {
+    border-style: solid;
+    border-color: #faf9df;
+    border-width: 3px;
+    position: absolute;
+    border-radius: 100%;
+    bottom: 1.5em;
+    left: 7.5em;
+  }
+  p {
+    font-size: .8em;
+    text-align: left;
+    line-height: 0%;
+    color: #faf9df;
+  }
+  .new_alert_logo {
+    margin-top: -1em;
+  }
+  .centered {
+    position: relative;
+    height: 1em;
+    top: 2em;
+  }
+  background-color: #00aac8;
+  position: relative;
+  height: 20em;
+  bottom: -12em;
+}
