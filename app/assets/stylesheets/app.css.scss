@@ -1,3 +1,110 @@
+#complete-page {
+    #on-way-name {
+    position: relative;
+    top: -2em;
+    left: 2.25em;  }
+  #on-way-img {
+    top: 0.25em;
+    left: -7em;  }
+  .response {
+    p#desc-cont {
+      color: #bdc2c6;
+      bottom: 10px;
+      position: relative;
+      left: 0.6em;
+    }
+      p#on-way {
+        color: #bdc2c6;
+        position: relative;
+        bottom: 4em;
+        left: 3em;
+
+      }
+    h6 {
+      color: #00aac8;
+      opacity: 0.6;
+      width: 0;
+      top: 0em;    }
+
+    background-color: #00aac8;
+    position: absolute;
+    width: 100%;
+    bottom: -3em;
+    height: 8em;
+    .columns {
+      background-color: white;
+      top: -0.75em;
+      border-radius: 3px;
+      height: 3em;
+      margin-top: 1.25em;}
+    p {
+      width: 0;
+      color: #faf9df;
+    }
+    p#response-title {
+
+    }
+    p#response-header {
+    width: 0;
+    color: #faf9df;
+    top: -0.5em;
+    left: 8px;
+    letter-spacing: -0.25px;    }
+    p#response-header-2 {
+    width: 0;
+    color: #faf9df;
+    top: -0.5em;
+    left: 8px;
+    letter-spacing: -0.25px;    }
+  }
+  .avatar {
+    border-style: solid;
+    border-color: #faf9df;
+    border-width: 3px;
+    border-radius: 100%;
+    position: relative;
+    bottom: 2.75em;
+    right: 7.5em;
+  }
+  .centered {
+    height: initial;
+  }
+  .alert_logo {
+    border-radius: 100%;
+    position: relative;
+    bottom: 1.5em;
+  }
+  .location-icon {
+    position: relative;
+    left: 6.5em;
+    bottom: 8em;  }
+  h3 {
+    color: #faf9df;
+    margin-top: -1.5em;
+    margin-bottom: 0;
+    text-align: left;
+    position: relative;
+    bottom: 2.375em;
+  }
+  h6 {
+    text-align: right;
+    position: relative;
+    color: #f04124;
+    bottom: 7.5em;
+    left: 0.5em;  }
+    p {
+      font-size: 80%;
+      position: relative;
+      text-align: left;
+      bottom: 4.5em;
+      left: 4em;
+      color: #00aac8;
+      width: 75%;
+      margin: 0;
+    }
+  background-color: #bdc2c6;
+}
+
 .profile-layer {
   img {
     position: absolute;
@@ -135,7 +242,6 @@
     margin-top: -4.5em;
     margin-bottom: 3em;  }
 
-
     p#desc-cont-mech {
       color: #bdc2c6;
       bottom: 10px;
@@ -146,8 +252,6 @@
     #mech-cancel {
       position: relative;
       bottom: -5.5em;    }
-
-
 
     p#response-header-mech {
       width: 0;
