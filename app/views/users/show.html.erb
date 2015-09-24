@@ -1,32 +1,56 @@
-<%= image_tag(@user.avatar_url) %>
-<% if authorized?(@user)%>
-	<%= link_to 'Edit', edit_user_path(@user) %>
-<% end %>
+<div id="user-profile-header">
+  <div id='hero-image' class='hero-image'><%= image_tag 'bike_header.jpg'%></div>
+  <div id="avatar-logo">
+    <%= image_tag @user.avatar_url, size: '100', id:"user-avatar" %>
+    <div id="username-user-show">
+      <h2><%= @user.full_name %></h2>
+    </div>
+  </div>
+  <div id="user-show-edit-button">
+    <% if authorized?(@user)%>
 
-<%= @user.full_name %>
+    <%= link_to image_tag('edit_icon.png', size: '40', class: "trash-icon"), edit_user_path(@user) %>
+    <% end %>
+  </div>
+  <%= image_tag 'grey_mail_icon.png', id:"user-mail", size: '20'%>
+  <p id="email"><%=@user.email%></p>
+  <%= image_tag 'grey_phone_icon.png', id:"user-phone", size: '18'%>
+  <p id="phone"><%=@user.phone%></p>
 
-<%= image_tag("blank_avatar.png") %>
+</div>
 
-<% if @user.bio.empty? %>
-	<%= link_to 'Click Here To Edit', edit_user_path(@user) %>
-<% else %>
-	<%= @user.bio %>
-<% end %>
 
-Accepted Alerts
-<% @receipts.each do |receipt| %>
-  <a href='/alerts/<%= receipt.alert.id %>'>
-  	<%= image_tag(receipt.alert.creator.avatar_url) %>
-  	<%= receipt.alert.creator.full_name %>
-  	<%= link_to receipt.alert.description, receipt.alert %>
-  </a>
-<% end %>
+<section  id='user-show-page'>
+  <div id="bio">
+    <%= image_tag('profile_icon.png', id:"bio-image", height: '10') %>
+    <p id="bio-text"><%= @user.bio%></p>
+  </div>
 
-Created Alerts
-<% @alerts.each do |alert| %>
-  <a href='/alerts/<%= alert.id %>'>
-  	<%= image_tag('location_icon.png') %>
-  	<%= alert.time_diff %>
-  	<%= alert.status.capitalize %>
-  </a>
-<% end %>
+  <div id="1">
+    <hr>
+    <h6 id="user-alert-headers">Accepted Alerts</h6></div>
+  <div id="2"><% @receipts.each do |receipt| %>
+    <a href='/alerts/<%= receipt.alert.id %>', id="receipt-link">
+      <%= image_tag(receipt.alert.creator.avatar_url, id: "alert-avatar", size: '50') %>
+      <%= link_to receipt.alert.creator.full_name, receipt.alert, id:"alert-user" %>
+      <p id= "receipt-time"><%= receipt.alert.time_diff  %></p>
+    </a>
+    <hr class="style-one">
+    <% end %>
+  </div>
+      <hr>
+    <div id="3"><h6 id="user-alert-headers">Created Alerts</h6></div>
+    <div id="4"><% @alerts.each do |alert| %>
+
+      <a href='/alerts/<%= alert.id %>'>
+       <div id="created-alerts">
+         <%= image_tag('location_icon.png', id: "alert-icon",size: '20') %>
+         Posted <%= alert.time_diff %>
+         <p id= "created-alert-status"><%= alert.status.capitalize %></p>
+       </div>
+     </a>
+     <% end %>
+   </div>
+   <div id="5"></div>
+
+ </section>

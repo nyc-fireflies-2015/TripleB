@@ -1,0 +1,142 @@
+#user-profile-header{
+  position: relative;
+}
+
+#user-show-edit-button{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+
+#user-mail{
+  position: absolute;
+  bottom: -1.5em;
+  right: 8em;
+}
+#email{
+  position: absolute;
+  bottom: -7em;
+  right: 8em;
+  font-size: 60%;
+  color: #bdc2c6;
+}
+#phone{
+  position: absolute;
+  bottom: -7em;
+  right: 1em;
+  font-size: 60%;
+  color: #bdc2c6;
+}
+
+
+#user-phone{
+  position: absolute;
+  bottom: -1.5em;
+  right: 1.8em;
+}
+
+#user-avatar{
+  border-radius: 100%;
+  position: absolute;
+  bottom: -20%;
+  left: 10px;
+}
+
+#user-show-page {
+  background-color: #ffffff;
+  padding-top:28%;
+  padding-left: 5%;
+}
+
+#username-user-show {
+  position: absolute;
+  bottom: -55%;
+  left: 4%;
+}
+
+bio{
+  position: relative;
+  padding-top:20%;
+
+
+
+}
+  #bio-text{
+    font-size: 60%;
+    color: #bdc2c6;
+  }
+
+  #bio-image{
+    position: relative;
+    float: left;
+    height: 40px;
+    padding-right: 15px;
+  }
+
+  #alert-avatar{
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 3px;
+  border-radius: 100%;
+  left: 10px;
+  vertical-align: text-top;
+  vertial-align: top;
+  }
+
+  #alert-icon{
+  left: 10px;
+  right: 10px;
+  vertical-align: text-top;
+  }
+
+  #alert-user{
+    font-size: 80%;
+    color: #bdc2c6;
+  }
+
+
+#user-alert-headers{
+  color: #bdc2c6;
+}
+
+
+#receipt-time{
+  float: right;
+  font-size: 80%;
+  color: #bdc2c6;
+  padding-right:4%;
+  padding-top:1.5%;
+}
+
+#created-alert-status{
+  float: right;
+  font-size: 90%;
+  color: #e64c3b;
+  padding-right:4%;
+}
+
+#created-alert-time{
+  font-size: 80%;
+  color: #e64c3b;
+}
+
+hr {
+  margin-right:4%;
+}
+
+#created-alerts{
+  font-size: 80%;
+  padding-top:5%;
+  color: #bdc2c6;
+}
+
+
+hr.style-one {
+border: 0;
+height: 1px;
+background: #333;
+margin-top:-5em;
+width: 78%;
+margin-left: 18%;
+}

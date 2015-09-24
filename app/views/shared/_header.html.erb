@@ -13,7 +13,6 @@
     <section class="top-bar-section">
       <ul class="right">
       <% if signed_in? %>
-        <li class="active"><%= link_to "Create an alert", new_alert_path %></li>
         <li class="active"><%= link_to current_user.username, user_path(id: current_user.id) %></li>
         <li class="active"><%= link_to "Logout", session_path(id: current_user.id), method: :delete %></li>
       <% else %>
