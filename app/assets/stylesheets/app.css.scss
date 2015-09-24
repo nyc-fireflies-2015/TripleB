@@ -1,3 +1,6 @@
+html {
+  background-color: #bdc2c6;
+}
 #complete-page {
     #on-way-name {
     position: relative;
@@ -136,9 +139,6 @@
   height: 9em;
 }
 
-#create-alert-map {
-  margin-top: -32em;
-  height: 12em;}
 
 #alert-incomplete-page {
   .trash-icon {
@@ -389,7 +389,7 @@
     left: 8em;
   }
   h2 {
-    color: #faf9df;
+    color: white;
     margin-top: -1.5em;
     margin-bottom: 0;
   }
@@ -415,7 +415,7 @@
       opacity: 0.7;
     }
     .columns {
-    background-color: #faf9df;
+    background-color: white;
     border-radius: 0.25em;
     margin-top: 1em;
       .avatar {
@@ -441,45 +441,21 @@
 
 }
 
-section#create-alert-page {
-  .avatar {
-    border-style: solid;
-    border-color: #faf9df;
-    border-width: 3px;
-    position: absolute;
-    border-radius: 100%;
-    bottom: 1.5em;
-    left: 7.5em;
-  }
-  p {
-    font-size: .8em;
-    text-align: left;
-    line-height: 0%;
-    color: #faf9df;
-  }
-  .new_alert_logo {
-    margin-top: -1em;
-  }
-  .centered {
-    position: relative;
-    height: 1em;
-    top: 2em;
-  }
-  background-color: #00aac8;
-  position: relative;
-  height: 20em;
-  bottom: -12em;
-}
 #homepage-hero-signed-in {
+
     background: url(asset-path('bwbike.jpg')) repeat scroll 45% center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 90%;
+    height: 32em;
     padding: 100px 20px 0;
     position: relative;
     text-align: center;
     .hero-button {
       opacity: .775;
+      width:10em;
+      margin-bottom: 0px;
+      margin-top: 15px;
+      top: -2em;
     }
     .button-path {
       padding-bottom: 3em;
