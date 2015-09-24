@@ -12,6 +12,11 @@
     <%= link_to image_tag('edit_icon.png', size: '40', class: "trash-icon"), edit_user_path(@user) %>
     <% end %>
   </div>
+  <%= image_tag 'grey_mail_icon.png', id:"user-mail", size: '20'%>
+  <p id="email"><%=@user.email%></p>
+  <%= image_tag 'grey_phone_icon.png', id:"user-phone", size: '18'%>
+  <p id="phone"><%=@user.phone%></p>
+
 </div>
 
 
@@ -29,9 +34,11 @@
       <%= image_tag(receipt.alert.creator.avatar_url, id: "alert-avatar", size: '50') %>
       <%= link_to receipt.alert.creator.full_name, receipt.alert, id:"alert-user" %>
       <p id= "receipt-time"><%= receipt.alert.time_diff  %></p>
-      <hr>
     </a>
-    <% end %></div>
+    <hr class="style-one">
+    <% end %>
+  </div>
+      <hr>
     <div id="3"><h6 id="user-alert-headers">Created Alerts</h6></div>
     <div id="4"><% @alerts.each do |alert| %>
 

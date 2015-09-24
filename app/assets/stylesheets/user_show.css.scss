@@ -8,6 +8,34 @@
   right: 5px;
 }
 
+
+#user-mail{
+  position: absolute;
+  bottom: -1.5em;
+  right: 8em;
+}
+#email{
+  position: absolute;
+  bottom: -7em;
+  right: 8em;
+  font-size: 60%;
+  color: #bdc2c6;
+}
+#phone{
+  position: absolute;
+  bottom: -7em;
+  right: 1em;
+  font-size: 60%;
+  color: #bdc2c6;
+}
+
+
+#user-phone{
+  position: absolute;
+  bottom: -1.5em;
+  right: 1.8em;
+}
+
 #user-avatar{
   border-radius: 100%;
   position: absolute;
@@ -17,13 +45,13 @@
 
 #user-show-page {
   background-color: #ffffff;
-  padding-top:25%;
+  padding-top:28%;
   padding-left: 5%;
 }
 
 #username-user-show {
   position: absolute;
-  bottom: -50%;
+  bottom: -55%;
   left: 4%;
 }
 
@@ -53,6 +81,7 @@ bio{
   border-radius: 100%;
   left: 10px;
   vertical-align: text-top;
+  vertial-align: top;
   }
 
   #alert-icon{
@@ -100,4 +129,14 @@ hr {
   font-size: 80%;
   padding-top:5%;
   color: #bdc2c6;
+}
+
+
+hr.style-one {
+border: 0;
+height: 1px;
+background: #333;
+margin-top:-5em;
+width: 78%;
+margin-left: 18%;
 }
