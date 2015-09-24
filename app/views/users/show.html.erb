@@ -21,21 +21,25 @@
     <p id="bio-text"><%= @user.bio%></p>
   </div>
 
-  <div id="1"><h6 id="user-alert-headers">Accepted Alerts</h6></div>
+  <div id="1">
+    <hr>
+    <h6 id="user-alert-headers">Accepted Alerts</h6></div>
   <div id="2"><% @receipts.each do |receipt| %>
     <a href='/alerts/<%= receipt.alert.id %>', id="receipt-link">
-      <%= image_tag(receipt.alert.creator.avatar_url, id: "alert-avatar", size: '40') %>
+      <%= image_tag(receipt.alert.creator.avatar_url, id: "alert-avatar", size: '50') %>
       <%= link_to receipt.alert.creator.full_name, receipt.alert, id:"alert-user" %>
+      <p id= "receipt-time"><%= receipt.alert.time_diff  %></p>
+      <hr>
     </a>
     <% end %></div>
     <div id="3"><h6 id="user-alert-headers">Created Alerts</h6></div>
     <div id="4"><% @alerts.each do |alert| %>
 
       <a href='/alerts/<%= alert.id %>'>
-       <div id="alert-item">
-         <%= image_tag('location_icon.png', size: '20') %>
-         <%= alert.time_diff %>
-         <%= alert.status.capitalize %>
+       <div id="created-alerts">
+         <%= image_tag('location_icon.png', id: "alert-icon",size: '20') %>
+         Posted <%= alert.time_diff %>
+         <p id= "created-alert-status"><%= alert.status.capitalize %></p>
        </div>
      </a>
      <% end %>
