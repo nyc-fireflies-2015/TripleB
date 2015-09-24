@@ -5,7 +5,7 @@ class Alert < ActiveRecord::Base
 
   belongs_to :creator, class_name: "User"
   has_one :location, as: :locatable, dependent: :destroy
-  has_one :receipt
+  has_one :receipt, dependent: :destroy
 
 
   validates :description, :creator, presence: true
