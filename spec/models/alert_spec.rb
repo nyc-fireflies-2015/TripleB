@@ -47,8 +47,8 @@ describe Alert do
 
     it 'calculates the time difference greater than an hour' do
       alert = build(:alert)
-      alert.update_attributes(created_at: Time.current - 3.5.hours)
-      expect(alert.time_diff).to eq '3 hours ago'
+      alert.update_attributes(created_at: Time.current - 1.hours)
+      expect(alert.time_diff).to eq '1 hour ago'
     end
 
     it 'calculates time time less than an hour' do
