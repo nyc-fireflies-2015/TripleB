@@ -1,5 +1,5 @@
 <div id="user-profile-header">
-<div id='hero-image' class='hero-image'><%= image_tag 'bike_header.jpg'%></div>
+  <div id='hero-image' class='hero-image'><%= image_tag 'bike_header.jpg'%></div>
   <div id="avatar-logo">
     <%= image_tag @user.avatar_url, size: '100', id:"user-avatar" %>
     <div id="username-user-show">
@@ -17,29 +17,29 @@
 
 <section  id='user-show-page'>
   <div id="bio">
-      <%= image_tag('profile_icon.png', id:"bio-image", height: '10') %>
-      <p id="bio-text"><%= @user.bio%></p>
+    <%= image_tag('profile_icon.png', id:"bio-image", height: '10') %>
+    <p id="bio-text"><%= @user.bio%></p>
   </div>
 
-    <h6>Accepted Alerts</h6>
-    <% @receipts.each do |receipt| %>
-    <a href='/alerts/<%= receipt.alert.id %>'>
-      <div id="alert-receipt-item">
-       <%= image_tag(receipt.alert.creator.avatar_url, size: '40', class: "trash-icon") %>
+  <div id="1"><h6 id="user-alert-headers">Accepted Alerts</h6></div>
+  <div id="2"><% @receipts.each do |receipt| %>
+    <a href='/alerts/<%= receipt.alert.id %>', id="receipt-link">
+      <%= image_tag(receipt.alert.creator.avatar_url, id: "alert-avatar", size: '40') %>
+      <%= link_to receipt.alert.creator.full_name, receipt.alert, id:"alert-user" %>
+    </a>
+    <% end %></div>
+    <div id="3"><h6 id="user-alert-headers">Created Alerts</h6></div>
+    <div id="4"><% @alerts.each do |alert| %>
 
-       <%= link_to receipt.alert.creator.full_name, receipt.alert %>
-    </div>
-   </a>
-   <% end %>
+      <a href='/alerts/<%= alert.id %>'>
+       <div id="alert-item">
+         <%= image_tag('location_icon.png', size: '20') %>
+         <%= alert.time_diff %>
+         <%= alert.status.capitalize %>
+       </div>
+     </a>
+     <% end %>
+   </div>
+   <div id="5"></div>
 
-   <h6>Created Alerts</h6>
-   <% @alerts.each do |alert| %>
-   <a href='/alerts/<%= alert.id %>'>
-     <div id="alert-item">
-       <%= image_tag('location_icon.png', size: '20', class: "trash-icon") %>
-       <%= alert.time_diff %>
-       <%= alert.status.capitalize %>
-    </div>
-   </a>
-   <% end %>
-</section>
+ </section>
