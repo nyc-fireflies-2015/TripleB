@@ -12,7 +12,6 @@ feature "User visits the site" do
       user = create(:user)
       log_in user
       expect(page).to have_content("Logout")
-      # expect(page).not_to have_content("Login")
     end
   end
 

@@ -2,7 +2,6 @@ class AlertsController < ApplicationController
   before_action :redirect_deleted_alert, only: [:show,:update]
 
   def index
-    # require 'pry';binding.pry
     @alerts = Alert.by_location(10, current_user.location)
   end
 
@@ -40,8 +39,8 @@ class AlertsController < ApplicationController
         mechanic_location = receipt.create_location(mechanic_params)
         dist = params[:receipt][:distance]
         dur = params[:receipt][:duration]
-        # TextMessage.send_to_mechanic(alert.creator.full_name, alert.mechanic.phone, alert.creator.phone,dist,dur) &&
-        # TextMessage.send_to_user(alert.mechanic.full_name, alert.mechanic.phone,alert.creator.phone,dist,dur)
+        #TextMessage.send_to_mechanic(alert.creator.full_name, alert.mechanic.phone, alert.creator.phone,dist,dur) &&
+        #TextMessage.send_to_user(alert.mechanic.full_name, alert.mechanic.phone,alert.creator.phone,dist,dur)
       elsif alert.status == 'incomplete'
         alert.receipt.destroy
       end
