@@ -1,0 +1,84 @@
+#user-profile-header{
+  position: relative;
+}
+
+#user-show-edit-button{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+#user-avatar{
+  border-style: solid;
+  border-color: #faf9df;
+  border-width: 3px;
+  border-radius: 100%;
+  position: absolute;
+  bottom: -20%;
+  left: 10px;
+}
+
+#user-show-page {
+  background-color: #ffffff;
+  padding-top:25%;
+  padding-left: 5%;
+}
+
+#username-user-show {
+  position: absolute;
+  bottom: -50%;
+  left: 4%;
+}
+
+bio{
+  position: relative;
+  padding-top:20%;
+
+
+
+}
+  #bio-text{
+    font-size: 60%;
+    color: #bdc2c6;
+  }
+
+  #bio-image{
+    position: relative;
+    float: left;
+    height: 40px;
+    padding-right: 15px;
+  }
+
+  #alert-avatar{
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 3px;
+  border-radius: 100%;
+  left: 10px;
+  }
+  #alert-user{
+
+    font-size: 80%;
+    color: #bdc2c6;
+
+  }
+
+#alert-item{
+
+}
+
+#user-alert-headers{
+  color: #bdc2c6;
+}
+
+#1 {
+  color:#bdc2c6;
+}
+
+#2 {
+  background-color:red;
+}
+
+#3 {
+  background-color:blue;
+}
