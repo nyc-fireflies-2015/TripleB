@@ -1,5 +1,7 @@
-html {
+html, body {
   background-color: #bdc2c6;
+  height: 100%;
+  overflow: auto;
 }
 #complete-page {
     #on-way-name {
@@ -446,7 +448,7 @@ html {
     background: url(asset-path('bwbike.jpg')) repeat scroll 45% center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 32em;
+    height: 100%;
     padding: 100px 20px 0;
     position: relative;
     text-align: center;
@@ -465,7 +467,7 @@ html {
     background: url(asset-path('Flat-Tire.jpg')) repeat scroll 0 center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 90%;
+    height: 100%;
     padding: 100px 20px 0;
     position: relative;
     text-align: center;
