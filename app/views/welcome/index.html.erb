@@ -1,31 +1,5 @@
 <% if signed_in? %>
-  <div id="user_id" style="display: none;"><%= current_user.id %></div>
-  <section id='homepage-hero-signed-in' class='block-splash'>
-    <div class='centered'>
-      <div class='row'>
-        <div class='small-centered columns button-path'>
-          <%= link_to "Need assistance", new_alert_path, class: 'button small expant radius hero-button alert' %>
-        </div>
-        <div class='small-centered columns'>
-          <%= link_to "Lend a hand", alerts_path, class: 'button small expant radius hero-button success' %>
-        </div>
-      </div>
-    </div>
-  </section>
+  <%= render partial: 'assistance' %>
 <% else %>
-  <section id="homepage-hero" class="block">
-    <div class='centered'>
-      <%= image_tag "bike_logo_white.png", class: 'logo' %>
-      <div class="row">
-        <div class="small-10 small-centered columns">
-          <%= link_to "Log In", login_path, class: "button small expand radius hero-button" %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="small-10 small-centered columns">
-          <%= link_to "Sign Up", signup_path, class: "button small expand radius hero-button" %>
-        </div>
-      </div>
-    </div>
-  </section>
+  <%= render partial: 'home' %>
 <% end %>
