@@ -1,21 +1,27 @@
-<section id="homepage-hero" class="block">
-  <div class='centered'>
-    <%= image_tag "bike_logo_white.png", class: 'logo' %>
-    <div class="row">
-      <div class="small-10 small-centered columns">
-        <%= link_to "Log In", login_path, class: "button small expand radius hero-button" %>
+<section id="homepage-hero">
+  <div class='small-10 medium-6 large-4 columns' style="float:right">
+    <%= form_for @user do |f| %>
+      <div class="row">
+        <div class='small-12 columns'>
+          <div id='sign-up-form'>
+            <%= f.text_field :email, placeholder: "Email" %>
+            <%= f.text_field :first_name, placeholder: "Full Name" %>
+            <%= f.text_field :phone, placeholder: "Phone Number" %>
+            <%= f.password_field :password, placeholder: "Password" %>
+            <input type='hidden' name="location[latitude]" id="latitude" value=""/>
+            <input type='hidden' name="location[longitude]" id="longitude" value=""/>
+            <%= f.submit 'Signup', class: 'button small expand radius' %>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="small-10 small-centered columns">
-        <%= link_to "Sign Up", signup_path, class: "button small expand radius hero-button" %>
-      </div>
-    </div>
+    <% end %>
   </div>
 </section>
-<div class="row">
-  <div class="large-4 columns"></div>
-  <div class="large-4 columns"></div>
-  <div class="large-4 columns"></div>
-</div>
-    
+<section style="text-align: center;">
+  <h3>How it Works</h3>
+  <div class="row" id="tester">
+    <div class="large-4 columns">Hi</div>
+    <div class="large-4 columns">Hi</div>
+    <div class="large-4 columns">Hi</div>
+  </div>
+</section>

@@ -1,5 +1,6 @@
+@import 'foundation_and_overrides';
+
 html, body {
-  background-color: #bdc2c6;
   height: 100%;
   overflow: auto;
 }
@@ -445,10 +446,10 @@ html, body {
 
 #homepage-hero-signed-in {
 
-    background: url(asset-path('bwbike.jpg')) repeat scroll 45% center;
+    background: url(asset-path('bwbike.jpg')) repeat scroll center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
+    /*height: 100%;*/
     padding: 100px 20px 0;
     position: relative;
     text-align: center;
@@ -464,10 +465,12 @@ html, body {
     }
 }
 #homepage-hero {
-    background: url(asset-path('Flat-Tire.jpg')) repeat scroll 0 center;
+    background: url(asset-path('Flat-Tire-2.jpg')) repeat scroll 0 center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
+    min-height: 550px;
+    height: 75%;
+    /*width: 100%;*/
     padding: 100px 20px 0;
     position: relative;
     text-align: center;
@@ -564,4 +567,7 @@ html, body {
 }
 #sign-up-form {
   padding-bottom: -0.5em;
+}
+input {
+  border-radius: 5px !important;
 }
