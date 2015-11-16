@@ -577,10 +577,11 @@ html, body {
 }
 #sign-up-form {
   /*padding-bottom: -0.5em;*/
-  width: 320px;
+  width: 280px;
   display: inline-block;
   /*margin: 0px auto;*/
   float: right;
+  margin-right: 50px;
 }
 input {
   border-radius: 5px !important;
@@ -595,10 +596,6 @@ input {
 }
 
 .top-bar {
-  background-color: white !important;
-}
-.top-bar-section ul li a {
-  color: black !important;
   background-color: white !important;
 }
 .fa-warning {
@@ -617,11 +614,14 @@ span #user_last_name {
   margin-left: 1%;
 }
 
+@media only screen and (max-width: 1150px) {
+  #sign-up-form {
+    float: left;
+    margin-left:10px;
+  }
+}
+
 @media only screen and (max-width: 475px) {
-  /*#formput {
-    display: inline-block;
-    margin: 0 auto;
-  }*/
   #sign-up-form {
     /*width: 200px;*/
     float: none;
