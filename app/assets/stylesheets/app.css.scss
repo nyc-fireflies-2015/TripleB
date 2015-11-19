@@ -1,6 +1,11 @@
-html {
-  background-color: #bdc2c6;
+@import 'foundation_and_overrides';
+
+html, body {
+  height: 100%;
+  overflow: auto;
 }
+
+
 #complete-page {
     #on-way-name {
     position: relative;
@@ -443,41 +448,54 @@ html {
 
 #homepage-hero-signed-in {
 
-    background: url(asset-path('bwbike.jpg')) repeat scroll 45% center;
+    background: url(asset-path('bwbike.jpg')) repeat scroll center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 32em;
+    height: 100%;
     padding: 100px 20px 0;
     position: relative;
     text-align: center;
     .hero-button {
-      opacity: .775;
+      /*opacity: .775;*/
       width:10em;
       margin-bottom: 0px;
       margin-top: 15px;
       top: -2em;
+    }
+    .reverse-hero-button {
+      /*opacity: .775;*/
+      width:10em;
+      margin-bottom: 0px;
+      margin-top: 15px;
+      top: -2em;
+      background-color: white;
+      color: $primary-color;
+      border: solid 2.5px $primary-color;
     }
     .button-path {
       padding-bottom: 3em;
     }
 }
 #homepage-hero {
-    background: url(asset-path('Flat-Tire.jpg')) repeat scroll 0 center;
+    background: url(asset-path('biking_in_city_2.jpg')) repeat scroll 0 center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 90%;
+    /*min-height: 700px;*/
+    height: 100%;
+    /*width: 100%;*/
+    /*height: auto;*/
     padding: 100px 20px 0;
-    position: relative;
+    /*position: relative;*/
     text-align: center;
     .logo {
       margin-top: -3em;
       margin-bottom: 3em;
     }
 }
-
+/*
 .hero-button {
   opacity: .7;
-}
+}*/
 
 .block-splash {
   text-align: center;
@@ -512,13 +530,10 @@ html {
   height: 400px;
 }
 #footer {
-  a {
-    color: #faf9df;
-  }
   position: relative;
-  height: 3em;
-  bottom: 3em;
-  background-color: #252419;
+  /*height: 3em;*/
+  bottom: 0;
+  /*background-color: #252419;*/
 }
 
 #password-div {
@@ -561,5 +576,56 @@ html {
 
 }
 #sign-up-form {
-  padding-bottom: -0.5em;
+  /*padding-bottom: -0.5em;*/
+  width: 280px;
+  display: inline-block;
+  /*margin: 0px auto;*/
+  float: right;
+  margin-right: 50px;
+}
+input {
+  border-radius: 5px !important;
+}
+#header {
+  background-color: white;
+  -webkit-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.25);
+  box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.25);
+  z-index: 1;
+  position: relative;
+}
+
+.top-bar {
+  background-color: white !important;
+}
+.fa-warning {
+  color: $primary-color;
+}
+
+span #user_first_name {
+  float: left;
+  width: 49%;
+  margin-right: 1%;
+}
+
+span #user_last_name {
+  float: right;
+  width: 49%;
+  margin-left: 1%;
+}
+
+@media only screen and (max-width: 1150px) {
+  #sign-up-form {
+    float: left;
+    margin-left:10px;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  #sign-up-form {
+    /*width: 200px;*/
+    float: none;
+    display: inline-block;
+    margin: 0 auto;
+  }
 }

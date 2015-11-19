@@ -1,0 +1,39 @@
+<section id="homepage-hero">
+  <div id="formput">
+    <%= form_for @user do |f| %>
+      <!-- <div class="row"> -->
+        <!-- <div class='small-12 columns'> -->
+          <div id='sign-up-form'>
+            <%= f.text_field :first_name, placeholder: "First Name" %>
+            <%= f.text_field :last_name, placeholder: "Last Name" %>
+            <%= f.text_field :email, placeholder: "Email" %>
+            <%= f.text_field :phone, placeholder: "Phone Number" %>
+            <%= f.password_field :password, placeholder: "Password" %>
+            <input type='hidden' name="location[latitude]" id="latitude" value=""/>
+            <input type='hidden' name="location[longitude]" id="longitude" value=""/>
+            <%= f.submit 'Signup', class: 'button small expand radius' %>
+          </div>
+        <!-- </div> -->
+      <!-- </div> -->
+    <% end %>
+  </div>
+</section>
+<section style="text-align: center; margin: 75px auto 55px auto;">
+  <div class="row" id="tester">
+    <div class="medium-4 columns">
+      <i class="fa fa-warning fa-5x"></i>
+      <h3>Have an issue?</h3>
+      <p>Easily create an alert detailing the issue with your bicycle.</p>
+    </div>
+    <div class="medium-4 columns">
+      <i class="fa fa-gears fa-5x" style="color:#00aac8;"></i>
+      <h3>Help is on the way!</h3>
+      <p>A detailed text message will be sent to your phone confirming a mechanic is on the way to assist you.</p>
+    </div>
+    <div class="medium-4 columns">
+      <i class="fa fa-bicycle fa-5x" style="color:#00aac8;"></i>
+      <h3>Ride with confidence</h3>
+      <p>Quickly get back on the road after the repairs are made.</p>
+    </div>
+  </div>
+</section>

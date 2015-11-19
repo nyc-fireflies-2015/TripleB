@@ -2,7 +2,6 @@ class AlertsController < ApplicationController
   before_action :redirect_deleted_alert, only: [:show,:update]
 
   def index
-    # require 'pry';binding.pry
     @alerts = Alert.by_location(10, current_user.location)
   end
 
