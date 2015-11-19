@@ -1,5 +1,44 @@
 <% if signed_in? %>
-  <%= render partial: 'assistance' %>
+  <div id="user_id" style="display: none;"><%= current_user.id %></div>
+  <section id='homepage-hero-signed-in' class='block-splash'>
+    <div class='centered'>
+      <div class='profile-layer'>
+        <div class='row'>
+          <a href='/users/<%= current_user.id %>'>
+            <div class='small-5 small-centered columns'>
+              <%= image_tag current_user.avatar_url, size: '70'%>
+              <h3><%= current_user.full_name %></h3>
+            </div>
+            <div class='small-5 small-centered columns'>
+              <h6><%= current_user.email %></h6>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='small-centered columns button-path'>
+          <%= link_to "Need assistance", new_alert_path, class: 'button small expant radius hero-button alert' %>
+        </div>
+        <div class='small-centered columns'>
+          <%= link_to "Lend a hand", alerts_path, class: 'button small expant radius hero-button success' %>
+        </div>
+      </div>
+    </div>
+  </section>
 <% else %>
-  <%= render partial: 'home' %>
+  <section id="homepage-hero" class="block">
+    <div class='centered'>
+      <%= image_tag "bike_logo_white.png", class: 'logo' %>
+      <div class="row">
+        <div class="small-10 small-centered columns">
+          <%= link_to "Log In", login_path, class: "button small expand radius hero-button" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-10 small-centered columns">
+          <%= link_to "Sign Up", signup_path, class: "button small expand radius hero-button" %>
+        </div>
+      </div>
+    </div>
+  </section>
 <% end %>
