@@ -6,7 +6,6 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Tripl_B" %></title>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_f9Nmfc9EU2ltkH3-Tcg3qrO6THZGZW4"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -20,6 +19,5 @@
       <%= content_tag :div, msg, class: name %>
     <% end %>
     <%= yield %>
-    <%= render partial: "shared/footer" %>
   </body>
 </html>
